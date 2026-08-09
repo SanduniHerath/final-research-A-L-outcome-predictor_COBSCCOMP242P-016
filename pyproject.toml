@@ -1,0 +1,43 @@
+[project]
+name = "al-outcome-system"
+version = "0.1.0"
+description = "Decision-support system predicting A/L Science-stream outcomes for Sri Lankan O/L students"
+requires-python = ">=3.12,<3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["notebooks", "4th Year Research Documentations"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "D", "ANN", "SIM"]
+ignore = ["D203", "D213", "D100", "D104"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D", "ANN"]
+"src/data/expert_form.py" = ["E501"]  # cover-letter template keeps one paragraph per line
+"src/models/*" = ["D107", "ANN401"]  # network classes are documented at class level; Any for mixed run records
+# Phase 9 parts: student-facing sentences are kept on one line so the wording is easy to review;
+# Any for questionnaire answers, which mix text and numbers.
+"src/chatbot/*" = ["E501"]
+"src/explain/student.py" = ["E501", "ANN401"]
+"src/gap/*" = ["E501", "ANN401"]
+"src/recommend/*" = ["E501", "ANN401"]
+"backend/*" = ["E501"]
+"src/evaluation/run_phase09.py" = ["E501"]
+"src/evaluation/stats_api.py" = ["E501"]
+# notebook cells are kept as readable code strings, one notebook line per line
+"notebooks/build_notebooks.py" = ["E501", "D103"]
+"src/evaluation/user_test.py" = ["E501"]
+"tests/test_user_test.py" = ["D", "ANN", "E501"]  # made-up answer tables
+
+[tool.ruff.format]
+quote-style = "double"

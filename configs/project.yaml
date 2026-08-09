@@ -1,0 +1,23 @@
+# Project-wide settings. All paths are relative to the project root.
+project:
+  name: al_outcome_system
+  description: Decision-support system predicting A/L Science-stream outcomes for O/L students
+
+# The ONLY place the random seed is defined. Every script reads it from here.
+seed: 42
+
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  models: models
+  figures: reports/figures
+  reports: reports
+  docs: docs
+  logs: logs
+  raw_checksums: data/raw_checksums.json
+
+logging:
+  level: INFO
+  file: logs/project.log
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"

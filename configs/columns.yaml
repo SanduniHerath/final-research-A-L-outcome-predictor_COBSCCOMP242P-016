@@ -1,0 +1,707 @@
+# Column dictionary for the survey files (main and pilot share the same 53 columns).
+# position = column order in the raw file; name = short name used in all code.
+# label and options come from the live Google Form, retrieved 2026-10-15:
+# https://docs.google.com/forms/d/e/1FAIpQLSfmm_-jG3uUu5Red6vPUIj09GuS8jrnbygxNAJ_oUghuIZuog/viewform
+# header_start is used to check that each raw column is the one expected.
+# Roles (input / target / leakage / administrative) are assigned in Phase 3, not here.
+columns:
+- position: 0
+  name: timestamp
+  label: Timestamp
+  header_start: Timestamp
+  form_type: system
+  required: true
+- position: 1
+  name: consent
+  label: Consent Statement
+  header_start: Consent Statement
+  form_type: checkboxes
+  required: true
+  options:
+  - I confirm that I have read and understood the above information. / ඉහත තොරතුරු මා කියවා තේරුම් ගත් බව මම තහවුරු කරමි.
+  - I voluntarily agree to participate in this study. / මෙම අධ්‍යයනයට සහභාගී වීමට මම ස්වේච්ඡාවෙන් එකඟ වෙමි.
+- position: 2
+  name: eligibility
+  label: Are you currently an undergraduate at a Sri Lankan state university, and did you complete your G.C.E. A/L in the Science stream (Biological Science or Physical Science)?
+  header_start: Are you currently an undergraduate at a
+  form_type: multiple_choice
+  required: true
+  options:
+  - Yes, both are true
+  - 'No'
+- position: 3
+  name: gender
+  label: Gender
+  header_start: Gender
+  form_type: multiple_choice
+  required: true
+  options:
+  - Male
+  - Female
+  - Prefer not to say
+- position: 4
+  name: al_exam_year
+  label: In which year did you sit the A/L examination that gained you university admission?
+  header_start: In which year did you sit the A/L examin
+  form_type: multiple_choice
+  required: true
+  options:
+  - 2018 or earlier
+  - '2019'
+  - '2020'
+  - '2021'
+  - '2022'
+  - '2023'
+  - '2024'
+  - '2025'
+- position: 5
+  name: al_attempt
+  label: Which attempt was that examination for you?
+  header_start: Which attempt was that examination for y
+  form_type: multiple_choice
+  required: true
+  options:
+  - First attempt
+  - Second attempt
+  - Third attempt
+- position: 6
+  name: ol_school_type
+  label: What type of school did you attend for O/L?
+  header_start: What type of school did you attend for O
+  form_type: multiple_choice
+  required: true
+  options:
+  - National school
+  - Provincial school
+  - Private or semi-government school
+  - International school
+  - Pirivena
+  - Other
+- position: 7
+  name: grade5_result
+  label: What was your Grade 5 Scholarship Examination result?
+  header_start: What was your Grade 5 Scholarship Examin
+  form_type: multiple_choice
+  required: true
+  options:
+  - Qualified
+  - Did not qualify
+  - Did not sit the examination
+  - Cannot remember
+- position: 8
+  name: g6_11_perf_rating
+  label: How would you rate your academic performance during Grades 6 - 11?
+  header_start: How would you rate your academic perform
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 9
+  name: class_rank_freq
+  label: How often did you receive positions/ranks among the top students in your class?
+  header_start: How often did you receive positions/rank
+  form_type: multiple_choice
+  required: true
+  options:
+  - Never
+  - Rarely
+  - Sometimes
+  - Often
+  - Always
+- position: 10
+  name: ol_religion
+  label: What grade did you get in each compulsory O/L subject? [Religion (Buddhism/Saivanery/Catholicism/Christianity/Islam)]
+  header_start: Religion
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - W
+- position: 11
+  name: ol_first_language
+  label: What grade did you get in each compulsory O/L subject? [Language (Sinhala/Tamil)]
+  header_start: Language (Sinhala/Tamil)]
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - W
+- position: 12
+  name: ol_english
+  label: What grade did you get in each compulsory O/L subject? [English Language]
+  header_start: '[English Language]'
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - W
+- position: 13
+  name: ol_maths
+  label: What grade did you get in each compulsory O/L subject? [Mathematics]
+  header_start: '[Mathematics]'
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - W
+- position: 14
+  name: ol_history
+  label: What grade did you get in each compulsory O/L subject? [History]
+  header_start: '[History]'
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - W
+- position: 15
+  name: ol_science
+  label: What grade did you get in each compulsory O/L subject? [Science]
+  header_start: '[Science]'
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - W
+- position: 16
+  name: ol_cat1
+  label: What grade did you get in each of your three O/L basket (optional) subjects? [Category 1 subject (e.g. Commerce, Geography, Civics, a second language)]
+  header_start: '[Category 1 subject (e.g. Commerce, Geog'
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - W
+- position: 17
+  name: ol_cat2
+  label: What grade did you get in each of your three O/L basket (optional) subjects? [Category 2 subject (e.g. Music, Art, Dancing, Literature, Drama)]
+  header_start: '[Category 2 subject (e.g. Music, Art, D'
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - W
+- position: 18
+  name: ol_cat3
+  label: What grade did you get in each of your three O/L basket (optional) subjects? [Category 3 subject (e.g. ICT, Agriculture, Health, Home Economics)]
+  header_start: '[Category 3 subject (e.g. ICT, Agricultu'
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - W
+- position: 19
+  name: g11_self_study_hours
+  label: In Grade 11, about how many hours per week did you study on your own, outside school and tuition classes?
+  header_start: In Grade 11, about how many hours per we
+  form_type: multiple_choice
+  required: true
+  options:
+  - Less than 5
+  - 5 - 10
+  - 11 - 20
+  - 21 - 30
+  - More than 30
+- position: 20
+  name: ol_tuition_subjects
+  label: For how many O/L subjects did you attend private tuition?
+  header_start: For how many O/L subjects did you attend
+  form_type: multiple_choice
+  required: true
+  options:
+  - None
+  - 1 - 2
+  - 3 - 4
+  - 5 or more
+- position: 21
+  name: se1
+  label: I was confident I could understand the most difficult material taught in my O/L subjects.
+  header_start: I was confident I could understand the m
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 22
+  name: se2
+  label: I expected to do well in the O/L examination.
+  header_start: I expected to do well in the O/L examina
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 23
+  name: se3
+  label: I was confident I could do an excellent job on school tests and assignments.
+  header_start: I was confident I could do an excellent
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 24
+  name: se4
+  label: I was certain I could master the skills taught in my O/L subjects.
+  header_start: I was certain I could master the skills
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 25
+  name: er1
+  label: I made good use of my study time.
+  header_start: I made good use of my study time. / මම ම
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 26
+  name: er2
+  label: I kept working on my studies even when the material was dull or uninteresting.
+  header_start: I kept working on my studies even when t
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 27
+  name: er3
+  label: I kept up with my schoolwork and homework every week.
+  header_start: I kept up with my schoolwork and homewor
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 28
+  name: er4
+  label: I often found it hard to stick to a study schedule.
+  header_start: I often found it hard to stick to a stud
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 29
+  name: int1
+  label: I was very interested in the content of Science and Mathematics.
+  header_start: I was very interested in the content of
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 30
+  name: int2
+  label: I enjoyed learning Science more than most other subjects.
+  header_start: I enjoyed learning Science more than mos
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 31
+  name: int3
+  label: I thought what I learned in Science and Mathematics would be useful for my future.
+  header_start: I thought what I learned in Science and
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 32
+  name: int4
+  label: I explored Science topics beyond what was required at school.
+  header_start: I explored Science topics beyond what wa
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 33
+  name: career_goal_clear
+  label: Before starting A/L studies, did you have a clear career goal?
+  header_start: Before starting A/L studies, did you hav
+  form_type: multiple_choice
+  required: true
+  options:
+  - 'Yes'
+  - 'No'
+  - Not Sure
+- position: 34
+  name: stream_influences
+  label: What influenced your decision to choose the Science stream?
+  header_start: What influenced your decision to choose
+  form_type: checkboxes
+  required: true
+  options:
+  - Personal Interest
+  - Parents
+  - Teachers
+  - Friends
+  - Career Goals
+- position: 35
+  name: al_target_degree
+  label: When you started A/L, which degree were you aiming for?
+  header_start: When you started A/L, which degree were
+  form_type: dropdown
+  required: true
+  options:
+  - Medicine
+  - Dental Surgery or Veterinary Science
+  - Engineering
+  - Allied Health Sciences (Nursing, Pharmacy, Physiotherapy, MLS, etc.)
+  - Agriculture or Food Science
+  - Biological Science
+  - Physical Science
+  - Computing, IT, AI or Data Science
+  - Other
+  - I had not decided
+- position: 36
+  name: school_activities
+  label: Which of these did you take part in at school? (Check all that apply)
+  header_start: Which of these did you take part in at s
+  form_type: checkboxes
+  required: true
+  options:
+  - Sports
+  - Clubs or societies
+  - Academic competitions (Science, Mathematics, ICT, Olympiads)
+  - Other competitions (debating, arts, etc.)
+  - None
+- position: 37
+  name: leadership_roles
+  label: Did you hold any leadership positions? (Check all that apply)
+  header_start: Did you hold any leadership positions? (
+  form_type: checkboxes
+  required: true
+  options:
+  - Prefect
+  - Head Prefect
+  - Club Leader
+  - Society Leader
+  - Sport Leader
+  - Team Captain
+  - None
+- position: 38
+  name: extracurricular_rating
+  label: How would you rate your involvement in extracurricular activities?
+  header_start: How would you rate your involvement in e
+  form_type: linear_scale
+  required: true
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+- position: 39
+  name: al_study_hours
+  label: How many hours per week did you study during A/L preparation?
+  header_start: How many hours per week did you study du
+  form_type: multiple_choice
+  required: true
+  options:
+  - Less than 10
+  - 10 - 20
+  - 21 - 30
+  - 31 - 40
+  - More than 40
+- position: 40
+  name: al_past_paper_freq
+  label: How frequently did you practice past papers?
+  header_start: How frequently did you practice past pap
+  form_type: multiple_choice
+  required: true
+  options:
+  - Never
+  - Monthly
+  - Weekly
+  - Several times per week
+- position: 41
+  name: al_revision_freq
+  label: How frequently did you revise previously learned content?
+  header_start: How frequently did you revise previously
+  form_type: multiple_choice
+  required: true
+  options:
+  - Never
+  - Rarely
+  - Sometimes
+  - Often
+  - Very Often
+- position: 42
+  name: al_biology
+  label: What were your final A/L grades? [Biology]
+  header_start: What were your final A/L grades? / ඔබගේ
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - F
+  - Not Taken
+- position: 43
+  name: al_chemistry
+  label: What were your final A/L grades? [Chemistry]
+  header_start: What were your final A/L grades? / ඔබගේ
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - F
+  - Not Taken
+- position: 44
+  name: al_physics
+  label: What were your final A/L grades? [Physics]
+  header_start: What were your final A/L grades? / ඔබගේ
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - F
+  - Not Taken
+- position: 45
+  name: al_combined_maths
+  label: What were your final A/L grades? [Combined Mathematics]
+  header_start: What were your final A/L grades? / ඔබගේ
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - F
+  - Not Taken
+- position: 46
+  name: al_ict
+  label: What were your final A/L grades? [ICT]
+  header_start: What were your final A/L grades? / ඔබගේ
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - F
+  - Not Taken
+- position: 47
+  name: al_agri_science
+  label: What were your final A/L grades? [Agricultural Science]
+  header_start: What were your final A/L grades? / ඔබගේ
+  form_type: choice_grid
+  required: true
+  options:
+  - A
+  - B
+  - C
+  - S
+  - F
+  - Not Taken
+- position: 48
+  name: al_district
+  label: District in which you sat for your A/L Examination?
+  header_start: District in which you sat for your A/L E
+  form_type: dropdown
+  required: true
+  options:
+  - Ampara
+  - Anuradhapura
+  - Badulla
+  - Batticaloa
+  - Colombo
+  - Galle
+  - Gampaha
+  - Hambantota
+  - Jaffna
+  - Kalutara
+  - Kandy
+  - Kegalle
+  - Kilinochchi
+  - Kurunegala
+  - Mannar
+  - Matale
+  - Matara
+  - Monaragala
+  - Mullaitivu
+  - Nuwara Eliya
+  - Polonnaruwa
+  - Puttalam
+  - Ratnapura
+  - Trincomalee
+  - Vavuniya
+- position: 49
+  name: zscore
+  label: What was your final Z-score?
+  header_start: What was your final Z-score? / ඔබගේ අවසන
+  form_type: short_text
+  required: true
+- position: 50
+  name: university
+  label: What is your university?
+  header_start: What is your university? / ඔබගේ විශ්වවිද
+  form_type: dropdown
+  required: true
+  options:
+  - University of Colombo
+  - University of Peradeniya
+  - University of Sri Jayewardenepura
+  - University of Kelaniya
+  - University of Moratuwa
+  - University of Jaffna
+  - University of Ruhuna
+  - Eastern University
+  - Trincomalee Campus, Eastern University
+  - South Eastern University
+  - Rajarata University
+  - Sabaragamuwa University
+  - Wayamba University
+  - Uva Wellassa University
+  - University of Vavuniya
+  - Gampaha Wickramarachchi University of Indigenous Medicine
+  - Other
+- position: 51
+  name: degree_program
+  label: What is your current degree program?
+  header_start: What is your current degree program? / ඔ
+  form_type: dropdown
+  required: true
+  options:
+  - Medicine
+  - Dental Surgery
+  - Veterinary Science
+  - Agricultural Technology & Management
+  - Agriculture
+  - Agricultural Resource Management & Technology
+  - Agribusiness Management
+  - Green Technology
+  - Food Science & Nutrition
+  - Food Science & Technology
+  - Ayurveda Medicine & Surgery
+  - Unani Medicine & Surgery
+  - Siddha Medicine & Surgery
+  - Biological Science
+  - Applied Sciences (Biological Science)
+  - Health Promotion
+  - Nursing
+  - Pharmacy
+  - Medical Laboratory Sciences
+  - Radiography
+  - Physiotherapy
+  - Biochemistry & Molecular Biology
+  - Fisheries & Marine Sciences
+  - Environmental Conservation & Management
+  - Animal Science & Fisheries
+  - Food Production & Technology Management
+  - Animal Production & Food Technology
+  - Export Agriculture
+  - Aquatic Resources Technology
+  - Occupational Therapy
+  - Optometry
+  - Applied Chemistry
+  - Aquatic Bioresources
+  - Medical Imaging Technology
+  - Speech & Hearing Sciences
+  - Engineering
+  - Engineering (EM) - Earth Resources Engineering
+  - Engineering (TM) - Textile & Apparel Engineering
+  - Transport Management & Logistics Engineering
+  - Physical Science
+  - Computer Science
+  - Applied Sciences (Physical Science)
+  - Industrial Statistics & Mathematical Finance
+  - Statistics & Operations Research
+  - Physical Science - ICT
+  - Artificial Intelligence
+  - Electronics & Computer Science
+  - Data Science
+  - Electronic & Intelligent Systems Engineering
+  - Other
+- position: 52
+  name: degree_first_pref
+  label: Was your current degree program your first preference?
+  header_start: Was your current degree program your fir
+  form_type: multiple_choice
+  required: true
+  options:
+  - 'Yes'
+  - 'No'

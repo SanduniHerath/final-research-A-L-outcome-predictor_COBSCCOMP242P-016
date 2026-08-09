@@ -1,0 +1,23 @@
+{
+  "registered_at_utc": "2026-10-14T18:50:50+00:00",
+  "algorithm": "sha256",
+  "files": {
+    "pilot/pilot_test_data_set.xlsx": "0c0892ba71bc528b6a5e54534af175526159cf0f592479a60f698fffb04d2f5d",
+    "survey/r_dataset.xlsx": "7412753e206d94bf1949ccccc1e7d9d7fc8d4df121d025846529c1e3d7f03ef1",
+    "ugc/2019_2020-NEW_SYLLABUS_ENGLISH.pdf": "9c369838ca210bedb6ded03d9d2bc0cbd45c1df9488e55b5871ca33044e933ab",
+    "ugc/COP_2021_2022-ENGLISH.pdf": "b5effd59cc98b28af193dda194ddef600e56dff42c211ec1e1a996a3ff567b12",
+    "ugc/COP_2023_2024-ENGLISH_AR_A4.pdf": "7d03c7e3e46e48fa34e8ad305a99e51c69b022dfb1844e841aadda706e466224"
+  },
+  "spreadsheet_shapes": {
+    "data/raw/survey/r_dataset.xlsx": {
+      "sheet": "Sheet1",
+      "rows": 1015,
+      "columns": 53
+    },
+    "data/raw/pilot/pilot_test_data_set.xlsx": {
+      "sheet": "first",
+      "rows": 13,
+      "columns": 53
+    }
+  }
+}

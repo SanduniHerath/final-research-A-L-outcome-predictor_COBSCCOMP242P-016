@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Data: respondents are young people, so survey data is never committed.
+# Only the checksum record is versioned.
+# Everything under data/ is ignored by default (including data/user_test/, the testers' answers),
+# except the checksum record and the empty-folder markers.
+data/**
+!data/*/
+!data/**/.gitkeep
+!data/raw_checksums.json
+
+# Trained models and generated outputs
+models/**
+!models/.gitkeep
+logs/**
+!logs/.gitkeep
+
+# Thesis working files and original copies kept in the project root (copies live in data/raw)
+4th Year Research Documentations/
+/*.xlsx
+/*.pdf
+~$*
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Secrets (chatbot API keys go in .env, never in code)
+.env
+
+# Node tooling for the frontend checks
+node_modules/

@@ -1,0 +1,18 @@
+# Raw data files. These are never edited; scripts read them and write to data/interim.
+raw_files:
+  survey:
+    path: data/raw/survey/r_dataset.xlsx
+    sheet: Sheet1
+    expected_rows: 1015
+    expected_columns: 53
+    description: Main questionnaire responses supplied by the researcher
+  pilot:
+    path: data/raw/pilot/pilot_test_data_set.xlsx
+    sheet: null          # first sheet
+    expected_rows: 13
+    expected_columns: 53
+    description: Pilot questionnaire responses supplied by the researcher
+  ugc_cutoffs:
+    - data/raw/ugc/2019_2020-NEW_SYLLABUS_ENGLISH.pdf
+    - data/raw/ugc/COP_2021_2022-ENGLISH.pdf
+    - data/raw/ugc/COP_2023_2024-ENGLISH_AR_A4.pdf

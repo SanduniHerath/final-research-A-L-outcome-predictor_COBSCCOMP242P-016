@@ -1,0 +1,31 @@
+# Top-level dependencies (human-edited). Exact pins live in requirements.txt (pip freeze).
+# Data and statistics
+numpy
+pandas
+openpyxl
+scipy
+statsmodels
+scikit-learn          # preprocessing, splitting and metrics only - no ensemble models are used
+factor_analyzer       # KMO, Bartlett's test, exploratory factor analysis (Phase 1)
+pdfplumber            # reading UGC cut-off PDFs
+pyyaml
+# Neural networks
+torch
+pytorch-tabnet
+# Explainability and figures
+shap
+matplotlib
+# Backend
+fastapi
+uvicorn
+pydantic
+httpx
+# Appendix notebooks (notebooks/build_notebooks.py)
+nbformat
+nbclient
+nbconvert
+ipykernel
+# Quality
+pytest
+pytest-cov
+ruff
