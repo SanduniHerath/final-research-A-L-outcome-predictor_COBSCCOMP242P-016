@@ -1,0 +1,67 @@
+# Phase 3 - target definitions. Fixed before any model is trained.
+
+prediction_time: >-
+  Just after the O/L results are known, when the student has chosen A/L subjects (confirmed by the
+  researcher on 2026-10-15). Every model input must be knowable at that point.
+
+targets:
+  zscore:
+    kind: regression
+    source: zscore
+
+  zscore_band:
+    kind: ordinal_classification
+    source: zscore
+    rule: tertiles         # three equal-sized bands
+    n_bands: 3
+    fitted_on: training split only (Phase 5); the edges are then frozen and applied to validation and test
+    labels: [lower third, middle third, upper third]   # relative standing among university entrants
+    student_facing_labels: [Band 1, Band 2, Band 3]     # wording decided in Phase 10; never "fail"/"low"
+
+  university_group:
+    kind: nominal_classification
+    source: university
+    # Region = province of the main campus, provinces merged into five regions so that no group is too small.
+    # Source to cite: University Grants Commission list of state universities (ugc.ac.lk) - researcher to confirm.
+    groups:
+      Western: [University of Colombo, University of Sri Jayewardenepura, University of Kelaniya, University of Moratuwa]
+      Central and Highlands: [University of Peradeniya, Sabaragamuwa University, Uva Wellassa University]
+      Southern: [University of Ruhuna]
+      Northern and Eastern: [University of Jaffna, University of Vavuniya, Eastern University, South Eastern University, "Trincomalee Campus, Eastern University"]
+      North Central and North Western: [Rajarata University, Wayamba University]
+
+  degree_category:
+    kind: nominal_classification
+    source: degree_program
+    # Categories are the questionnaire's own "degree aimed for at the start of A/L" options, so the
+    # predicted category can be compared directly with the student's stated target.
+    groups:
+      Medicine: [Medicine]
+      Engineering: [Engineering]
+      Allied Health Sciences: [Nursing, Pharmacy]
+      Agriculture or Food Science: [Agriculture, Food Science & Nutrition]
+      Biological Science: [Biological Science]
+      Physical Science: [Physical Science]
+      Computing, IT, AI or Data Science: [Computer Science, Data Science, Artificial Intelligence]
+
+# Not a model target (researcher's decision). Used to set the recommendation mode and for the
+# retrospective check of the gap module (hypothesis H8).
+goal_status:
+  target_column: al_target_degree
+  outcome_column: degree_category
+  not_applicable: [I had not decided, Other]
+  # Form option -> degree category. "Dental Surgery or Veterinary Science" has no respondents
+  # enrolled in it, so its goal can never be "reached" in this data.
+  target_to_category:
+    Medicine: Medicine
+    Dental Surgery or Veterinary Science: Dental Surgery or Veterinary Science
+    Engineering: Engineering
+    Allied Health Sciences (Nursing, Pharmacy, Physiotherapy, MLS, etc.): Allied Health Sciences
+    Agriculture or Food Science: Agriculture or Food Science
+    Biological Science: Biological Science
+    Physical Science: Physical Science
+    Computing, IT, AI or Data Science: Computing, IT, AI or Data Science
+
+small_class_rule:
+  min_class_size: 50       # about 5% of 1,015 and about 7 students in a 15% test set
+  action: merge with the most similar class (documented); no class currently falls below this

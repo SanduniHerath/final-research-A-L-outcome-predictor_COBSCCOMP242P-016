@@ -1,0 +1,28 @@
+# Phase 3 - cleaning rules. Applied by src/data/clean.py; every change is logged.
+# Raw files are never edited.
+
+strip_whitespace: true      # e.g. Combined Mathematics grade "C " -> "C"
+
+# Value corrections, each with a reason. Applied only where the exact value is found.
+value_corrections:
+  - column: al_district
+    from: M+AX533atara
+    to: Matara
+    reason: typing error in one cell; the only district name it can be is Matara
+
+# Questions the form marks as required that were left blank. The researcher stated (2026-10-15)
+# that respondents probably skipped them. They are kept as missing with a "skipped" indicator.
+skipped_as_missing: [ol_tuition_subjects, school_activities, leadership_roles]
+
+zscore_range: [-5.0, 5.0]   # wider than any possible Z-score; values outside are flagged, not changed
+outlier_iqr_multiplier: 3.0 # extreme-value flag for the Z-score (flag only)
+
+# A degree whose A/L subject combination is very rare among its own students is flagged for the
+# researcher to check; it is not changed or removed.
+rare_combination_share: 0.01
+
+# Rows kept in the cleaned file but excluded from modelling, each with a reason. Values are not edited
+# because the correct answer is unknown.
+exclude_from_modelling:
+  - respondent_id: M0211
+    reason: Physical Science degree with Biology + Chemistry + Physics, the only such case; the researcher considers it an accidental entry error (2026-10-15), but which answer is wrong is unknown
