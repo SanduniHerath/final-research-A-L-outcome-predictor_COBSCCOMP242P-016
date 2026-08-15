@@ -1,0 +1,55 @@
+column,question,role,reason,missing
+respondent_id,,administrative,anonymous row number,0
+timestamp,Timestamp,administrative,survey submission time; dropped after cleaning (privacy),0
+consent,Consent Statement,administrative,all respondents consented,0
+eligibility,"Are you currently an undergraduate at a Sri Lankan state university, and did you complete your G.C.E. A/L in the Science stream (Biological Science or Physical Science)?",administrative,screening question; all answered yes,0
+gender,Gender,fairness_only,sensitive attribute; not an input (researcher 2026-10-15); used for the fairness check,0
+al_exam_year,In which year did you sit the A/L examination that gained you university admission?,administrative,a future O/L student's exam year lies outside the training years; kept for the limitation analysis,0
+al_attempt,Which attempt was that examination for you?,leakage,whether the admission came on a second or third attempt is only known after A/L,0
+ol_school_type,What type of school did you attend for O/L?,input,known at O/L,0
+grade5_result,What was your Grade 5 Scholarship Examination result?,input,known before O/L,0
+g6_11_perf_rating,How would you rate your academic performance during Grades 6 - 11?,input,Grades 6-11,0
+class_rank_freq,How often did you receive positions/ranks among the top students in your class?,input,school years up to O/L,0
+ol_religion,What grade did you get in each compulsory O/L subject? [Religion (Buddhism/Saivanery/Catholicism/Christianity/Islam)],input,O/L grade,0
+ol_first_language,What grade did you get in each compulsory O/L subject? [Language (Sinhala/Tamil)],input,O/L grade,0
+ol_english,What grade did you get in each compulsory O/L subject? [English Language],input,O/L grade,0
+ol_maths,What grade did you get in each compulsory O/L subject? [Mathematics],input,O/L grade,0
+ol_history,What grade did you get in each compulsory O/L subject? [History],input,O/L grade,0
+ol_science,What grade did you get in each compulsory O/L subject? [Science],input,O/L grade,0
+ol_cat1,"What grade did you get in each of your three O/L basket (optional) subjects? [Category 1 subject (e.g. Commerce, Geography, Civics, a second language)]",input,O/L grade,0
+ol_cat2,"What grade did you get in each of your three O/L basket (optional) subjects? [Category 2 subject (e.g. Music, Art, Dancing, Literature, Drama)]",input,O/L grade,0
+ol_cat3,"What grade did you get in each of your three O/L basket (optional) subjects? [Category 3 subject (e.g. ICT, Agriculture, Health, Home Economics)]",input,O/L grade,0
+g11_self_study_hours,"In Grade 11, about how many hours per week did you study on your own, outside school and tuition classes?",input,Grade 11 habit,0
+ol_tuition_subjects,For how many O/L subjects did you attend private tuition?,input,O/L tuition; blanks kept as skipped,260
+se1,I was confident I could understand the most difficult material taught in my O/L subjects.,input,attitude during O/L,0
+se2,I expected to do well in the O/L examination.,input,attitude during O/L,0
+se3,I was confident I could do an excellent job on school tests and assignments.,input,attitude during O/L,0
+se4,I was certain I could master the skills taught in my O/L subjects.,input,attitude during O/L,0
+er1,I made good use of my study time.,input,study habit during O/L,0
+er2,I kept working on my studies even when the material was dull or uninteresting.,input,study habit during O/L,0
+er3,I kept up with my schoolwork and homework every week.,input,study habit during O/L,0
+er4,I often found it hard to stick to a study schedule.,input,study habit during O/L (reverse-coded in Phase 4),0
+int1,I was very interested in the content of Science and Mathematics.,input,interest during O/L,0
+int2,I enjoyed learning Science more than most other subjects.,input,interest during O/L,0
+int3,I thought what I learned in Science and Mathematics would be useful for my future.,input,interest during O/L,0
+int4,I explored Science topics beyond what was required at school.,input,interest during O/L,0
+career_goal_clear,"Before starting A/L studies, did you have a clear career goal?",input,before starting A/L,0
+stream_influences,What influenced your decision to choose the Science stream?,input,reasons for choosing the Science stream,0
+al_target_degree,"When you started A/L, which degree were you aiming for?",gap_only,the student's own target; the thesis (4.5) uses it only for comparison,0
+school_activities,Which of these did you take part in at school? (Check all that apply),input,school participation; question does not limit it to O/L years (timing caveat),268
+leadership_roles,Did you hold any leadership positions? (Check all that apply),input,researcher 2026-10-15 - prefect positions can be held by O/L; timing caveat (some roles may date from the A/L years),256
+extracurricular_rating,How would you rate your involvement in extracurricular activities?,input,school involvement; same timing caveat as school_activities,0
+al_study_hours,How many hours per week did you study during A/L preparation?,recommendation,A/L preparation habit,0
+al_past_paper_freq,How frequently did you practice past papers?,recommendation,A/L preparation habit,0
+al_revision_freq,How frequently did you revise previously learned content?,recommendation,A/L preparation habit,0
+al_biology,What were your final A/L grades? [Biology],leakage,"A/L grade (outcome); only ""taken / not taken"" feeds al_subject_combination",0
+al_chemistry,What were your final A/L grades? [Chemistry],leakage,"A/L grade (outcome); only ""taken / not taken"" feeds al_subject_combination",0
+al_physics,What were your final A/L grades? [Physics],leakage,"A/L grade (outcome); only ""taken / not taken"" feeds al_subject_combination",0
+al_combined_maths,What were your final A/L grades? [Combined Mathematics],leakage,"A/L grade (outcome); only ""taken / not taken"" feeds al_subject_combination",0
+al_ict,What were your final A/L grades? [ICT],leakage,"A/L grade (outcome); only ""taken / not taken"" feeds al_subject_combination",0
+al_agri_science,What were your final A/L grades? [Agricultural Science],leakage,"A/L grade (outcome); only ""taken / not taken"" feeds al_subject_combination",0
+al_district,District in which you sat for your A/L Examination?,input,district is normally known at O/L and sets the UGC district quota,0
+zscore,What was your final Z-score?,target,source of the Z-score and Z-score band targets,0
+university,What is your university?,target,source of the university-group target,0
+degree_program,What is your current degree program?,target,source of the degree-category target,0
+degree_first_pref,Was your current degree program your first preference?,leakage,university preference outcome,0
