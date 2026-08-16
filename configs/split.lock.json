@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "rows": 1014,
+  "counts": {
+    "train": 709,
+    "test": 153,
+    "validation": 152
+  },
+  "test_ids_sha256": "d5d6cacb2eeaaf273cd78156315ae961ada600cc25625c2073c6d2763cc42530",
+  "split_file_rows_sha256": "29bb390779abfbc7e4260778f9628355cf29e74b36395bddbcf07fb37201d6fa"
+}

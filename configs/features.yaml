@@ -1,0 +1,109 @@
+# Phase 4 - feature definitions. Every transformer is fitted on the TRAINING split only.
+
+ordinal:
+  # Grade order: W (fail) < S < C < B < A. O/L has no "Not Taken" (every subject is graded);
+  # "Not Taken" exists only for A/L subjects, which enter only through al_subject_combination.
+  grades:
+    columns: [ol_religion, ol_first_language, ol_english, ol_maths, ol_history, ol_science, ol_cat1, ol_cat2, ol_cat3]
+    order: [W, S, C, B, A]          # coded 0..4
+  class_rank_freq:
+    order: [Never, Rarely, Sometimes, Often, Always]
+  g11_self_study_hours:
+    order: [Less than 5, 5 - 10, 11 - 20, 21 - 30, More than 30]
+  ol_tuition_subjects:
+    order: [None, 1 - 2, 3 - 4, 5 or more]
+  career_goal_clear:
+    order: ["No", "Not Sure", "Yes"]  # increasing clarity (quoted: YAML would read No/Yes as booleans)
+  numeric_scales:                   # already 1..5
+    columns: [g6_11_perf_rating, extracurricular_rating, se1, se2, se3, se4, er1, er2, er3, er4, int1, int2, int3, int4]
+
+reverse_coded: [er4]                # 6 - answer, before any composite (Phase 1)
+
+nominal_onehot: [grade5_result, ol_school_type, al_subject_combination]
+nominal_many: [al_district]         # one-hot for most models; integer index for entity embeddings
+
+binary_prefixes: [stream_influence_, school_activity_, leadership_]
+skipped_indicators: [ol_tuition_subjects_skipped, school_activities_skipped, leadership_roles_skipped]
+
+not_inputs: [gender, al_exam_year, al_target_degree]   # fairness only / administrative / gap only
+
+composites:
+  ol_core_mean:
+    columns: [ol_religion, ol_first_language, ol_english, ol_maths, ol_history, ol_science]
+    formula: mean of the six compulsory O/L grades (0-4)
+    reason: prior achievement is the most consistent predictor in student-performance studies (Alnasyan et al., 2024); used in the thesis draft (4.7)
+  ol_all_mean:
+    columns: [ol_religion, ol_first_language, ol_english, ol_maths, ol_history, ol_science, ol_cat1, ol_cat2, ol_cat3]
+    formula: mean of all nine O/L grades (0-4)
+    reason: overall O/L achievement including basket subjects
+  ol_n_A:
+    columns: [ol_religion, ol_first_language, ol_english, ol_maths, ol_history, ol_science, ol_cat1, ol_cat2, ol_cat3]
+    formula: number of A grades (0-9)
+    reason: count of top grades, a common summary of O/L results in Sri Lanka; used in the thesis draft (4.7)
+  ol_sci_maths_mean:
+    columns: [ol_maths, ol_science]
+    formula: mean of the O/L Mathematics and Science grades (0-4)
+    reason: subject-specific prior achievement for the Science stream
+  self_efficacy_index:
+    columns: [se1, se2, se3, se4]
+    formula: mean of se1-se4 (1-5)
+    reason: MSLQ scale score is the item mean (Pintrich et al., 1991); alpha 0.93 (Phase 1)
+  effort_regulation_index:
+    columns: [er1, er2, er3, er4]
+    formula: mean of er1-er3 and reversed er4 (1-5)
+    reason: MSLQ effort regulation; alpha 0.90 (Phase 1)
+  effort_regulation_index_no_er4:
+    columns: [er1, er2, er3]
+    formula: mean of er1-er3 (1-5)
+    reason: variant without the weaker reverse-worded item (Phase 1 decision); chosen on training data in Phase 6
+  interest_index:
+    columns: [int1, int2, int3, int4]
+    formula: mean of int1-int4 (1-5)
+    reason: interest and task value in Science and Mathematics; alpha 0.93 (Phase 1)
+  motivation_index:
+    columns: [self_efficacy_index, interest_index]
+    formula: mean of the self-efficacy and interest indices (1-5)
+    reason: the MSLQ motivation section combines expectancy (self-efficacy) and value (interest) components (Pintrich et al., 1991)
+  effort_index:
+    columns: [effort_regulation_index, g11_self_study_hours]
+    formula: mean of the two after standardising each on the training split
+    reason: combines reported persistence with reported study time in Grade 11
+  goal_clarity_index:
+    columns: [career_goal_clear, stream_influence_career_goals]
+    formula: mean of career_goal_clear rescaled to 0-1 and the career-goal stream influence (0/1)
+    reason: goal-setting theory - specific goals direct effort (Locke & Latham, 2002)
+  activity_count:
+    columns: [school_activity_*]
+    formula: number of activity types ticked (0-4); missing if the question was skipped
+    reason: breadth of school involvement (Fredricks & Eccles, 2006)
+  leadership_count:
+    columns: [leadership_*]
+    formula: number of leadership roles ticked (0-6); missing if the question was skipped
+    reason: leadership experience as part of school involvement (researcher decision D2)
+  school_performance_index:
+    columns: [g6_11_perf_rating, class_rank_freq]
+    formula: mean of the two after standardising each on the training split
+    reason: self-reported academic standing before O/L
+
+missing_values:
+  numeric: training-set median, plus the existing *_skipped indicator
+  binary: training-set mean (share of 1s), plus the *_skipped indicator
+
+skew:
+  threshold: 1.0                  # |skewness| on training data above this -> Yeo-Johnson transform
+scaling: standardise numeric and ordinal features (training mean and SD); one-hot and 0/1 columns unscaled
+
+selection:                        # computed on TRAINING data only; final choice by cross-validation in Phase 6
+  measures:
+    numeric_vs_zscore: spearman
+    binary_vs_zscore: point_biserial
+    nominal_vs_zscore: kruskal_wallis_epsilon_squared
+    numeric_vs_class_target: kruskal_wallis_epsilon_squared
+    binary_or_nominal_vs_class_target: cramers_v
+  multiple_testing: benjamini_hochberg
+  alpha: 0.05
+  redundancy_abs_spearman: 0.90   # pairs above this are reported; the later of the pair is dropped in the "reduced" set
+  feature_sets:
+    full: every input feature and composite
+    composites: composites + non-scale inputs (scale items replaced by their indices)
+    filtered: features associated with at least one target after FDR correction, minus redundant ones
