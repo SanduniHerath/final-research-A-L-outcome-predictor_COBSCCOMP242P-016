@@ -1,0 +1,99 @@
+feature,source,type,formula,reason
+ol_religion,ol_religion,ordinal (standardised),"ordinal code, Yeo-Johnson, median-imputed, standardised",answer to the questionnaire item
+ol_first_language,ol_first_language,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+ol_english,ol_english,ordinal (standardised),"ordinal code, Yeo-Johnson, median-imputed, standardised",answer to the questionnaire item
+ol_maths,ol_maths,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+ol_history,ol_history,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+ol_science,ol_science,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+ol_cat1,ol_cat1,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+ol_cat2,ol_cat2,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+ol_cat3,ol_cat3,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+class_rank_freq,class_rank_freq,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+g11_self_study_hours,g11_self_study_hours,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+ol_tuition_subjects,ol_tuition_subjects,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+career_goal_clear,career_goal_clear,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+g6_11_perf_rating,g6_11_perf_rating,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+extracurricular_rating,extracurricular_rating,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+se1,se1,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+se2,se2,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+se3,se3,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+se4,se4,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+er1,er1,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+er2,er2,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+er3,er3,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+er4,er4,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+int1,int1,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+int2,int2,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+int3,int3,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+int4,int4,ordinal (standardised),"ordinal code, median-imputed, standardised",answer to the questionnaire item
+ol_core_mean,"ol_religion, ol_first_language, ol_english, ol_maths, ol_history, ol_science",composite (standardised),mean of the six compulsory O/L grades (0-4),"prior achievement is the most consistent predictor in student-performance studies (Alnasyan et al., 2024); used in the thesis draft (4.7)"
+ol_all_mean,"ol_religion, ol_first_language, ol_english, ol_maths, ol_history, ol_science, ol_cat1, ol_cat2, ol_cat3",composite (standardised),mean of all nine O/L grades (0-4),overall O/L achievement including basket subjects
+ol_sci_maths_mean,"ol_maths, ol_science",composite (standardised),mean of the O/L Mathematics and Science grades (0-4),subject-specific prior achievement for the Science stream
+self_efficacy_index,"se1, se2, se3, se4",composite (standardised),mean of se1-se4 (1-5),"MSLQ scale score is the item mean (Pintrich et al., 1991); alpha 0.93 (Phase 1)"
+effort_regulation_index,"er1, er2, er3, er4",composite (standardised),mean of er1-er3 and reversed er4 (1-5),MSLQ effort regulation; alpha 0.90 (Phase 1)
+effort_regulation_index_no_er4,"er1, er2, er3",composite (standardised),mean of er1-er3 (1-5),variant without the weaker reverse-worded item (Phase 1 decision); chosen on training data in Phase 6
+interest_index,"int1, int2, int3, int4",composite (standardised),mean of int1-int4 (1-5),interest and task value in Science and Mathematics; alpha 0.93 (Phase 1)
+ol_n_A,"ol_religion, ol_first_language, ol_english, ol_maths, ol_history, ol_science, ol_cat1, ol_cat2, ol_cat3",composite (standardised),number of A grades (0-9),"count of top grades, a common summary of O/L results in Sri Lanka; used in the thesis draft (4.7)"
+motivation_index,"self_efficacy_index, interest_index",composite (standardised),mean of the self-efficacy and interest indices (1-5),"the MSLQ motivation section combines expectancy (self-efficacy) and value (interest) components (Pintrich et al., 1991)"
+goal_clarity_index,"career_goal_clear, stream_influence_career_goals",composite (standardised),mean of career_goal_clear rescaled to 0-1 and the career-goal stream influence (0/1),"goal-setting theory - specific goals direct effort (Locke & Latham, 2002)"
+activity_count,school_activity_*,composite (standardised),number of activity types ticked (0-4); missing if the question was skipped,"breadth of school involvement (Fredricks & Eccles, 2006)"
+leadership_count,leadership_*,composite (standardised),number of leadership roles ticked (0-6); missing if the question was skipped,leadership experience as part of school involvement (researcher decision D2)
+effort_index,"effort_regulation_index, g11_self_study_hours",composite (standardised),mean of the two after standardising each on the training split,combines reported persistence with reported study time in Grade 11
+school_performance_index,"g6_11_perf_rating, class_rank_freq",composite (standardised),mean of the two after standardising each on the training split,self-reported academic standing before O/L
+stream_influence_personal_interest,stream_influence_personal_interest,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+stream_influence_parents,stream_influence_parents,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+stream_influence_teachers,stream_influence_teachers,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+stream_influence_friends,stream_influence_friends,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+stream_influence_career_goals,stream_influence_career_goals,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+school_activity_sports,school_activity_sports,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+school_activity_clubs_or_societies,school_activity_clubs_or_societies,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+school_activity_academic_competitions,school_activity_academic_competitions,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+school_activity_other_competitions,school_activity_other_competitions,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+leadership_prefect,leadership_prefect,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+leadership_head_prefect,leadership_head_prefect,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+leadership_club_leader,leadership_club_leader,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+leadership_society_leader,leadership_society_leader,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+leadership_sport_leader,leadership_sport_leader,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+leadership_team_captain,leadership_team_captain,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+ol_tuition_subjects_skipped,ol_tuition_subjects_skipped,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+school_activities_skipped,school_activities_skipped,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+leadership_roles_skipped,leadership_roles_skipped,0/1,0/1; skipped answers filled with the training share,ticked option or skipped-question indicator
+grade5_result_Cannot remember,grade5,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+grade5_result_Did not qualify,grade5,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+grade5_result_Did not sit the examination,grade5,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+grade5_result_Qualified,grade5,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+ol_school_type_International school,ol,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+ol_school_type_National school,ol,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+ol_school_type_Other,ol,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+ol_school_type_Private or semi-government school,ol,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+ol_school_type_Provincial school,ol,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_subject_combination_Biology + Chemistry + Agri Science,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_subject_combination_Biology + Chemistry + Physics,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_subject_combination_Chemistry + Physics + Combined Maths,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_subject_combination_Physics + Combined Maths + ICT,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Ampara,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Anuradhapura,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Badulla,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Batticaloa,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Colombo,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Galle,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Gampaha,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Hambantota,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Jaffna,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Kalutara,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Kandy,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Kegalle,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Kilinochchi,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Kurunegala,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Mannar,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Matale,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Matara,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Monaragala,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Mullaitivu,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Nuwara Eliya,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Polonnaruwa,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Puttalam,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Ratnapura,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Trincomalee,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_Vavuniya,al,one-hot,"1 if this category, else 0; unseen categories all 0",nominal answer
+al_district_index,al_district,integer index,"1..25 by training districts, 0 = unknown",input for the entity-embedding model only
