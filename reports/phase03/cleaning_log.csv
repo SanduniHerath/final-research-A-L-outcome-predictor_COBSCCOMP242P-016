@@ -1,0 +1,11 @@
+step,column,rows_affected,respondent_ids,detail
+strip_whitespace,al_combined_maths,1,M0198,['C ']
+value_correction,al_district,1,M0532,'M+AX533atara' -> 'Matara': typing error in one cell; the only district name it can be is Matara
+check_duplicates,all,0,,0 exact duplicate rows
+skipped_question,school_activities,268,M0009; M0010; M0012; M0014; M0017; M0019; M0023; M0032; M0034; M0037; M0041; M0044; M0045; M0058; M0060; M0062; M0068; M0069; M0070; M0075 ...,blank although required in the form; kept as missing with a skipped indicator
+skipped_question,leadership_roles,256,M0002; M0007; M0022; M0026; M0030; M0031; M0034; M0043; M0049; M0050; M0054; M0057; M0062; M0063; M0064; M0075; M0085; M0093; M0099; M0100 ...,blank although required in the form; kept as missing with a skipped indicator
+skipped_question,ol_tuition_subjects,260,M0003; M0005; M0013; M0026; M0028; M0040; M0041; M0047; M0049; M0053; M0063; M0065; M0069; M0070; M0078; M0084; M0090; M0092; M0093; M0097 ...,blank although required in the form; kept as missing with a skipped indicator
+check_zscore_extremes,zscore,0,,"0 values outside [-0.72, 3.79] (quartiles -/+ 3.0 x IQR); flag only"
+flag_rare_combination,degree_program,1,M0211,Physical Science with Biology + Chemistry + Physics (0.7% of Physical Science students); researcher to check
+exclude_from_modelling,row,1,M0211,"Physical Science degree with Biology + Chemistry + Physics, the only such case; the researcher considers it an accidental entry error (2026-10-15), but which answer is wrong is unknown"
+drop_column,timestamp,0,,submission time removed for privacy

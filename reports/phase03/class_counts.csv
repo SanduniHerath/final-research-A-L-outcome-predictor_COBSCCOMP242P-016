@@ -1,0 +1,19 @@
+target,class,count,share
+university_group,Western,336,0.331
+university_group,Northern and Eastern,286,0.2818
+university_group,Central and Highlands,217,0.2138
+university_group,Southern,90,0.0887
+university_group,North Central and North Western,86,0.0847
+degree_category,Biological Science,233,0.2296
+degree_category,"Computing, IT, AI or Data Science",177,0.1744
+degree_category,Agriculture or Food Science,158,0.1557
+degree_category,Allied Health Sciences,156,0.1537
+degree_category,Physical Science,138,0.136
+degree_category,Engineering,83,0.0818
+degree_category,Medicine,70,0.069
+goal_status,not reached,674,0.664
+goal_status,,207,0.2039
+goal_status,reached,134,0.132
+target_combination_observed,1,506,0.4985
+target_combination_observed,,301,0.2966
+target_combination_observed,0,208,0.2049

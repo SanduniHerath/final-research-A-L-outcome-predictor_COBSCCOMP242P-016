@@ -1,0 +1,34 @@
+{
+  "train_rows": 709,
+  "validation_rows": 152,
+  "band_edges": [
+    1.3314,
+    1.7423
+  ],
+  "band_counts_train": {
+    "0": 236,
+    "1": 236,
+    "2": 237
+  },
+  "features_total": 98,
+  "numeric": 41,
+  "binary": 18,
+  "onehot": 38,
+  "dropped_constant": [
+    "stream_influence_other_text",
+    "school_activity_other_text",
+    "leadership_other_text"
+  ],
+  "skew_transformed": [
+    "ol_religion",
+    "ol_english"
+  ],
+  "significant_pairs": 146,
+  "tests": 252,
+  "redundant_pairs": 17,
+  "feature_set_sizes": {
+    "full": 97,
+    "composites": 85,
+    "filtered": 34
+  }
+}

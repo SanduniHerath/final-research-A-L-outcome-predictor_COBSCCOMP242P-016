@@ -1,0 +1,13 @@
+# Administrative provinces of Sri Lanka's 25 districts. Used only to check whether the learned
+# district embeddings (entity-embedding MLP) place districts of the same province close together.
+# Not a model input.
+provinces:
+  Western: [Colombo, Gampaha, Kalutara]
+  Central: [Kandy, Matale, Nuwara Eliya]
+  Southern: [Galle, Matara, Hambantota]
+  Northern: [Jaffna, Kilinochchi, Mannar, Mullaitivu, Vavuniya]
+  Eastern: [Trincomalee, Batticaloa, Ampara]
+  North Western: [Kurunegala, Puttalam]
+  North Central: [Anuradhapura, Polonnaruwa]
+  Uva: [Badulla, Monaragala]
+  Sabaragamuwa: [Ratnapura, Kegalle]

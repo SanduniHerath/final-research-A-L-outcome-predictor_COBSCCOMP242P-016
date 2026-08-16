@@ -1,0 +1,21 @@
+# Data split (brief, Phase 5 rules). Created before any transformer is fitted.
+proportions: {train: 0.70, validation: 0.15, test: 0.15}
+stratify:
+  # Joint key: degree category x Z-score third. The thirds here are only a stratification key,
+  # computed on all modelling rows; the Z-score band TARGET edges are computed on training only.
+  columns: [degree_category, zscore_third]
+  min_stratum_size: 10   # smaller strata are merged into the neighbouring third of the same degree
+cross_validation:
+  scheme: repeated stratified k-fold inside the training set
+  folds: 5
+  repeats: 3
+files:
+  split: data/processed/split.csv            # respondent_id -> train / validation / test (not committed)
+  lock: configs/split.lock.json              # counts and SHA-256 of the test IDs (committed)
+imbalance:
+  # Classification targets whose training imbalance ratio (largest / smallest class) exceeds this
+  # get balanced class weights in the loss, computed on the rows being trained on only.
+  # No oversampling or synthetic rows are used.
+  weight_if_ratio_above: 1.5
+cv_files:
+  folds: data/processed/cv_folds.csv         # respondent_id, repeat, fold (training rows only)

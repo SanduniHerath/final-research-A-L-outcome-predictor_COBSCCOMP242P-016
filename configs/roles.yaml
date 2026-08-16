@@ -1,0 +1,78 @@
+# Phase 3 - role of every column at the prediction time (just after O/L results, A/L subjects chosen).
+# input          : may be used by the prediction model
+# target         : source of a prediction target
+# gap_only       : the student's own goal; used by the gap module and recommendation mode, never a model input
+# recommendation : known only after the prediction time; used only as evidence for study-plan rules
+# leakage        : known only after the prediction time, or an outcome; never used as a model input
+# administrative : survey management or context; not used by the model
+# fairness_only  : never a model input; used only to check that the model works equally well for groups
+
+columns:
+  respondent_id:          {role: administrative, reason: anonymous row number}
+  timestamp:              {role: administrative, reason: survey submission time; dropped after cleaning (privacy)}
+  consent:                {role: administrative, reason: all respondents consented}
+  eligibility:            {role: administrative, reason: screening question; all answered yes}
+  gender:                 {role: fairness_only, reason: sensitive attribute; not an input (researcher 2026-10-15); used for the fairness check}
+  al_exam_year:           {role: administrative, reason: a future O/L student's exam year lies outside the training years; kept for the limitation analysis}
+  al_attempt:             {role: leakage, reason: whether the admission came on a second or third attempt is only known after A/L}
+  ol_school_type:         {role: input, reason: known at O/L}
+  grade5_result:          {role: input, reason: known before O/L}
+  g6_11_perf_rating:      {role: input, reason: Grades 6-11, known at O/L}
+  class_rank_freq:        {role: input, reason: school years up to O/L}
+  ol_religion:            {role: input, reason: O/L grade}
+  ol_first_language:      {role: input, reason: O/L grade}
+  ol_english:             {role: input, reason: O/L grade}
+  ol_maths:               {role: input, reason: O/L grade}
+  ol_history:             {role: input, reason: O/L grade}
+  ol_science:             {role: input, reason: O/L grade}
+  ol_cat1:                {role: input, reason: O/L grade}
+  ol_cat2:                {role: input, reason: O/L grade}
+  ol_cat3:                {role: input, reason: O/L grade}
+  g11_self_study_hours:   {role: input, reason: Grade 11 habit, known at O/L}
+  ol_tuition_subjects:    {role: input, reason: O/L tuition; blanks kept as skipped}
+  se1:                    {role: input, reason: attitude during O/L}
+  se2:                    {role: input, reason: attitude during O/L}
+  se3:                    {role: input, reason: attitude during O/L}
+  se4:                    {role: input, reason: attitude during O/L}
+  er1:                    {role: input, reason: study habit during O/L}
+  er2:                    {role: input, reason: study habit during O/L}
+  er3:                    {role: input, reason: study habit during O/L}
+  er4:                    {role: input, reason: study habit during O/L (reverse-coded in Phase 4)}
+  int1:                   {role: input, reason: interest during O/L}
+  int2:                   {role: input, reason: interest during O/L}
+  int3:                   {role: input, reason: interest during O/L}
+  int4:                   {role: input, reason: interest during O/L}
+  career_goal_clear:      {role: input, reason: before starting A/L}
+  stream_influences:      {role: input, reason: reasons for choosing the Science stream, at the choice}
+  al_target_degree:       {role: gap_only, reason: the student's own target; the thesis (4.5) uses it only for comparison}
+  school_activities:      {role: input, reason: school participation; question does not limit it to O/L years (timing caveat)}
+  leadership_roles:       {role: input, reason: researcher 2026-10-15 - prefect positions can be held by O/L; timing caveat (some roles may date from the A/L years)}
+  extracurricular_rating: {role: input, reason: school involvement; same timing caveat as school_activities}
+  al_study_hours:         {role: recommendation, reason: A/L preparation habit, after the prediction time}
+  al_past_paper_freq:     {role: recommendation, reason: A/L preparation habit, after the prediction time}
+  al_revision_freq:       {role: recommendation, reason: A/L preparation habit, after the prediction time}
+  al_biology:             {role: leakage, reason: A/L grade (outcome); only "taken / not taken" feeds al_subject_combination}
+  al_chemistry:           {role: leakage, reason: A/L grade (outcome); only "taken / not taken" feeds al_subject_combination}
+  al_physics:             {role: leakage, reason: A/L grade (outcome); only "taken / not taken" feeds al_subject_combination}
+  al_combined_maths:      {role: leakage, reason: A/L grade (outcome); only "taken / not taken" feeds al_subject_combination}
+  al_ict:                 {role: leakage, reason: A/L grade (outcome); only "taken / not taken" feeds al_subject_combination}
+  al_agri_science:        {role: leakage, reason: A/L grade (outcome); only "taken / not taken" feeds al_subject_combination}
+  al_district:            {role: input, reason: district is normally known at O/L and sets the UGC district quota}
+  zscore:                 {role: target, reason: source of the Z-score and Z-score band targets}
+  university:             {role: target, reason: source of the university-group target}
+  degree_program:         {role: target, reason: source of the degree-category target}
+  degree_first_pref:      {role: leakage, reason: university preference outcome, after A/L}
+
+derived:
+  al_subject_combination: {role: input, reason: the A/L subjects chosen (taken / not taken), known at the prediction time}
+  stream_influence_*:     {role: input, reason: one yes/no column per option of stream_influences}
+  school_activity_*:      {role: input, reason: one yes/no column per option of school_activities}
+  leadership_*:           {role: input, reason: one yes/no column per option of leadership_roles}
+  exclude_from_modelling: {role: administrative, reason: 1 = row kept in the file but left out of modelling (see cleaning log)}
+  "*_skipped":            {role: input, reason: indicator that a question was left blank}
+  goal_status:            {role: gap_only, reason: target category reached or not; for the recommendation mode and hypothesis H8}
+  target_category:        {role: gap_only, reason: al_target_degree expressed as a degree category}
+  target_combination_observed: {role: gap_only, reason: data-derived consistency flag for the student's target; used to interpret H8}
+  university_group:       {role: target, reason: university grouped by region}
+  degree_category:        {role: target, reason: degree programme grouped into the form's categories}
+  "*_other_text":         {role: input, reason: write-in text present in a tick-all question}
