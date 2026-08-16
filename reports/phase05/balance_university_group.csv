@@ -1,0 +1,6 @@
+university_group,train_n,validation_n,test_n,train_share,validation_share,test_share,max_share_gap
+Central and Highlands,156,30,31,0.22,0.1974,0.2026,0.02265978769207927
+North Central and North Western,54,19,13,0.0762,0.125,0.085,0.048836389280677
+Northern and Eastern,197,48,41,0.2779,0.3158,0.268,0.04781561747506019
+Southern,66,11,13,0.0931,0.0724,0.085,0.020720436493207622
+Western,236,44,55,0.3329,0.2895,0.3595,0.07000343997248021

@@ -1,0 +1,3 @@
+gender,train_n,validation_n,test_n,train_share,validation_share,test_share,max_share_gap
+Female,363,84,72,0.512,0.5526,0.4706,0.08204334365325083
+Male,346,68,81,0.488,0.4474,0.5294,0.08204334365325078

@@ -1,0 +1,34 @@
+{
+  "rows": {
+    "train": 709,
+    "validation": 152,
+    "test": 153
+  },
+  "max_share_gap_zscore_band": 0.0061,
+  "max_share_gap_university_group": 0.07,
+  "max_share_gap_degree_category": 0.0054,
+  "max_share_gap_gender": 0.082,
+  "fold_sizes": [
+    141,
+    142
+  ],
+  "fold_max_share_diff": {
+    "degree_category": 0.0058,
+    "university_group": 0.0666,
+    "zscore_band": 0.0122
+  },
+  "imbalance": {
+    "zscore_band": [
+      1.004,
+      false
+    ],
+    "university_group": [
+      4.37,
+      true
+    ],
+    "degree_category": [
+      3.396,
+      true
+    ]
+  }
+}

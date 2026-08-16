@@ -1,0 +1,35 @@
+{
+  "zscore_band": {
+    "ratio": 1.004,
+    "weighted": false,
+    "weights_full_training_split": {
+      "2": 0.9972,
+      "0": 1.0014,
+      "1": 1.0014
+    }
+  },
+  "university_group": {
+    "ratio": 4.37,
+    "weighted": true,
+    "weights_full_training_split": {
+      "Western": 0.6008,
+      "Northern and Eastern": 0.7198,
+      "Central and Highlands": 0.909,
+      "Southern": 2.1485,
+      "North Central and North Western": 2.6259
+    }
+  },
+  "degree_category": {
+    "ratio": 3.396,
+    "weighted": true,
+    "weights_full_training_split": {
+      "Biological Science": 0.6214,
+      "Computing, IT, AI or Data Science": 0.8168,
+      "Agriculture or Food Science": 0.9208,
+      "Allied Health Sciences": 0.9208,
+      "Physical Science": 1.0662,
+      "Engineering": 1.7167,
+      "Medicine": 2.1101
+    }
+  }
+}
