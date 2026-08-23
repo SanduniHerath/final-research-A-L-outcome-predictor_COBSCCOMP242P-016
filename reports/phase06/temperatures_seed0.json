@@ -1,0 +1,42 @@
+{
+  "ae_mlp": {
+    "zscore_band": 1.16305152926739,
+    "university_group": 1.1309101850580394,
+    "degree_category": 1.0279559752246714
+  },
+  "entity_mlp": {
+    "zscore_band": 1.1328752300990428,
+    "university_group": 1.1960582467776968,
+    "degree_category": 0.9348659331194051
+  },
+  "mlp": {
+    "zscore_band": 1.0799802547717359,
+    "university_group": 1.065444577291419,
+    "degree_category": 0.6591956304871762
+  },
+  "mtl": {
+    "zscore_band": 1.2460142630758055,
+    "university_group": 1.112945117347279,
+    "degree_category": 0.9521023195645605
+  },
+  "reg_dnn": {
+    "zscore_band": 1.0087737585336163,
+    "university_group": 0.9827689213292966,
+    "degree_category": 0.9183386999308918
+  },
+  "resnet": {
+    "zscore_band": 0.9931467727670699,
+    "university_group": 1.0860819276127915,
+    "degree_category": 0.7188722147213115
+  },
+  "tabnet": {
+    "zscore_band": 1.2614757745279586,
+    "university_group": 1.1498212381388926,
+    "degree_category": 1.1166399719387299
+  },
+  "wide_deep": {
+    "zscore_band": 1.0508792971054337,
+    "university_group": 1.266751981793172,
+    "degree_category": 0.8098044008345495
+  }
+}

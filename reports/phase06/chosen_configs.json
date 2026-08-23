@@ -1,0 +1,101 @@
+{
+  "ae_mlp": {
+    "config_id": "c07",
+    "cfg": {
+      "lr": 0.000712,
+      "batch_size": 64,
+      "patience": 20,
+      "bottleneck": 32,
+      "ae_units": 64,
+      "layers": 2,
+      "units": 64,
+      "dropout": 0.2142,
+      "weight_decay": 4.15e-05
+    }
+  },
+  "entity_mlp": {
+    "config_id": "c12",
+    "cfg": {
+      "lr": 0.000281,
+      "batch_size": 32,
+      "patience": 30,
+      "layers": 1,
+      "units": 128,
+      "emb_dim": 2,
+      "dropout": 0.4841,
+      "weight_decay": 1.3e-06
+    }
+  },
+  "mlp": {
+    "config_id": "c12",
+    "cfg": {
+      "lr": 0.000128,
+      "batch_size": 64,
+      "patience": 10,
+      "layers": 1,
+      "units": 32
+    }
+  },
+  "mtl": {
+    "config_id": "c03",
+    "cfg": {
+      "lr": 0.000135,
+      "batch_size": 32,
+      "patience": 20,
+      "shared_layers": 1,
+      "units": 128,
+      "tower_units": 16,
+      "dropout": 0.4257,
+      "weight_decay": 7.56e-05
+    }
+  },
+  "reg_dnn": {
+    "config_id": "c08",
+    "cfg": {
+      "lr": 0.00162,
+      "batch_size": 128,
+      "patience": 20,
+      "layers": 2,
+      "units": 64,
+      "dropout": 0.447,
+      "weight_decay": 1.22e-06
+    }
+  },
+  "resnet": {
+    "config_id": "c16",
+    "cfg": {
+      "lr": 0.000495,
+      "batch_size": 128,
+      "patience": 20,
+      "blocks": 1,
+      "units": 64,
+      "dropout": 0.3972,
+      "weight_decay": 1.5e-05
+    }
+  },
+  "tabnet": {
+    "config_id": "c12",
+    "cfg": {
+      "n_d": 8,
+      "n_steps": 3,
+      "gamma": 1.6286,
+      "lambda_sparse": 0.000692,
+      "lr": 0.0155,
+      "batch_size": 128,
+      "virtual_batch_size": 64,
+      "patience": 20
+    }
+  },
+  "wide_deep": {
+    "config_id": "c03",
+    "cfg": {
+      "lr": 0.000104,
+      "batch_size": 32,
+      "patience": 20,
+      "layers": 1,
+      "units": 32,
+      "dropout": 0.2594,
+      "weight_decay": 1.68e-06
+    }
+  }
+}

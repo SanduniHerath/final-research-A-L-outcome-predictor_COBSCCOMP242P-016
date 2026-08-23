@@ -1,0 +1,3 @@
+variant,mean_rank_over_models,sd_over_models,columns
+with_er4,1.4229166666666666,0.10798938072424687,0
+without_er4,1.5770833333333334,0.10798938072424687,1

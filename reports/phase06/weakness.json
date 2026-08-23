@@ -1,0 +1,27 @@
+{
+  "selected": "mlp",
+  "rule_a": {
+    "degree_category": {
+      "macro_f1_gain": 0.5674,
+      "meets_minimum": true
+    },
+    "university_group": {
+      "macro_f1_gain": 0.1821,
+      "meets_minimum": true
+    },
+    "zscore": {
+      "mae_reduction": 0.3931,
+      "meets_minimum": true
+    },
+    "zscore_band": {
+      "macro_f1_gain": 0.5041,
+      "meets_minimum": true
+    }
+  },
+  "rule_b_negative_transfer_tasks": [
+    "zscore"
+  ],
+  "weak_tasks": [
+    "zscore"
+  ]
+}

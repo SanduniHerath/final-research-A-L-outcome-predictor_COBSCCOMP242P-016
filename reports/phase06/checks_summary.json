@@ -1,0 +1,31 @@
+{
+  "tabnet": {
+    "mask_zero_share_mean": 0.9271026831785345,
+    "importance_spearman_mean": 0.18337603831812363,
+    "importance_spearman_min": 0.0704318300630056,
+    "top10_overlap_mean": 0.38,
+    "seconds_mean": 13.345999999999998
+  },
+  "entity_geometry": {
+    "mean_distance_same_province": 1.5032788515090942,
+    "mean_distance_other_province": 1.652815580368042,
+    "rare_districts": [
+      "Batticaloa",
+      "Hambantota",
+      "Kilinochchi",
+      "Mannar",
+      "Mullaitivu",
+      "Nuwara Eliya",
+      "Polonnaruwa",
+      "Trincomalee",
+      "Vavuniya"
+    ],
+    "validation_rows_in_rare_districts": 17,
+    "ratio_same_to_other": 0.9095260653184007,
+    "permutation_p_value": 0.156
+  },
+  "loss_smoothness": {
+    "resnet": 0.0013845297389509452,
+    "reg_dnn_same_depth": 0.0013097511393216894
+  }
+}
