@@ -1,0 +1,26 @@
+district,province,pc1,pc2,train_rows
+Ampara,Eastern,-0.36546114,-0.23591658,15
+Anuradhapura,North Central,1.2995598,0.3457581,23
+Badulla,Uva,-1.9303442,0.74134433,25
+Batticaloa,Eastern,-0.6431565,0.68215036,8
+Colombo,Western,0.7189001,0.006918356,92
+Galle,Southern,1.3608593,-0.8499011,43
+Gampaha,Western,0.43683666,1.0304458,86
+Hambantota,Southern,-1.8563541,-0.72972476,11
+Jaffna,Northern,1.1775002,-0.068801105,17
+Kalutara,Western,-0.94614863,1.110981,40
+Kandy,Central,1.4287237,-1.3652587,56
+Kegalle,Sabaragamuwa,0.10261269,0.6701094,31
+Kilinochchi,Northern,0.21552588,-0.35216397,6
+Kurunegala,North Western,2.2169282,0.18804643,63
+Mannar,Northern,-0.18556318,0.92717135,2
+Matale,Central,-0.0053409934,-0.71551704,18
+Matara,Southern,0.10715663,-0.5504235,37
+Monaragala,Uva,-0.52147055,-0.03765306,16
+Mullaitivu,Northern,-0.028611496,0.4570236,6
+Nuwara Eliya,Central,-0.09365246,0.06607944,12
+Polonnaruwa,North Central,-0.7106328,-0.34989858,10
+Puttalam,North Western,-1.6338664,-0.92021775,31
+Ratnapura,Sabaragamuwa,0.66742516,1.5821631,37
+Trincomalee,Eastern,-0.49156126,-1.459178,13
+Vavuniya,Northern,-0.31986505,-0.17353795,11

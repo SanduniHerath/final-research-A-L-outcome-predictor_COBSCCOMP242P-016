@@ -1,0 +1,2 @@
+task,stage2_model,config_id,metric,stage2_validation,multi_output_validation,diff_stage2_minus_multi_higher_is_better,ci_low,ci_high,train_validation_gap,n_params,best_epoch_mean,validation_mae,validation_rmse,validation_r2,validation_spearman
+zscore,mlp,c12,mae,0.209 ± 0.005,0.215 ± 0.004,0.00949503481388092,0.0018425717949867256,0.017721998691558813,0.04175334038566337,1153,131.8,0.20919274687767028,0.26797932520924367,0.5957056164741517,0.7629022254506885
