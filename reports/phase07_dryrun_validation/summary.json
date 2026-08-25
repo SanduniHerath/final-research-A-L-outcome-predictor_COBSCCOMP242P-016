@@ -1,0 +1,13 @@
+{
+  "label": "validation (dry run)",
+  "rows": 152,
+  "chosen_z_source": "stage2_zscore_mlp",
+  "hypotheses": {
+    "H1": "Supported",
+    "H2": "Supported",
+    "H3": "Partly supported",
+    "H4": "Supported",
+    "H5": "Not supported",
+    "H6": "Supported (difference found)"
+  }
+}

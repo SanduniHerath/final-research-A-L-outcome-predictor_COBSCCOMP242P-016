@@ -1,0 +1,17 @@
+group,n,target,metric,value,ci,accuracy
+Biology + Chemistry + Agri Science,6,zscore,mae,0.260541170835495,"[0.094, 0.420]",
+Biology + Chemistry + Agri Science,6,zscore_band,macro_f1,0.2222222222222222,"[0.095, 0.303]",0.5
+Biology + Chemistry + Agri Science,6,university_group,macro_f1,0.08,"[0.000, 0.171]",0.16666666666666666
+Biology + Chemistry + Agri Science,6,degree_category,macro_f1,0.14285714285714285,"[0.143, 0.143]",1.0
+Biology + Chemistry + Physics,81,zscore,mae,0.21196553111076355,"[0.176, 0.252]",
+Biology + Chemistry + Physics,81,zscore_band,macro_f1,0.63260231012169,"[0.523, 0.730]",0.654320987654321
+Biology + Chemistry + Physics,81,university_group,macro_f1,0.229585326953748,"[0.149, 0.301]",0.2716049382716049
+Biology + Chemistry + Physics,81,degree_category,macro_f1,0.25398435236163436,"[0.202, 0.300]",0.5308641975308642
+Chemistry + Physics + Combined Maths,39,zscore,mae,0.20790520310401917,"[0.156, 0.265]",
+Chemistry + Physics + Combined Maths,39,zscore_band,macro_f1,0.6398850574712643,"[0.468, 0.781]",0.6410256410256411
+Chemistry + Physics + Combined Maths,39,university_group,macro_f1,0.23140096618357484,"[0.100, 0.352]",0.2564102564102564
+Chemistry + Physics + Combined Maths,39,degree_category,macro_f1,0.20652173913043478,"[0.162, 0.243]",0.6410256410256411
+Physics + Combined Maths + ICT,26,zscore,mae,0.14743582904338837,"[0.112, 0.183]",
+Physics + Combined Maths + ICT,26,zscore_band,macro_f1,0.6380952380952382,"[0.370, 0.862]",0.6923076923076923
+Physics + Combined Maths + ICT,26,university_group,macro_f1,0.18666666666666668,"[0.112, 0.261]",0.4230769230769231
+Physics + Combined Maths + ICT,26,degree_category,macro_f1,0.13095238095238096,"[0.117, 0.140]",0.8461538461538461
