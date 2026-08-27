@@ -1,0 +1,59 @@
+# Phase 8 / 9 - explanation settings.
+
+# Feature groups for hypothesis H7 (grouped permutation importance). A name ending in * matches
+# every column starting with it. Groups follow Phase 2 (activities and leadership are not among
+# the 34 final inputs: the filtered feature set dropped them in Phase 6).
+groups:
+  O/L results: [ol_first_language, ol_maths, ol_history, ol_science, ol_cat1, ol_cat2, ol_cat3,
+                ol_core_mean, ol_sci_maths_mean, ol_n_A]
+  School background and standing: [class_rank_freq, g6_11_perf_rating, school_performance_index,
+                                    ol_school_type_*]
+  Attitudes and study habits: [er1, er3, er4, self_efficacy_index, effort_regulation_index,
+                               interest_index, motivation_index, g11_self_study_hours]
+  Goals and reasons for Science: [career_goal_clear, goal_clarity_index,
+                                  stream_influence_personal_interest, stream_influence_teachers]
+  A/L subject choice: [al_subject_combination_*]
+
+# Plain-language names (used in figures and, in Phase 9, in the student-facing explanation).
+display_names:
+  ol_first_language: O/L first language grade
+  ol_maths: O/L Mathematics grade
+  ol_history: O/L History grade
+  ol_science: O/L Science grade
+  ol_cat1: O/L basket subject 1 grade
+  ol_cat2: O/L basket subject 2 grade
+  ol_cat3: O/L basket subject 3 grade
+  ol_core_mean: Average of the 6 core O/L grades
+  ol_sci_maths_mean: Average of O/L Maths and Science
+  ol_n_A: Number of A grades at O/L
+  class_rank_freq: How often in the top of the class
+  g6_11_perf_rating: Own rating of Grades 6-11 performance
+  school_performance_index: School standing (rating + class rank)
+  g11_self_study_hours: Self-study hours per week in Grade 11
+  er1: Made good use of study time
+  er3: Kept up with schoolwork every week
+  er4: Found it hard to keep a study schedule (reversed)
+  self_efficacy_index: Confidence in O/L studies
+  effort_regulation_index: Effort and study regularity
+  interest_index: Interest in Science and Maths
+  motivation_index: Motivation (confidence + interest)
+  career_goal_clear: Had a clear career goal
+  goal_clarity_index: Goal clarity
+  stream_influence_personal_interest: Chose Science out of personal interest
+  stream_influence_teachers: Chose Science because of teachers
+  ol_school_type_*: "School type: "
+  al_subject_combination_*: "A/L subjects: "
+
+shap:
+  algorithm: permutation         # model-agnostic, exact additivity for each explanation
+  background_rows: 100           # training rows used as the "typical student" reference
+  explain_split: validation      # rows explained here (the test set is not re-read)
+  max_evals: 1000
+
+permutation_importance:
+  bootstrap: 500                 # resamples of the explained rows, each with a fresh permutation
+  level: 0.95
+
+partial_dependence:
+  top_features: 6
+  grid_points: 9
