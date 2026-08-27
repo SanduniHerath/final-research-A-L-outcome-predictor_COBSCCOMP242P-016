@@ -1,0 +1,35 @@
+feature,label,mask_importance,shap_importance
+motivation_index,Motivation (confidence + interest),0.1599842,0.11884760078253692
+al_subject_combination_Physics + Combined Maths + ICT,A/L subjects: Physics + Combined Maths + ICT,0.21492375,0.11072277920091964
+ol_first_language,O/L first language grade,0.03041219,0.0691752297173476
+ol_core_mean,Average of the 6 core O/L grades,0.0728048,0.06732407320298443
+career_goal_clear,Had a clear career goal,0.10216327,0.06161885894817403
+al_subject_combination_Biology + Chemistry + Physics,A/L subjects: Biology + Chemistry + Physics,0.00024455244,0.04927248306597265
+al_subject_combination_Chemistry + Physics + Combined Maths,A/L subjects: Chemistry + Physics + Combined Maths,0.026461214,0.04150656531641498
+ol_maths,O/L Mathematics grade,0.044912506,0.04120999087563981
+er4,Found it hard to keep a study schedule (reversed),0.025771715,0.0354456207312667
+goal_clarity_index,Goal clarity,0.059757594,0.03490514963487652
+ol_cat2,O/L basket subject 2 grade,0.038009536,0.03250269563795931
+ol_cat1,O/L basket subject 1 grade,0.028907765,0.031813317785633184
+stream_influence_teachers,Chose Science because of teachers,0.01413013,0.030052415000843255
+interest_index,Interest in Science and Maths,0.022132466,0.029166696567752157
+ol_sci_maths_mean,Average of O/L Maths and Science,0.04983396,0.028845729965697006
+ol_science,O/L Science grade,0.0,0.019553884252317813
+class_rank_freq,How often in the top of the class,0.01864303,0.01927769642899338
+er3,Kept up with schoolwork every week,0.022913048,0.017436270314111296
+ol_school_type_Provincial school,School type: Provincial school,0.0030511988,0.016658582682701702
+self_efficacy_index,Confidence in O/L studies,0.0,0.016405405609760653
+school_performance_index,School standing (rating + class rank),0.030791853,0.016098133032470187
+ol_history,O/L History grade,0.003593476,0.015723443973618897
+g11_self_study_hours,Self-study hours per week in Grade 11,0.019023063,0.014834596227806548
+effort_regulation_index,Effort and study regularity,0.0031208636,0.012836315399366006
+er1,Made good use of study time,0.0,0.012314049375701554
+ol_cat3,O/L basket subject 3 grade,0.0023493185,0.010090950144116989
+g6_11_perf_rating,Own rating of Grades 6-11 performance,0.0031112458,0.009894076312711095
+ol_school_type_National school,School type: National school,0.0017540668,0.009312638141510768
+stream_influence_personal_interest,Chose Science out of personal interest,0.0006324334,0.008527310364520656
+ol_n_A,Number of A grades at O/L,0.00010666522,0.005317811626322901
+al_subject_combination_Biology + Chemistry + Agri Science,A/L subjects: Biology + Chemistry + Agri Science,0.00017504531,0.005092365135181527
+ol_school_type_International school,School type: International school,0.00014548468,0.0032639605404078805
+ol_school_type_Private or semi-government school,School type: Private or semi-government school,0.0,0.0026686562633620515
+ol_school_type_Other,School type: Other,0.00013955157,0.0022846477409998863

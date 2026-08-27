@@ -1,0 +1,46 @@
+{
+  "additivity_max_error": {
+    "zscore": 0.0,
+    "zscore_band": 3.3306690738754696e-16,
+    "university_group": 1.6653345369377348e-16,
+    "degree_category": 2.220446049250313e-16
+  },
+  "tabnet_mask_vs_shap": {
+    "spearman": 0.7704895218116793,
+    "top10_overlap": 0.7
+  },
+  "zscore_residuals_test": {
+    "residual_sd": 0.26230719685554504,
+    "share_within_0_2": 0.5555555555555556,
+    "share_within_0_4": 0.8627450980392157,
+    "residual_trend_slope": 0.014667099954580083,
+    "mean_residual_lowest_actual_third": -0.22807885706424713,
+    "mean_residual_highest_actual_third": 0.1476767212152481,
+    "mean_residual_lowest_predicted_third": -0.04955555498600006,
+    "mean_residual_highest_predicted_third": -0.005944560747593641
+  },
+  "h7_supported": {
+    "degree_category": [
+      "O/L results",
+      "A/L subject choice"
+    ],
+    "university_group": [],
+    "zscore": [
+      "O/L results",
+      "Attitudes and study habits",
+      "Goals and reasons for Science"
+    ],
+    "zscore_band": [
+      "O/L results",
+      "Attitudes and study habits"
+    ]
+  },
+  "pdp_features": [
+    "ol_cat1",
+    "motivation_index",
+    "er4",
+    "career_goal_clear",
+    "ol_sci_maths_mean",
+    "ol_first_language"
+  ]
+}

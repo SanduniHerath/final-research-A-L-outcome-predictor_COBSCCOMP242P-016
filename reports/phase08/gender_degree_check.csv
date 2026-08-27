@@ -1,0 +1,8 @@
+degree_category,Female_n,Female_recall,Male_n,Male_recall
+Medicine,9,0.8888888888888888,2,1.0
+Engineering,9,0.6666666666666666,3,0.3333333333333333
+Allied Health Sciences,12,0.5,11,0.36363636363636365
+Agriculture or Food Science,11,0.5454545454545454,13,0.3076923076923077
+Biological Science,13,0.46153846153846156,22,0.6363636363636364
+Physical Science,11,0.9090909090909091,10,0.6
+"Computing, IT, AI or Data Science",7,1.0,20,0.85
