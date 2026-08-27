@@ -1,0 +1,17 @@
+group,n,target,metric,value,ci,baseline_within_group,accuracy,baseline_accuracy_within_group
+Biology + Chemistry + Agri Science,12,zscore,mae,0.19327063858509064,"[0.103, 0.308]",0.264288991689682,,
+Biology + Chemistry + Agri Science,12,zscore_band,macro_f1_present_classes,0.5138888888888888,"[0.281, 1.000]",,0.75,0.6666666666666666
+Biology + Chemistry + Agri Science,12,university_group,macro_f1_present_classes,0.21666666666666667,"[0.000, 0.417]",,0.25,0.5833333333333334
+Biology + Chemistry + Agri Science,12,degree_category,macro_f1_present_classes,0.9090909090909091,"[0.737, 1.000]",,0.8333333333333334,1.0
+Biology + Chemistry + Physics,77,zscore,mae,0.22677014768123627,"[0.193, 0.261]",0.4104595482349396,,
+Biology + Chemistry + Physics,77,zscore_band,macro_f1_present_classes,0.7000000000000001,"[0.596, 0.795]",,0.7142857142857143,0.37662337662337664
+Biology + Chemistry + Physics,77,university_group,macro_f1_present_classes,0.23650284765068816,"[0.154, 0.317]",,0.2987012987012987,0.35064935064935066
+Biology + Chemistry + Physics,77,degree_category,macro_f1_present_classes,0.4096006295494787,"[0.320, 0.491]",,0.5194805194805194,0.45454545454545453
+Chemistry + Physics + Combined Maths,38,zscore,mae,0.18696093559265137,"[0.129, 0.252]",0.3349030017852783,,
+Chemistry + Physics + Combined Maths,38,zscore_band,macro_f1_present_classes,0.7115384615384616,"[0.557, 0.844]",,0.7105263157894737,0.3684210526315789
+Chemistry + Physics + Combined Maths,38,university_group,macro_f1_present_classes,0.20095652173913042,"[0.111, 0.342]",,0.2894736842105263,0.3684210526315789
+Chemistry + Physics + Combined Maths,38,degree_category,macro_f1_present_classes,0.32608695652173914,"[0.243, 0.529]",,0.6052631578947368,0.5526315789473685
+Physics + Combined Maths + ICT,26,zscore,mae,0.17227588593959808,"[0.125, 0.227]",0.26698046922683716,,
+Physics + Combined Maths + ICT,26,zscore_band,macro_f1_present_classes,0.6668594563331406,"[0.426, 0.862]",,0.6923076923076923,0.5
+Physics + Combined Maths + ICT,26,university_group,macro_f1_present_classes,0.3563519813519814,"[0.201, 0.565]",,0.38461538461538464,0.5384615384615384
+Physics + Combined Maths + ICT,26,degree_category,macro_f1_present_classes,0.96,"[0.894, 1.000]",,0.9230769230769231,1.0

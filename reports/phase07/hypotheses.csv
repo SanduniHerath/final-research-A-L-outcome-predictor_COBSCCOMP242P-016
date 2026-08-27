@@ -1,0 +1,7 @@
+hypothesis,target,result,evidence
+H1,zscore,Supported,"MAE reduction vs baseline: 0.442 [0.361, 0.515] vs 0.1; other minima met: 3/3"
+H2,zscore_band,Supported,"macro F1 gain vs baseline: 0.543 [0.470, 0.615] vs 0.1; other minima met: 5/5"
+H3,university_group,Partly supported,"macro F1 gain vs baseline: 0.180 [0.101, 0.249] vs 0.1; other minima met: 3/4"
+H4,degree_category,Supported,"macro F1 gain vs baseline: 0.569 [0.480, 0.645] vs 0.1; other minima met: 4/4"
+H5,calibration,Not supported,"zscore_band: ECE 0.079 [0.054, 0.162], BSS 0.347 [0.243, 0.449]; university_group: ECE 0.088 [0.045, 0.160], BSS 0.035 [-0.024, 0.092]; degree_category: ECE 0.192 [0.123, 0.270], BSS 0.309 [0.236, 0.377]"
+H6,multi-task vs single-task,Not supported (no difference detected),mlp/zscore: no difference detected; mlp/zscore_band: no difference detected; mlp/university_group: no difference detected; mlp/degree_category: no difference detected; mtl/zscore: no difference detected; mtl/zscore_band: no difference detected; mtl/university_group: no difference detected; mtl/degree_category: no difference detected

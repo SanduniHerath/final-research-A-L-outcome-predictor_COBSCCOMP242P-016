@@ -1,0 +1,180 @@
+system,target,criterion,value,ci_low,ci_high,threshold,verdict
+ae_mlp,zscore,MAE reduction vs baseline,0.4587496648275582,0.3798988096011741,0.5285782234723162,0.1,met
+ae_mlp,zscore,R-squared CI lower bound > 0,0.6481952667236328,0.5496312379837036,0.7245773345232009,0.0,met
+ae_mlp,zscore,Spearman CI lower bound > 0,0.8127293607763569,0.741275158208822,0.8635708116816425,0.0,met
+ae_mlp,zscore_band,macro F1 gain vs baseline,0.5389762283091483,0.464516924068626,0.6091516542774288,0.1,met
+ae_mlp,zscore_band,balanced accuracy CI lower bound > chance,0.7109200603318251,0.642856855562738,0.7755203335876628,0.3333333333333333,met
+ae_mlp,zscore_band,QWK CI lower bound > 0,0.7619788425637835,0.6788219866839936,0.8289013181587258,0.0,met
+ae_mlp,zscore_band,ROC-AUC CI lower bound > 0.5,0.8562670459125767,0.8119185749919936,0.898538525426816,0.5,met
+ae_mlp,zscore_band,log loss below baseline (baseline minus model),0.41058220584422034,0.28736173275011256,0.5181668288386608,0.0,met
+ae_mlp,degree_category,macro F1 gain vs baseline,0.6290931205847794,0.5461987201251757,0.6998762487817867,0.1,met
+ae_mlp,degree_category,balanced accuracy CI lower bound > chance,0.7211065102369449,0.6553408569986813,0.785493476631212,0.14285714285714285,met
+ae_mlp,degree_category,ROC-AUC CI lower bound > 0.5,0.9180966287341495,0.8935556656807087,0.9425735314061734,0.5,met
+ae_mlp,degree_category,log loss below baseline (baseline minus model),1.0230131919450671,0.8392313289109404,1.189069638433803,0.0,met
+ae_mlp,university_group,macro F1 gain vs baseline,0.16469792895333218,0.08783792675834316,0.23725802410626143,0.1,partly met
+ae_mlp,university_group,balanced accuracy CI lower bound > chance,0.318470451656919,0.22630034594895915,0.405291301528957,0.2,met
+ae_mlp,university_group,ROC-AUC CI lower bound > 0.5,0.7374685641379886,0.6951845504175376,0.778297156528651,0.5,met
+ae_mlp,university_group,log loss below baseline (baseline minus model),0.1141172471188654,0.0004798648413080312,0.2263778076354416,0.0,met
+entity_mlp,zscore,MAE reduction vs baseline,0.43676309740055075,0.3546689314319872,0.5126458932462797,0.1,met
+entity_mlp,zscore,R-squared CI lower bound > 0,0.6172168254852295,0.5128943741321563,0.6999526083469391,0.0,met
+entity_mlp,zscore,Spearman CI lower bound > 0,0.8032035328996533,0.7290927850531218,0.8570883916323971,0.0,met
+entity_mlp,zscore_band,macro F1 gain vs baseline,0.510680619955687,0.43151012229137026,0.5840224504809712,0.1,met
+entity_mlp,zscore_band,balanced accuracy CI lower bound > chance,0.6786224233283057,0.6058010237080009,0.7460841403778397,0.3333333333333333,met
+entity_mlp,zscore_band,QWK CI lower bound > 0,0.7156680551105414,0.6165782044505599,0.7925769360891348,0.0,met
+entity_mlp,zscore_band,ROC-AUC CI lower bound > 0.5,0.8439801869098482,0.7961398106424744,0.8886771772453469,0.5,met
+entity_mlp,zscore_band,log loss below baseline (baseline minus model),0.3702699752572147,0.24250699491130157,0.48889088747910764,0.0,met
+entity_mlp,degree_category,macro F1 gain vs baseline,0.5900431628648395,0.508172688575749,0.6582806294748955,0.1,met
+entity_mlp,degree_category,balanced accuracy CI lower bound > chance,0.6724173112371871,0.5970220092972222,0.742996267444997,0.14285714285714285,met
+entity_mlp,degree_category,ROC-AUC CI lower bound > 0.5,0.9065930205527865,0.8803638737120849,0.9327441526886638,0.5,met
+entity_mlp,degree_category,log loss below baseline (baseline minus model),0.9622430379457385,0.7838361935278414,1.1257690236265414,0.0,met
+entity_mlp,university_group,macro F1 gain vs baseline,0.22968639963320808,0.15127674002975108,0.2972892500957915,0.1,met
+entity_mlp,university_group,balanced accuracy CI lower bound > chance,0.36904964429748066,0.2855370242883951,0.45079761904761906,0.2,met
+entity_mlp,university_group,ROC-AUC CI lower bound > 0.5,0.7315674824735808,0.6843838673303196,0.7770990126415693,0.5,met
+entity_mlp,university_group,log loss below baseline (baseline minus model),0.12803505088320866,0.012268670849453673,0.23983215629272855,0.0,met
+mlp,zscore,MAE reduction vs baseline,0.4401954726581928,0.35821812848030604,0.5151294623720349,0.1,met
+mlp,zscore,R-squared CI lower bound > 0,0.6230971813201904,0.5231441095471382,0.7042781487107277,0.0,met
+mlp,zscore,Spearman CI lower bound > 0,0.8024647200094622,0.7299381126362676,0.8559768814138402,0.0,met
+mlp,zscore_band,macro F1 gain vs baseline,0.5433126095966843,0.47032074613368,0.615128239586533,0.1,met
+mlp,zscore_band,balanced accuracy CI lower bound > chance,0.7113122171945702,0.6416330839317346,0.7774667061346763,0.3333333333333333,met
+mlp,zscore_band,QWK CI lower bound > 0,0.7549176651502532,0.6698173832015504,0.8237453723947393,0.0,met
+mlp,zscore_band,ROC-AUC CI lower bound > 0.5,0.8348933849689187,0.7853732542922849,0.8824818826872329,0.5,met
+mlp,zscore_band,log loss below baseline (baseline minus model),0.36200090367823523,0.24743535335946087,0.4749919262340645,0.0,met
+mlp,degree_category,macro F1 gain vs baseline,0.5692911768713041,0.48038519266041385,0.6446769372767728,0.1,met
+mlp,degree_category,balanced accuracy CI lower bound > chance,0.6522993914298263,0.5745143400261934,0.7288286074116729,0.14285714285714285,met
+mlp,degree_category,ROC-AUC CI lower bound > 0.5,0.8828117631784733,0.8543433547818602,0.9112729584555178,0.5,met
+mlp,degree_category,log loss below baseline (baseline minus model),0.6864991362161548,0.5259434876362096,0.834865583211394,0.0,met
+mlp,university_group,macro F1 gain vs baseline,0.18015992586457352,0.10056993580771775,0.2491449942053028,0.1,met
+mlp,university_group,balanced accuracy CI lower bound > chance,0.3390449676208921,0.24649694492017907,0.4279666706924586,0.2,met
+mlp,university_group,ROC-AUC CI lower bound > 0.5,0.7265870967384833,0.6786094859249259,0.770294647542141,0.5,met
+mlp,university_group,log loss below baseline (baseline minus model),0.08226011420718327,-0.02627670587471596,0.19414373533250978,0.0,partly met
+mtl,zscore,MAE reduction vs baseline,0.4338080516587888,0.3505259754768172,0.505859476416558,0.1,met
+mtl,zscore,R-squared CI lower bound > 0,0.624889612197876,0.5217985093593598,0.7039201185107231,0.0,met
+mtl,zscore,Spearman CI lower bound > 0,0.8051401943533061,0.7352293327130338,0.8567224389991219,0.0,met
+mtl,zscore_band,macro F1 gain vs baseline,0.5171531118650722,0.4399263405478966,0.5902367200985049,0.1,met
+mtl,zscore_band,balanced accuracy CI lower bound > chance,0.685158371040724,0.6128058636923884,0.7529989273208137,0.3333333333333333,met
+mtl,zscore_band,QWK CI lower bound > 0,0.7353449932731116,0.6452680615206159,0.8075135305323736,0.0,met
+mtl,zscore_band,ROC-AUC CI lower bound > 0.5,0.8431726720681265,0.7933376326554032,0.888979218527151,0.5,met
+mtl,zscore_band,log loss below baseline (baseline minus model),0.3829120608094303,0.2576337255290938,0.5007519292124354,0.0,met
+mtl,degree_category,macro F1 gain vs baseline,0.6445522452993213,0.5665566166916352,0.7110918036458198,0.1,met
+mtl,degree_category,balanced accuracy CI lower bound > chance,0.7289565277142918,0.6604200406156013,0.7930607769423558,0.14285714285714285,met
+mtl,degree_category,ROC-AUC CI lower bound > 0.5,0.9115384809464323,0.8858402822801971,0.9376211771340041,0.5,met
+mtl,degree_category,log loss below baseline (baseline minus model),0.9743979747362048,0.8000915271011,1.1388531292745658,0.0,met
+mtl,university_group,macro F1 gain vs baseline,0.23459601562886312,0.16034230427300938,0.3063345412722386,0.1,met
+mtl,university_group,balanced accuracy CI lower bound > chance,0.3833479502401611,0.30101986359260585,0.47095536811161803,0.2,met
+mtl,university_group,ROC-AUC CI lower bound > 0.5,0.7413413955005246,0.6956347405919251,0.785241712432779,0.5,met
+mtl,university_group,log loss below baseline (baseline minus model),0.1316665234707941,0.018448664523151338,0.24387767724165615,0.0,met
+reg_dnn,zscore,MAE reduction vs baseline,0.45152502075700185,0.37681102471830213,0.5182835265013255,0.1,met
+reg_dnn,zscore,R-squared CI lower bound > 0,0.6424163579940796,0.552494814991951,0.7131295949220657,0.0,met
+reg_dnn,zscore,Spearman CI lower bound > 0,0.8170181612273527,0.7442601702085866,0.8669777636582745,0.0,met
+reg_dnn,zscore_band,macro F1 gain vs baseline,0.5316226755101181,0.4552789063004575,0.6029991902329527,0.1,met
+reg_dnn,zscore_band,balanced accuracy CI lower bound > chance,0.7041277023629965,0.6345716147506955,0.7690084119874153,0.3333333333333333,met
+reg_dnn,zscore_band,QWK CI lower bound > 0,0.7583537208510112,0.6766919170248785,0.8251761554601359,0.0,met
+reg_dnn,zscore_band,ROC-AUC CI lower bound > 0.5,0.8615751732454627,0.8149195441051132,0.9044142579702311,0.5,met
+reg_dnn,zscore_band,log loss below baseline (baseline minus model),0.41831185538798255,0.31340030890433745,0.5121875616397003,0.0,met
+reg_dnn,degree_category,macro F1 gain vs baseline,0.6266385321455256,0.5440929739430582,0.6975142969823614,0.1,met
+reg_dnn,degree_category,balanced accuracy CI lower bound > chance,0.715072792401985,0.6459259040104497,0.7805499996554889,0.14285714285714285,met
+reg_dnn,degree_category,ROC-AUC CI lower bound > 0.5,0.9153514739164431,0.8898140852293469,0.940365833995007,0.5,met
+reg_dnn,degree_category,log loss below baseline (baseline minus model),0.9700892145700366,0.796825721624092,1.1298424355304446,0.0,met
+reg_dnn,university_group,macro F1 gain vs baseline,0.19643413142565957,0.11967487762128132,0.2681688757978451,0.1,met
+reg_dnn,university_group,balanced accuracy CI lower bound > chance,0.4020883286658267,0.3210109498344792,0.48145185515981187,0.2,met
+reg_dnn,university_group,ROC-AUC CI lower bound > 0.5,0.7494174025883094,0.703543672464221,0.7939162157558003,0.5,met
+reg_dnn,university_group,log loss below baseline (baseline minus model),0.12639747287264957,0.022102025054986513,0.23196348573030662,0.0,met
+resnet,zscore,MAE reduction vs baseline,0.4288363526024639,0.34010857885181844,0.5052940624318376,0.1,met
+resnet,zscore,R-squared CI lower bound > 0,0.6011447310447693,0.4768596366047859,0.6922227621078492,0.0,met
+resnet,zscore,Spearman CI lower bound > 0,0.7941149616314301,0.7164988515741888,0.8488983610083437,0.0,met
+resnet,zscore_band,macro F1 gain vs baseline,0.5309609877331725,0.4536786803266527,0.6014368977384091,0.1,met
+resnet,zscore_band,balanced accuracy CI lower bound > chance,0.7040020110608346,0.6372025794682286,0.7724066576009825,0.3333333333333333,met
+resnet,zscore_band,QWK CI lower bound > 0,0.745235892691952,0.6564119206649146,0.8212732969494865,0.0,met
+resnet,zscore_band,ROC-AUC CI lower bound > 0.5,0.8361056340526763,0.7865967483888593,0.8836113106294803,0.5,met
+resnet,zscore_band,log loss below baseline (baseline minus model),0.3552827449563114,0.23641765029350875,0.46540199275260563,0.0,met
+resnet,degree_category,macro F1 gain vs baseline,0.5956731486269602,0.5121904720948947,0.6648843296359545,0.1,met
+resnet,degree_category,balanced accuracy CI lower bound > chance,0.6837110382141438,0.6111251910572545,0.7504894294679909,0.14285714285714285,met
+resnet,degree_category,ROC-AUC CI lower bound > 0.5,0.9053274731085431,0.8789050217245323,0.9325609868884174,0.5,met
+resnet,degree_category,log loss below baseline (baseline minus model),0.902257817513457,0.7361749932684993,1.056909447585265,0.0,met
+resnet,university_group,macro F1 gain vs baseline,0.23167323464087874,0.14797247365341715,0.3087988809116722,0.1,met
+resnet,university_group,balanced accuracy CI lower bound > chance,0.3658338514357397,0.2805994680228358,0.4522439521658465,0.2,met
+resnet,university_group,ROC-AUC CI lower bound > 0.5,0.7361294899719206,0.6839682433371099,0.7869364913869875,0.5,met
+resnet,university_group,log loss below baseline (baseline minus model),0.12748168136111393,0.019427928515700577,0.23923884862811273,0.0,met
+tabnet,zscore,MAE reduction vs baseline,0.345169538542202,0.24483183995440871,0.43195428736967445,0.1,met
+tabnet,zscore,R-squared CI lower bound > 0,0.49300795793533325,0.3399608716368675,0.6139469221234319,0.0,met
+tabnet,zscore,Spearman CI lower bound > 0,0.7012347995712753,0.60018654700327,0.7842842458398953,0.0,met
+tabnet,zscore_band,macro F1 gain vs baseline,0.4250218774631813,0.3463893381069524,0.5031792501496578,0.1,met
+tabnet,zscore_band,balanced accuracy CI lower bound > chance,0.5935042735042736,0.5224102446295843,0.6662223199411387,0.3333333333333333,met
+tabnet,zscore_band,QWK CI lower bound > 0,0.5827625570776256,0.46632181453138905,0.6859092252308857,0.0,met
+tabnet,zscore_band,ROC-AUC CI lower bound > 0.5,0.7835797161078363,0.7289593073591436,0.838083113072426,0.5,met
+tabnet,zscore_band,log loss below baseline (baseline minus model),0.22405674178629797,0.07957354790317324,0.3629264730258013,0.0,met
+tabnet,degree_category,macro F1 gain vs baseline,0.45494977874634335,0.36868652376109473,0.5358764561132655,0.1,met
+tabnet,degree_category,balanced accuracy CI lower bound > chance,0.5178340637967968,0.4333193139090696,0.6048218049804447,0.14285714285714285,met
+tabnet,degree_category,ROC-AUC CI lower bound > 0.5,0.8341292262690916,0.7928038260362921,0.8701368393610475,0.5,met
+tabnet,degree_category,log loss below baseline (baseline minus model),0.5623839075632007,0.35255566874137584,0.7603489044511174,0.0,met
+tabnet,university_group,macro F1 gain vs baseline,0.1376271205493756,0.06816625859658727,0.20524466106380063,0.1,partly met
+tabnet,university_group,balanced accuracy CI lower bound > chance,0.29969464052862954,0.22275043976598016,0.3784697309067695,0.2,met
+tabnet,university_group,ROC-AUC CI lower bound > 0.5,0.6952971963177973,0.6444696649084782,0.7409130417164771,0.5,met
+tabnet,university_group,log loss below baseline (baseline minus model),0.04748318816653385,-0.06275697700538073,0.1591316976274098,0.0,partly met
+wide_deep,zscore,MAE reduction vs baseline,0.4305276332607104,0.34932761139671387,0.5046257372654228,0.1,met
+wide_deep,zscore,R-squared CI lower bound > 0,0.623021125793457,0.5240891143679619,0.7033327206969261,0.0,met
+wide_deep,zscore,Spearman CI lower bound > 0,0.7987706555585069,0.7265077649294325,0.8502752060655155,0.0,met
+wide_deep,zscore_band,macro F1 gain vs baseline,0.5338874558874018,0.4554959394197712,0.6059560637700927,0.1,met
+wide_deep,zscore_band,balanced accuracy CI lower bound > chance,0.7042634489693315,0.6342476064499875,0.77013678049205,0.3333333333333333,met
+wide_deep,zscore_band,QWK CI lower bound > 0,0.7403356590609089,0.6480840848095512,0.8151664841517833,0.0,met
+wide_deep,zscore_band,ROC-AUC CI lower bound > 0.5,0.8411054985281078,0.7930364404145425,0.8880371960828057,0.5,met
+wide_deep,zscore_band,log loss below baseline (baseline minus model),0.3793006153824894,0.2677751299880008,0.4871689416221571,0.0,met
+wide_deep,degree_category,macro F1 gain vs baseline,0.5984934827188471,0.5199789044935996,0.666570076589303,0.1,met
+wide_deep,degree_category,balanced accuracy CI lower bound > chance,0.6892156555200034,0.6235647172261046,0.75121502130539,0.14285714285714285,met
+wide_deep,degree_category,ROC-AUC CI lower bound > 0.5,0.9000182772901303,0.8718712730863654,0.9280968993304842,0.5,met
+wide_deep,degree_category,log loss below baseline (baseline minus model),0.8674767191476733,0.6950012700016641,1.0300265530041517,0.0,met
+wide_deep,university_group,macro F1 gain vs baseline,0.23091808081451826,0.15048386931877628,0.3078185827690987,0.1,met
+wide_deep,university_group,balanced accuracy CI lower bound > chance,0.35896364846797574,0.26790594661942213,0.4510118888992559,0.2,met
+wide_deep,university_group,ROC-AUC CI lower bound > 0.5,0.7233743915021403,0.6688924090842462,0.7722386917684417,0.5,met
+wide_deep,university_group,log loss below baseline (baseline minus model),0.10084555770388737,-0.016805678583449144,0.21907726748946155,0.0,partly met
+single_mlp_zscore,zscore,MAE reduction vs baseline,0.44194662740205504,0.3607846073817232,0.5149823900505218,0.1,met
+single_mlp_zscore,zscore,R-squared CI lower bound > 0,0.6325945258140564,0.5336826339364051,0.7115709006786346,0.0,met
+single_mlp_zscore,zscore,Spearman CI lower bound > 0,0.8004643966741151,0.7228044872326639,0.8549261246010305,0.0,met
+single_mlp_zscore_band,zscore_band,macro F1 gain vs baseline,0.509991993417118,0.43388081092815384,0.5829021380412515,0.1,met
+single_mlp_zscore_band,zscore_band,balanced accuracy CI lower bound > chance,0.6842584213172448,0.6167477763626166,0.7546565863537098,0.3333333333333333,met
+single_mlp_zscore_band,zscore_band,QWK CI lower bound > 0,0.7323615160349854,0.6407721377530043,0.809534710501665,0.0,met
+single_mlp_zscore_band,zscore_band,ROC-AUC CI lower bound > 0.5,0.8417693171196502,0.7935890021719332,0.8889509123684378,0.5,met
+single_mlp_zscore_band,zscore_band,log loss below baseline (baseline minus model),0.36870451886683386,0.2766960850640995,0.45946803909909084,0.0,met
+single_mlp_university_group,university_group,macro F1 gain vs baseline,0.17366617371390308,0.10597257827211429,0.24256459770891342,0.1,met
+single_mlp_university_group,university_group,balanced accuracy CI lower bound > chance,0.2889594119491838,0.2150289327607876,0.3672436092098075,0.2,met
+single_mlp_university_group,university_group,ROC-AUC CI lower bound > 0.5,0.6930682889745715,0.6374878551152361,0.7455942153531537,0.5,met
+single_mlp_university_group,university_group,log loss below baseline (baseline minus model),0.053854328646575356,-0.05275319494753518,0.161941617145618,0.0,partly met
+single_mlp_degree_category,degree_category,macro F1 gain vs baseline,0.5656519703089049,0.48107802461718396,0.6387311165384217,0.1,met
+single_mlp_degree_category,degree_category,balanced accuracy CI lower bound > chance,0.6486507338991812,0.5745770996795847,0.7200911210796807,0.14285714285714285,met
+single_mlp_degree_category,degree_category,ROC-AUC CI lower bound > 0.5,0.9019363639754214,0.8748855065214686,0.9287312113901931,0.5,met
+single_mlp_degree_category,degree_category,log loss below baseline (baseline minus model),0.8678345854349048,0.7036425930951654,1.0169625151476431,0.0,met
+single_mtl_zscore,zscore,MAE reduction vs baseline,0.4466630502925404,0.36383935542734436,0.5169333228883397,0.1,met
+single_mtl_zscore,zscore,R-squared CI lower bound > 0,0.6435601711273193,0.5498507246375084,0.7177080705761909,0.0,met
+single_mtl_zscore,zscore,Spearman CI lower bound > 0,0.8073867886520503,0.7338997839078218,0.860380041066209,0.0,met
+single_mtl_zscore_band,zscore_band,macro F1 gain vs baseline,0.5297391934315384,0.45399410705263427,0.6049052585838737,0.1,met
+single_mtl_zscore_band,zscore_band,balanced accuracy CI lower bound > chance,0.6982352941176471,0.6298348776431457,0.766626693997437,0.3333333333333333,met
+single_mtl_zscore_band,zscore_band,QWK CI lower bound > 0,0.7317757307238708,0.637254543735062,0.8114951926450785,0.0,met
+single_mtl_zscore_band,zscore_band,ROC-AUC CI lower bound > 0.5,0.842785240726236,0.7944010626466436,0.88936926586849,0.5,met
+single_mtl_zscore_band,zscore_band,log loss below baseline (baseline minus model),0.38123931605845374,0.2773262001136327,0.48259871968153295,0.0,met
+single_mtl_university_group,university_group,macro F1 gain vs baseline,0.17821622306142432,0.10538889320372792,0.2523212233912534,0.1,met
+single_mtl_university_group,university_group,balanced accuracy CI lower bound > chance,0.3005683537548211,0.22063017747895858,0.38593344390387724,0.2,met
+single_mtl_university_group,university_group,ROC-AUC CI lower bound > 0.5,0.7226710567884791,0.6713177206327249,0.7714479976233427,0.5,met
+single_mtl_university_group,university_group,log loss below baseline (baseline minus model),0.10364721442690983,-0.0006418875293069724,0.20925563053716617,0.0,partly met
+single_mtl_degree_category,degree_category,macro F1 gain vs baseline,0.6129053436135017,0.5292119607099011,0.6816131294268596,0.1,met
+single_mtl_degree_category,degree_category,balanced accuracy CI lower bound > chance,0.6916423925740697,0.6177275394585934,0.7633035606610633,0.14285714285714285,met
+single_mtl_degree_category,degree_category,ROC-AUC CI lower bound > 0.5,0.9136591764502205,0.8874897175789855,0.9398274403219306,0.5,met
+single_mtl_degree_category,degree_category,log loss below baseline (baseline minus model),1.0159055168695361,0.8376074627012994,1.188677602289808,0.0,met
+stage2_zscore_mlp,zscore,MAE reduction vs baseline,0.44194662740205504,0.3607846073817232,0.5149823900505218,0.1,met
+stage2_zscore_mlp,zscore,R-squared CI lower bound > 0,0.6325945258140564,0.5336826339364051,0.7115709006786346,0.0,met
+stage2_zscore_mlp,zscore,Spearman CI lower bound > 0,0.8004643966741151,0.7228044872326639,0.8549261246010305,0.0,met
+chosen_system,zscore,MAE reduction vs baseline,0.44194662740205504,0.3607846073817232,0.5149823900505218,0.1,met
+chosen_system,zscore,R-squared CI lower bound > 0,0.6325945258140564,0.5336826339364051,0.7115709006786346,0.0,met
+chosen_system,zscore,Spearman CI lower bound > 0,0.8004643966741151,0.7228044872326639,0.8549261246010305,0.0,met
+chosen_system,zscore_band,macro F1 gain vs baseline,0.5433126095966843,0.47032074613368,0.615128239586533,0.1,met
+chosen_system,zscore_band,balanced accuracy CI lower bound > chance,0.7113122171945702,0.6416330839317346,0.7774667061346763,0.3333333333333333,met
+chosen_system,zscore_band,QWK CI lower bound > 0,0.7549176651502532,0.6698173832015504,0.8237453723947393,0.0,met
+chosen_system,zscore_band,ROC-AUC CI lower bound > 0.5,0.8348933849689187,0.7853732542922849,0.8824818826872329,0.5,met
+chosen_system,zscore_band,log loss below baseline (baseline minus model),0.36200090367823523,0.24743535335946087,0.4749919262340645,0.0,met
+chosen_system,degree_category,macro F1 gain vs baseline,0.5692911768713041,0.48038519266041385,0.6446769372767728,0.1,met
+chosen_system,degree_category,balanced accuracy CI lower bound > chance,0.6522993914298263,0.5745143400261934,0.7288286074116729,0.14285714285714285,met
+chosen_system,degree_category,ROC-AUC CI lower bound > 0.5,0.8828117631784733,0.8543433547818602,0.9112729584555178,0.5,met
+chosen_system,degree_category,log loss below baseline (baseline minus model),0.6864991362161548,0.5259434876362096,0.834865583211394,0.0,met
+chosen_system,university_group,macro F1 gain vs baseline,0.18015992586457352,0.10056993580771775,0.2491449942053028,0.1,met
+chosen_system,university_group,balanced accuracy CI lower bound > chance,0.3390449676208921,0.24649694492017907,0.4279666706924586,0.2,met
+chosen_system,university_group,ROC-AUC CI lower bound > 0.5,0.7265870967384833,0.6786094859249259,0.770294647542141,0.5,met
+chosen_system,university_group,log loss below baseline (baseline minus model),0.08226011420718327,-0.02627670587471596,0.19414373533250978,0.0,partly met

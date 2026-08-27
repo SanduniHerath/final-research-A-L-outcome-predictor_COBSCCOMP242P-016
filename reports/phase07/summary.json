@@ -1,0 +1,13 @@
+{
+  "label": "test",
+  "rows": 153,
+  "chosen_z_source": "stage2_zscore_mlp",
+  "hypotheses": {
+    "H1": "Supported",
+    "H2": "Supported",
+    "H3": "Partly supported",
+    "H4": "Supported",
+    "H5": "Not supported",
+    "H6": "Not supported (no difference detected)"
+  }
+}
