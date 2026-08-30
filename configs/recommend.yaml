@@ -1,0 +1,192 @@
+# Phase 9 - transparent recommendation rules (system part 2).
+#
+# Every rule has: when it fires (all conditions must hold), the student-facing text, the reason
+# shown with it, and one or more evidence labels. Evidence labels:
+#   model     - Phase 8 explanation results (what the model relies on; association, not cause)
+#   survey    - what similar successful respondents in the TRAINING data reported (aggregates only)
+#   official  - the UGC cut-off documents supplied by the researcher
+#   research  - published research (full references in docs/phase09)
+# Fields used in conditions are computed in src/recommend/engine.py (function facts()).
+# Wording: simple, short, encouraging, for 15-16 year olds; no medical or psychological advice.
+
+rules:
+  - id: study_time
+    area: Study time
+    when: [{field: study_below_similar, op: eq, value: true}]
+    title: Set a weekly self-study target
+    text: >-
+      Plan your own study time every week, on top of school and tuition. Students like you who
+      {similar_who} {similar_study_phrase}. Build up your own study time step by step, and keep
+      time for sleep, rest and family.
+    reason: Your Grade 11 self-study time ({g11_self_study_hours} hours a week) was lower than that of most similar students who {similar_who}.
+    evidence: [survey, model]
+
+  - id: schedule
+    area: Study habits
+    when: [{field: er4, op: ge, value: 4}]
+    title: Make a simple weekly timetable
+    text: >-
+      Write a weekly timetable with short, fixed study blocks (for example 45 minutes), and tick
+      each block when you finish it. Small blocks are easier to keep than long ones.
+    reason: You said it was often hard to stick to a study schedule.
+    evidence: [model, research]
+    research: Effort regulation and self-regulated learning (Pintrich et al., 1991; Zimmerman, 2002)
+
+  - id: weekly_review
+    area: Study habits
+    when: [{field: er3, op: le, value: 3}]
+    title: Do a weekly catch-up
+    text: >-
+      Keep one fixed time each weekend to go over the week's lessons and finish any homework that
+      is left, so work does not pile up.
+    reason: You said you did not always keep up with schoolwork every week.
+    evidence: [model, research]
+    research: Spaced practice (Dunlosky et al., 2013)
+
+  - id: session_goal
+    area: Study habits
+    when: [{field: er1, op: le, value: 3}]
+    title: Give every study session one clear goal
+    text: >-
+      Before you start, write one small goal for the session, such as "finish 10 Chemistry MCQs"
+      or "summarise one Physics lesson". Check it at the end.
+    reason: You said you did not always make good use of your study time.
+    evidence: [model, research]
+    research: Goal setting (Locke & Latham, 2002)
+
+  - id: past_papers
+    area: Practice
+    when: [{field: similar_past_paper_known, op: eq, value: true}]
+    title: Practise past papers
+    text: >-
+      After you finish a topic, practise past paper questions on it. Most similar students who
+      {similar_who} practised past papers "{similar_past_paper}" during A/L.
+    reason: This is what similar successful students in our survey reported doing.
+    evidence: [survey, research]
+    research: Practice testing (Roediger & Karpicke, 2006; Dunlosky et al., 2013)
+
+  - id: revision
+    area: Practice
+    when: [{field: similar_revision_known, op: eq, value: true}]
+    title: Revise earlier lessons regularly
+    text: >-
+      Go back to lessons from earlier weeks and months, not only the newest ones. Most similar
+      students who {similar_who} revised earlier work "{similar_revision}".
+    reason: This is what similar successful students in our survey reported doing.
+    evidence: [survey, research]
+    research: Distributed practice (Dunlosky et al., 2013)
+
+  - id: confidence
+    area: Confidence
+    when: [{field: se_mean, op: le, value: 3}]
+    title: Build confidence step by step
+    text: >-
+      Start each topic with easier questions, then move to harder ones. Keep a list of the topics
+      you have mastered and add to it every week.
+    reason: Your answers about confidence in your studies were in the middle or lower part of the scale.
+    evidence: [model, research]
+    research: Mastery experiences build self-efficacy (Bandura, 1997)
+
+  - id: interest
+    area: Interest
+    when: [{field: int_mean, op: le, value: 3}]
+    title: Connect your subjects to your goal
+    text: >-
+      Find out how the Science and Maths you learn are used in {target_or_future}. Short videos,
+      books or talking to someone who studies it can make the subjects more interesting.
+    reason: Your answers about interest in Science and Maths were in the middle or lower part of the scale.
+    evidence: [model, research]
+    research: Interest development (Hidi & Renninger, 2006)
+
+  - id: career_goal
+    area: Goals
+    when: [{field: career_goal_clear, op: ne, value: "Yes"}]
+    title: Explore your career goal
+    text: >-
+      Learn about the degrees and careers you could aim for. Your teachers and the school career
+      guidance unit can help you choose a goal that fits you.
+    reason: You said you did not have a clear career goal yet ({career_goal_clear}).
+    evidence: [model, research]
+    research: Specific goals direct effort (Locke & Latham, 2002)
+
+  - id: foundation
+    area: Foundations
+    when: [{field: weak_foundation_subject, op: ne, value: ""}]
+    title: Strengthen your {weak_foundation_subject} basics early
+    text: >-
+      Spend extra time on the basics of {weak_foundation_subject} at the start of A/L, before new
+      topics build on them. Ask your teacher which O/L topics matter most for your A/L subjects.
+    reason: Your O/L {weak_foundation_subject} grade was {weak_foundation_grade}, and {target} needs strong {weak_foundation_subject}.
+    evidence: [model]
+
+  - id: subject_check
+    area: Subjects
+    when: [{field: subject_warning, op: eq, value: true}]
+    title: Check the subject requirements for {target}
+    text: >-
+      Ask your teachers to check the UGC subject requirements for {target} with your A/L
+      subjects ({al_subject_combination}).
+    reason: In our survey, no student who entered {target} took these A/L subjects.
+    evidence: [survey]
+
+  - id: backup_options
+    area: Options
+    when: [{field: mode, op: eq, value: close_the_gap}, {field: big_gap, op: eq, value: true},
+           {field: has_backup, op: eq, value: true}]
+    title: Also keep backup options in mind
+    text: >-
+      While you work towards {target}, also look at degree areas your predicted Z-score already
+      reaches in your district: {backup_list}.
+    reason: Your predicted Z-score is {gap_points} below the lowest {target} cut-off in your district.
+    evidence: [official]
+
+  - id: safety_margin
+    area: Options
+    when: [{field: mode, op: eq, value: strengthen}, {field: has_target, op: eq, value: true},
+           {field: has_reference_range, op: eq, value: true}]
+    title: Aim for a safety margin
+    text: >-
+      Keep up your routine and aim above the cut-off, not just at it. Cut-offs change every year:
+      for {reference_course} ({reference_university}) in your district they were between
+      {reference_min} and {reference_max} in the UGC documents we have.
+    reason: Your predicted Z-score reaches your target's cut-off, and a margin protects you if cut-offs rise.
+    evidence: [official]
+
+  - id: choose_target
+    area: Goals
+    when: [{field: has_target, op: eq, value: false}]
+    title: Choose a target to work towards
+    text: >-
+      A clear target makes planning easier. Degree areas your predicted Z-score reaches in your
+      district include: {backup_list}. Talk to your teachers and family about which fits you.
+    reason: You have not chosen a target degree yet.
+    evidence: [official, research]
+    research: Specific goals direct effort (Locke & Latham, 2002)
+
+# Softer wording for 15-16 year olds (researcher's decision, Phase 9): if similar students mostly
+# reported this many A/L study hours or more, no number is shown, only "studied regularly".
+study_hours_soft_from: 31 - 40
+
+# Subjects whose O/L grade is checked for each target (rule "foundation"): grade C or lower fires it.
+foundation_subjects:
+  Medicine: [ol_science]
+  Dental Surgery or Veterinary Science: [ol_science]
+  Allied Health Sciences: [ol_science]
+  Agriculture or Food Science: [ol_science]
+  Biological Science: [ol_science]
+  Engineering: [ol_maths, ol_science]
+  Physical Science: [ol_maths, ol_science]
+  Computing, IT, AI or Data Science: [ol_maths]
+foundation_max_grade: C
+
+evidence_labels:
+  model: "Model: the Phase 8 explanation found this group of answers linked to the Z-score (a pattern, not proof)"
+  survey: "Survey: what similar students who reached this target reported"
+  official: "Official: UGC minimum Z-score documents"
+  research: "Research"
+
+# What-if estimate: the change in predicted Z-score if each changeable answer were one step better.
+what_if:
+  habits: {g11_self_study_hours: +1, er1: +1, er2: +1, er3: +1, er4: -1}
+  motivation: {se1: +1, se2: +1, se3: +1, se4: +1, int1: +1, int2: +1, int3: +1, int4: +1}
+  goals: {career_goal_clear: "Yes"}
