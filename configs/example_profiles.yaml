@@ -1,0 +1,99 @@
+# Phase 9 - three ILLUSTRATIVE student profiles (strong, average, weak) for testing the five parts,
+# for the expert review (H9) and for the user test. They were written by hand before running the
+# system; they are NOT respondents from the survey. Fixed here so results can be reproduced.
+
+strong:
+  ol_school_type: National school
+  g6_11_perf_rating: 5
+  class_rank_freq: Always
+  ol_religion: A
+  ol_first_language: A
+  ol_english: A
+  ol_maths: A
+  ol_history: A
+  ol_science: A
+  ol_cat1: A
+  ol_cat2: A
+  ol_cat3: A
+  g11_self_study_hours: 21 - 30
+  se1: 5
+  se2: 5
+  se3: 4
+  se4: 5
+  er1: 5
+  er2: 4
+  er3: 5
+  er4: 2
+  int1: 5
+  int2: 5
+  int3: 5
+  int4: 4
+  career_goal_clear: "Yes"
+  stream_influences: [Personal Interest, Career Goals]
+  al_subject_combination: Biology + Chemistry + Physics
+  al_district: Kandy
+  al_target_degree: Medicine
+
+average:
+  ol_school_type: Provincial school
+  g6_11_perf_rating: 3
+  class_rank_freq: Sometimes
+  ol_religion: B
+  ol_first_language: B
+  ol_english: C
+  ol_maths: B
+  ol_history: C
+  ol_science: B
+  ol_cat1: C
+  ol_cat2: B
+  ol_cat3: C
+  g11_self_study_hours: 5 - 10
+  se1: 3
+  se2: 3
+  se3: 3
+  se4: 3
+  er1: 3
+  er2: 3
+  er3: 3
+  er4: 3
+  int1: 4
+  int2: 3
+  int3: 4
+  int4: 3
+  career_goal_clear: Not Sure
+  stream_influences: [Parents, Teachers]
+  al_subject_combination: Chemistry + Physics + Combined Maths
+  al_district: Gampaha
+  al_target_degree: Engineering
+
+weak:
+  ol_school_type: Provincial school
+  g6_11_perf_rating: 2
+  class_rank_freq: Rarely
+  ol_religion: C
+  ol_first_language: C
+  ol_english: S
+  ol_maths: S
+  ol_history: C
+  ol_science: C
+  ol_cat1: S
+  ol_cat2: C
+  ol_cat3: S
+  g11_self_study_hours: Less than 5
+  se1: 2
+  se2: 2
+  se3: 2
+  se4: 3
+  er1: 2
+  er2: 2
+  er3: 2
+  er4: 4
+  int1: 3
+  int2: 2
+  int3: 3
+  int4: 2
+  career_goal_clear: "No"
+  stream_influences: [Parents, Friends]
+  al_subject_combination: Biology + Chemistry + Physics
+  al_district: Colombo
+  al_target_degree: Medicine

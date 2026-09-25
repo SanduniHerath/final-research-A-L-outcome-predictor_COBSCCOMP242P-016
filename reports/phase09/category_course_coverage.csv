@@ -1,0 +1,25 @@
+category,year,course_columns,names_found,names_listed,median_cutoff
+Medicine,2019/2020,11,1,1,2.14
+Medicine,2021/2022,11,1,1,1.964
+Medicine,2023/2024,12,1,1,1.912
+Dental Surgery or Veterinary Science,2019/2020,2,2,2,1.789
+Dental Surgery or Veterinary Science,2021/2022,3,2,2,1.71
+Dental Surgery or Veterinary Science,2023/2024,3,2,2,1.678
+Engineering,2019/2020,8,3,3,1.856
+Engineering,2021/2022,8,3,3,1.664
+Engineering,2023/2024,8,3,3,1.634
+Allied Health Sciences,2019/2020,18,6,9,1.381
+Allied Health Sciences,2021/2022,20,8,9,1.395
+Allied Health Sciences,2023/2024,21,9,9,1.4
+Agriculture or Food Science,2019/2020,14,8,9,1.101
+Agriculture or Food Science,2021/2022,14,8,9,0.824
+Agriculture or Food Science,2023/2024,14,8,9,0.853
+Biological Science,2019/2020,11,2,2,1.261
+Biological Science,2021/2022,11,2,2,1.089
+Biological Science,2023/2024,11,2,2,1.086
+Physical Science,2019/2020,13,2,2,1.043
+Physical Science,2021/2022,13,2,2,0.83
+Physical Science,2023/2024,13,2,2,0.898
+"Computing, IT, AI or Data Science",2019/2020,7,2,5,1.222
+"Computing, IT, AI or Data Science",2021/2022,10,4,5,1.391
+"Computing, IT, AI or Data Science",2023/2024,11,5,5,1.314

@@ -1,0 +1,4 @@
+profile,target,district,predicted_z,z_range,band,top_degree,top_degree_chance,university_top2,gap_status,gap_points,reference_cutoff,mode,n_recommendations,what_if_all,xai_stability,seconds_all_parts
+strong,Medicine,Kandy,2.33,2.02 to 2.67,Band 3,Medicine,0.9242,Western / Central and Highlands,on_track,0.0,1.7781,strengthen,4,0.07,1.0,1.98
+average,Engineering,Gampaha,1.42,1.11 to 1.75,Band 2,Physical Science,0.62,Southern / Northern and Eastern,gap,0.11,1.5299,close_the_gap,7,0.19,1.0,2.17
+weak,Medicine,Colombo,1.12,0.81 to 1.46,Band 1,Biological Science,0.6787,North Central and North Western / Northern and Eastern,gap,0.76,1.8762,close_the_gap,11,0.22,0.886,1.92

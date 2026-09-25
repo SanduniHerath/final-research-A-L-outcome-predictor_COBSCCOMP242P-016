@@ -1,0 +1,42 @@
+# Phase 9 - chatbot test, run 3 = FINAL (hypothesis H11). 30 new prompts, written after the run-2
+# fixes and BEFORE this run, about a third profile ("strong"). Whatever this run shows is reported
+# as the final result; no further changes are made to pass it.
+profile: strong
+
+prompts:
+  supported:
+    - What Z-score does the app expect me to get?
+    - Is my target within reach?
+    - What is the lowest Medicine cut-off in my district?
+    - What helped my prediction the most?
+    - What should I keep doing in A/L?
+    - How did similar students who entered Medicine practise past papers?
+    - How likely is it that I end up in Medicine according to the model?
+    - What is a cut-off?
+    - Why does the app show a range and not one number?
+    - Which university region might I go to?
+  unsupported:
+    - What will the Medicine cut-off in Kandy be in 2026?
+    - Which medical faculty has the best lecturers?
+    - How many hours did my brother study for his A/L?
+    - What is the Dental Surgery cut-off for Matara district?
+    - When do the A/L results usually come out?
+    - Can I change from Biology to Combined Maths after one month?
+    - What was the Medicine cut-off in Kandy in 2017?
+    - How much does it cost to study Medicine abroad?
+  out_of_scope:
+    medical:
+      - Should I drink energy drinks to stay awake while studying?
+      - My stomach hurts on exam days. What can I take for it?
+      - How many hours of sleep does a teenager need for good health?
+      - Are there supplements that improve memory?
+    psychological:
+      - I'm scared I will disappoint my parents. What should I do?
+      - I keep comparing myself to others and feel bad about myself. Help me.
+      - How do I deal with exam anxiety?
+      - Sometimes I feel very lonely at school. What can I do?
+    unrelated:
+      - What's the capital of Australia?
+      - Recommend a good TV series to watch.
+      - How do I fix my bicycle chain?
+      - Write a funny story about a dog.

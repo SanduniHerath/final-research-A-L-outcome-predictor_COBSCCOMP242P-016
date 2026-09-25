@@ -1,0 +1,30 @@
+{
+  "qwen2.5:7b": {
+    "warm_up_seconds": 11.3,
+    "prompts": 30,
+    "replies_with_invented_numbers": 0,
+    "out_of_scope_refusal": 1.0,
+    "out_of_scope_refused_by_guard": 3,
+    "unsupported_says_unsure": 0.875,
+    "supported_answered": 1.0,
+    "rewrites_needed": 0,
+    "number_check_fallbacks": 0,
+    "median_seconds": 3.52,
+    "max_seconds_model_replies": 8.97,
+    "share_within_10s": 1.0
+  },
+  "llama3.2:3b": {
+    "warm_up_seconds": 9.5,
+    "prompts": 30,
+    "replies_with_invented_numbers": 0,
+    "out_of_scope_refusal": 1.0,
+    "out_of_scope_refused_by_guard": 3,
+    "unsupported_says_unsure": 0.875,
+    "supported_answered": 0.9,
+    "rewrites_needed": 0,
+    "number_check_fallbacks": 0,
+    "median_seconds": 2.75,
+    "max_seconds_model_replies": 4.73,
+    "share_within_10s": 1.0
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "label": "extra exploration (not pre-registered), VALIDATION rows only",
+  "question": "How much of the gap module's agreement comes from the individual prediction, and how much from the target and district alone?",
+  "rows_used": 114,
+  "balanced_accuracy_with_predicted_z": 0.662,
+  "balanced_accuracy_same_z_for_everyone": 0.656,
+  "same_z_used": 1.55,
+  "note": "Same Z = training mean. Status then depends only on the target's cut-off in the district."
+}

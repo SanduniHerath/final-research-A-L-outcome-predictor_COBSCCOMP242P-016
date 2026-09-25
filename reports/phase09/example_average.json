@@ -1,0 +1,1127 @@
+{
+  "profile": {
+    "ol_school_type": "Provincial school",
+    "g6_11_perf_rating": 3,
+    "class_rank_freq": "Sometimes",
+    "ol_religion": "B",
+    "ol_first_language": "B",
+    "ol_english": "C",
+    "ol_maths": "B",
+    "ol_history": "C",
+    "ol_science": "B",
+    "ol_cat1": "C",
+    "ol_cat2": "B",
+    "ol_cat3": "C",
+    "g11_self_study_hours": "5 - 10",
+    "se1": 3,
+    "se2": 3,
+    "se3": 3,
+    "se4": 3,
+    "er1": 3,
+    "er2": 3,
+    "er3": 3,
+    "er4": 3,
+    "int1": 4,
+    "int2": 3,
+    "int3": 4,
+    "int4": 3,
+    "career_goal_clear": "Not Sure",
+    "stream_influences": [
+      "Parents",
+      "Teachers"
+    ],
+    "al_subject_combination": "Chemistry + Physics + Combined Maths",
+    "al_district": "Gampaha",
+    "al_target_degree": "Engineering"
+  },
+  "prediction": {
+    "zscore": {
+      "predicted": 1.42,
+      "range_low": 1.11,
+      "range_high": 1.75,
+      "range_level": 0.8,
+      "message": "Our best guess is a Z-score of about 1.42. When we checked the model on students it had not seen, 8 out of 10 got a real Z-score within the same distance of the guess, so we show 1.11 to 1.75.",
+      "below_data_range": false
+    },
+    "zscore_band": {
+      "probabilities": {
+        "Band 2": 0.4932,
+        "Band 1": 0.352,
+        "Band 3": 0.1548
+      },
+      "most_likely": "Band 2",
+      "top_probability": 0.4932,
+      "model_is_sure": false,
+      "calibration": "reliable",
+      "confidence_message": "These chances were fairly well matched to what really happened when we tested the model.",
+      "band_edges": [
+        1.33,
+        1.74
+      ],
+      "band_of_predicted_z": "Band 2"
+    },
+    "degree_category": {
+      "probabilities": {
+        "Physical Science": 0.62,
+        "Agriculture or Food Science": 0.1628,
+        "Computing, IT, AI or Data Science": 0.1008,
+        "Engineering": 0.0384,
+        "Biological Science": 0.0383,
+        "Allied Health Sciences": 0.0383,
+        "Medicine": 0.0014
+      },
+      "most_likely": "Physical Science",
+      "top_probability": 0.62,
+      "model_is_sure": true,
+      "calibration": "rough",
+      "confidence_message": "Treat these chances as rough. When we tested the model, its chances were sometimes too high or too low."
+    },
+    "university_group": {
+      "probabilities": {
+        "Southern": 0.3319,
+        "Northern and Eastern": 0.2731,
+        "North Central and North Western": 0.1554,
+        "Western": 0.1326,
+        "Central and Highlands": 0.107
+      },
+      "most_likely": "Southern",
+      "top_probability": 0.3319,
+      "model_is_sure": false,
+      "calibration": "very_rough",
+      "confidence_message": "This is only a very rough guide. When we tested the model, it was not better than simply guessing the most common answer.",
+      "top_k": [
+        "Southern",
+        "Northern and Eastern"
+      ]
+    }
+  },
+  "gap": {
+    "target_option": "Engineering",
+    "target_category": "Engineering",
+    "district": "Gampaha",
+    "cutoff_year": "2023/2024",
+    "predicted_z": 1.42,
+    "range": [
+      1.11,
+      1.75
+    ],
+    "other_options": [
+      {
+        "category": "Agriculture or Food Science",
+        "lowest_cutoff": 0.5565,
+        "course": "Agriculture",
+        "university": "Eastern University, Sri Lanka",
+        "whole_range_above": true
+      },
+      {
+        "category": "Physical Science",
+        "lowest_cutoff": 0.7308,
+        "course": "Applied Sciences (PHY.SC)",
+        "university": "Eastern University - Trincomalee Campus",
+        "whole_range_above": true
+      },
+      {
+        "category": "Computing, IT, AI or Data Science",
+        "lowest_cutoff": 1.0424,
+        "course": "Physical Science -ICT",
+        "university": "University of Kelaniya",
+        "whole_range_above": true
+      }
+    ],
+    "notes": [
+      "Cut-offs are the UGC minimum Z-scores for 2023/2024 for your district. They change every year, so they are a guide, not a promise.",
+      "Your predicted Z-score is an estimate. Your own work in A/L can change your result."
+    ],
+    "status": "gap",
+    "mode": "close_the_gap",
+    "reference": {
+      "value": 1.5299,
+      "source": "official",
+      "document": "UGC minimum Z-scores 2023/2024, page 4",
+      "course": "ENGINEERING (EM)",
+      "university": "University of Moratuwa",
+      "year": "2023/2024"
+    },
+    "gap_points": 0.11,
+    "courses": [
+      {
+        "course": "Engineering (EM)",
+        "university": "University of Moratuwa",
+        "cutoff": 1.5299,
+        "cutoff_range_over_years": [
+          1.4385,
+          1.8205
+        ],
+        "years_published": 3,
+        "status": "borderline_below",
+        "status_text": "Your best guess is below this cut-off, but the upper part of your range reaches it.",
+        "aptitude_test_mark": false,
+        "document": "UGC minimum Z-scores 2023/2024, page 4"
+      },
+      {
+        "course": "Engineering (TM)",
+        "university": "University of Moratuwa",
+        "cutoff": 1.5433,
+        "cutoff_range_over_years": [
+          1.5005,
+          1.8462
+        ],
+        "years_published": 3,
+        "status": "borderline_below",
+        "status_text": "Your best guess is below this cut-off, but the upper part of your range reaches it.",
+        "aptitude_test_mark": false,
+        "document": "UGC minimum Z-scores 2023/2024, page 4"
+      },
+      {
+        "course": "Engineering",
+        "university": "University of Jaffna",
+        "cutoff": 1.5835,
+        "cutoff_range_over_years": [
+          1.4869,
+          1.6726
+        ],
+        "years_published": 3,
+        "status": "borderline_below",
+        "status_text": "Your best guess is below this cut-off, but the upper part of your range reaches it.",
+        "aptitude_test_mark": false,
+        "document": "UGC minimum Z-scores 2023/2024, page 4"
+      },
+      {
+        "course": "Engineering",
+        "university": "University of Ruhuna",
+        "cutoff": 1.6306,
+        "cutoff_range_over_years": [
+          1.6306,
+          1.8512
+        ],
+        "years_published": 3,
+        "status": "borderline_below",
+        "status_text": "Your best guess is below this cut-off, but the upper part of your range reaches it.",
+        "aptitude_test_mark": false,
+        "document": "UGC minimum Z-scores 2023/2024, page 4"
+      },
+      {
+        "course": "Engineering",
+        "university": "University of Sri Jayewardenepura",
+        "cutoff": 1.8122,
+        "cutoff_range_over_years": [
+          1.7838,
+          1.9761
+        ],
+        "years_published": 3,
+        "status": "unlikely",
+        "status_text": "Your whole predicted range is below this cut-off.",
+        "aptitude_test_mark": false,
+        "document": "UGC minimum Z-scores 2023/2024, page 4"
+      },
+      {
+        "course": "Engineering",
+        "university": "University of Peradeniya",
+        "cutoff": 1.9259,
+        "cutoff_range_over_years": [
+          1.9259,
+          2.0711
+        ],
+        "years_published": 3,
+        "status": "unlikely",
+        "status_text": "Your whole predicted range is below this cut-off.",
+        "aptitude_test_mark": false,
+        "document": "UGC minimum Z-scores 2023/2024, page 4"
+      },
+      {
+        "course": "Engineering",
+        "university": "University of Moratuwa",
+        "cutoff": 2.0818,
+        "cutoff_range_over_years": [
+          2.0818,
+          2.2013
+        ],
+        "years_published": 3,
+        "status": "unlikely",
+        "status_text": "Your whole predicted range is below this cut-off.",
+        "aptitude_test_mark": false,
+        "document": "UGC minimum Z-scores 2023/2024, page 4"
+      },
+      {
+        "course": "Engineering",
+        "university": "South Eastern University of Sri Lanka",
+        "cutoff": null,
+        "cutoff_range_over_years": [
+          1.661,
+          1.661
+        ],
+        "years_published": 1,
+        "status": "no_cutoff",
+        "status_text": "No cut-off was published for your district (NQC in the UGC table).",
+        "aptitude_test_mark": false,
+        "document": "UGC minimum Z-scores 2023/2024, page 4"
+      }
+    ],
+    "entrants": {
+      "n": 59,
+      "median_z": 1.94,
+      "q1": 1.71,
+      "q3": 2.12
+    },
+    "subject_check": {
+      "checked": true,
+      "share_with_same_subjects": 1.0,
+      "n": 59
+    },
+    "model_chance_of_target": 0.0384,
+    "message": "Your predicted Z-score (1.42) is 0.11 below the lowest 2023/2024 cut-off for Engineering in your district (Engineering (EM), University of Moratuwa: 1.53). A study plan can help close this gap."
+  },
+  "explanation": {
+    "task": "zscore",
+    "class_name": null,
+    "unit": "Z-score points",
+    "typical_student_value": 1.5644607734680176,
+    "prediction": 1.4188098907470703,
+    "items": [
+      {
+        "item": "ol_n_A",
+        "name": "Number of A grades at O/L",
+        "answer": "0 A grades",
+        "contribution": -0.048283450619170554,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "ol_core_mean",
+        "name": "Average of the 6 core O/L grades",
+        "answer": "Religion B, First language B, English C, Maths B, History C, Science B",
+        "contribution": -0.028535247246424377,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "ol_cat1",
+        "name": "O/L basket subject 1 grade",
+        "answer": "C",
+        "contribution": -0.02656677941829837,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "ol_cat3",
+        "name": "O/L basket subject 3 grade",
+        "answer": "C",
+        "contribution": -0.01763617504061314,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "ol_history",
+        "name": "O/L History grade",
+        "answer": "C",
+        "contribution": -0.015563469391468668,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "al_subject_combination",
+        "name": "A/L subjects",
+        "answer": "Chemistry + Physics + Combined Maths",
+        "contribution": -0.015386765325627137,
+        "direction": "down",
+        "changeable": false,
+        "group": "A/L subject choice"
+      },
+      {
+        "item": "motivation_index",
+        "name": "Motivation (confidence + interest)",
+        "answer": "average 3.2 out of 5",
+        "contribution": 0.015252082685978099,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "goal_clarity_index",
+        "name": "Goal clarity",
+        "answer": "clear career goal: Not Sure; chose Science for career goals: no",
+        "contribution": -0.010287817336662465,
+        "direction": "down",
+        "changeable": true,
+        "group": "Goals and reasons for Science"
+      },
+      {
+        "item": "ol_sci_maths_mean",
+        "name": "Average of O/L Maths and Science",
+        "answer": "Maths B, Science B",
+        "contribution": -0.009256211107934438,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "career_goal_clear",
+        "name": "Had a clear career goal",
+        "answer": "Not Sure",
+        "contribution": -0.009208922185744447,
+        "direction": "down",
+        "changeable": true,
+        "group": "Goals and reasons for Science"
+      },
+      {
+        "item": "interest_index",
+        "name": "Interest in Science and Maths",
+        "answer": "average 3.5 out of 5",
+        "contribution": 0.007784517635727482,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "ol_first_language",
+        "name": "O/L first language grade",
+        "answer": "B",
+        "contribution": 0.007574722306770192,
+        "direction": "up",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "self_efficacy_index",
+        "name": "Confidence in O/L studies",
+        "answer": "average 3.0 out of 5",
+        "contribution": 0.005828230834146678,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "g11_self_study_hours",
+        "name": "Self-study hours per week in Grade 11",
+        "answer": "5 - 10",
+        "contribution": 0.005798212709831219,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "ol_maths",
+        "name": "O/L Mathematics grade",
+        "answer": "B",
+        "contribution": -0.00571196179466638,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "stream_influence_teachers",
+        "name": "Chose Science because of teachers",
+        "answer": "yes",
+        "contribution": 0.005703949006328801,
+        "direction": "up",
+        "changeable": false,
+        "group": "Goals and reasons for Science"
+      },
+      {
+        "item": "ol_science",
+        "name": "O/L Science grade",
+        "answer": "B",
+        "contribution": -0.0036962232934801237,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "ol_school_type",
+        "name": "School type",
+        "answer": "Provincial school",
+        "contribution": 0.0030332676865900896,
+        "direction": "up",
+        "changeable": false,
+        "group": "School background and standing"
+      },
+      {
+        "item": "school_performance_index",
+        "name": "School standing (rating + class rank)",
+        "answer": "rating 3 out of 5, top of class: Sometimes",
+        "contribution": -0.0030178409535982415,
+        "direction": "down",
+        "changeable": false,
+        "group": "School background and standing"
+      },
+      {
+        "item": "er4",
+        "name": "Finding it hard to keep a study schedule",
+        "answer": "3 out of 5 (higher = harder to keep a schedule)",
+        "contribution": 0.0029665991141085055,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "ol_cat2",
+        "name": "O/L basket subject 2 grade",
+        "answer": "B",
+        "contribution": -0.002917285652188528,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "class_rank_freq",
+        "name": "How often in the top of the class",
+        "answer": "Sometimes",
+        "contribution": -0.0019537566663229023,
+        "direction": "down",
+        "changeable": false,
+        "group": "School background and standing"
+      },
+      {
+        "item": "effort_regulation_index",
+        "name": "Effort and study regularity",
+        "answer": "average 3.0 out of 5 (the 'hard to keep a schedule' answer counted in reverse)",
+        "contribution": -0.0018175930603902826,
+        "direction": "down",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "er3",
+        "name": "Kept up with schoolwork every week",
+        "answer": "3 out of 5",
+        "contribution": 0.0012115147204427006,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "g6_11_perf_rating",
+        "name": "Own rating of Grades 6-11 performance",
+        "answer": "3 out of 5",
+        "contribution": -0.0010428094567611174,
+        "direction": "down",
+        "changeable": false,
+        "group": "School background and standing"
+      },
+      {
+        "item": "er1",
+        "name": "Made good use of study time",
+        "answer": "3 out of 5",
+        "contribution": 0.00020462394109247288,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "stream_influence_personal_interest",
+        "name": "Chose Science out of personal interest",
+        "answer": "no",
+        "contribution": -0.00012629481261237617,
+        "direction": "down",
+        "changeable": false,
+        "group": "Goals and reasons for Science"
+      }
+    ],
+    "groups": {
+      "O/L results": -0.1505920812574744,
+      "Attitudes and study habits": 0.03722818858093688,
+      "A/L subject choice": -0.015386765325627137,
+      "Goals and reasons for Science": -0.013919085328690487,
+      "School background and standing": -0.002981139390092172
+    },
+    "top_up": [
+      {
+        "item": "motivation_index",
+        "name": "Motivation (confidence + interest)",
+        "answer": "average 3.2 out of 5",
+        "contribution": 0.015252082685978099,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "interest_index",
+        "name": "Interest in Science and Maths",
+        "answer": "average 3.5 out of 5",
+        "contribution": 0.007784517635727482,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "ol_first_language",
+        "name": "O/L first language grade",
+        "answer": "B",
+        "contribution": 0.007574722306770192,
+        "direction": "up",
+        "changeable": false,
+        "group": "O/L results"
+      }
+    ],
+    "top_down": [
+      {
+        "item": "ol_n_A",
+        "name": "Number of A grades at O/L",
+        "answer": "0 A grades",
+        "contribution": -0.048283450619170554,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "ol_core_mean",
+        "name": "Average of the 6 core O/L grades",
+        "answer": "Religion B, First language B, English C, Maths B, History C, Science B",
+        "contribution": -0.028535247246424377,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "ol_cat1",
+        "name": "O/L basket subject 1 grade",
+        "answer": "C",
+        "contribution": -0.02656677941829837,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      }
+    ],
+    "additivity_error": 0.0,
+    "stability_spearman_top5": 0.9999999999999999,
+    "stable": true,
+    "stability_note": null,
+    "sentences": [
+      "Your O/L results lowered your predicted Z-score by about 0.15, compared with a typical student in our survey.",
+      "Your attitudes and study habits raised your predicted Z-score by about 0.04, compared with a typical student in our survey.",
+      "Your A/L subject choice lowered your predicted Z-score by about 0.02, compared with a typical student in our survey.",
+      "Your goals and reasons for choosing Science lowered your predicted Z-score by about 0.01, compared with a typical student in our survey."
+    ],
+    "detail_sentences": [
+      "Motivation (confidence + interest) (average 3.2 out of 5) raised your predicted Z-score by about 0.02.",
+      "Interest in Science and Maths (average 3.5 out of 5) raised your predicted Z-score by about 0.01.",
+      "O/L first language grade (B) raised your predicted Z-score by about 0.01.",
+      "Number of A grades at O/L (0 A grades) lowered your predicted Z-score by about 0.05.",
+      "Average of the 6 core O/L grades (Religion B, First language B, English C, Maths B, History C, Science B) lowered your predicted Z-score by about 0.03.",
+      "O/L basket subject 1 grade (C) lowered your predicted Z-score by about 0.03."
+    ],
+    "note": "These show how the model used your answers compared with a typical student in our survey. They are patterns in the data, not proof that one thing causes another."
+  },
+  "explanation_degree": {
+    "task": "degree_category",
+    "class_name": "Physical Science",
+    "unit": "chance (0-1)",
+    "typical_student_value": 0.1088463276186667,
+    "prediction": 0.6200140714645386,
+    "items": [
+      {
+        "item": "al_subject_combination",
+        "name": "A/L subjects",
+        "answer": "Chemistry + Physics + Combined Maths",
+        "contribution": 0.39514176626306785,
+        "direction": "up",
+        "changeable": false,
+        "group": "A/L subject choice"
+      },
+      {
+        "item": "ol_n_A",
+        "name": "Number of A grades at O/L",
+        "answer": "0 A grades",
+        "contribution": 0.04412065034883953,
+        "direction": "up",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "stream_influence_teachers",
+        "name": "Chose Science because of teachers",
+        "answer": "yes",
+        "contribution": 0.03048331056864603,
+        "direction": "up",
+        "changeable": false,
+        "group": "Goals and reasons for Science"
+      },
+      {
+        "item": "ol_cat1",
+        "name": "O/L basket subject 1 grade",
+        "answer": "C",
+        "contribution": 0.019088532281498937,
+        "direction": "up",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "ol_history",
+        "name": "O/L History grade",
+        "answer": "C",
+        "contribution": 0.01873228591773288,
+        "direction": "up",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "ol_sci_maths_mean",
+        "name": "Average of O/L Maths and Science",
+        "answer": "Maths B, Science B",
+        "contribution": 0.0147671459515818,
+        "direction": "up",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "stream_influence_personal_interest",
+        "name": "Chose Science out of personal interest",
+        "answer": "no",
+        "contribution": -0.013261163008935381,
+        "direction": "down",
+        "changeable": false,
+        "group": "Goals and reasons for Science"
+      },
+      {
+        "item": "ol_core_mean",
+        "name": "Average of the 6 core O/L grades",
+        "answer": "Religion B, First language B, English C, Maths B, History C, Science B",
+        "contribution": -0.013168732663630575,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "motivation_index",
+        "name": "Motivation (confidence + interest)",
+        "answer": "average 3.2 out of 5",
+        "contribution": -0.013127310221080145,
+        "direction": "down",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "ol_cat3",
+        "name": "O/L basket subject 3 grade",
+        "answer": "C",
+        "contribution": 0.012773442293939126,
+        "direction": "up",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "career_goal_clear",
+        "name": "Had a clear career goal",
+        "answer": "Not Sure",
+        "contribution": 0.010955475260197148,
+        "direction": "up",
+        "changeable": true,
+        "group": "Goals and reasons for Science"
+      },
+      {
+        "item": "er1",
+        "name": "Made good use of study time",
+        "answer": "3 out of 5",
+        "contribution": 0.009331765626059979,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "ol_school_type",
+        "name": "School type",
+        "answer": "Provincial school",
+        "contribution": -0.008791121081636297,
+        "direction": "down",
+        "changeable": false,
+        "group": "School background and standing"
+      },
+      {
+        "item": "ol_cat2",
+        "name": "O/L basket subject 2 grade",
+        "answer": "B",
+        "contribution": -0.007340169611122682,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "g11_self_study_hours",
+        "name": "Self-study hours per week in Grade 11",
+        "answer": "5 - 10",
+        "contribution": -0.006434921330832083,
+        "direction": "down",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "school_performance_index",
+        "name": "School standing (rating + class rank)",
+        "answer": "rating 3 out of 5, top of class: Sometimes",
+        "contribution": 0.004937823103128181,
+        "direction": "up",
+        "changeable": false,
+        "group": "School background and standing"
+      },
+      {
+        "item": "ol_first_language",
+        "name": "O/L first language grade",
+        "answer": "B",
+        "contribution": 0.004339267425369925,
+        "direction": "up",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "g6_11_perf_rating",
+        "name": "Own rating of Grades 6-11 performance",
+        "answer": "3 out of 5",
+        "contribution": 0.003551140989994348,
+        "direction": "up",
+        "changeable": false,
+        "group": "School background and standing"
+      },
+      {
+        "item": "class_rank_freq",
+        "name": "How often in the top of the class",
+        "answer": "Sometimes",
+        "contribution": 0.003350986815942724,
+        "direction": "up",
+        "changeable": false,
+        "group": "School background and standing"
+      },
+      {
+        "item": "effort_regulation_index",
+        "name": "Effort and study regularity",
+        "answer": "average 3.0 out of 5 (the 'hard to keep a schedule' answer counted in reverse)",
+        "contribution": 0.0025447291237919415,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "interest_index",
+        "name": "Interest in Science and Maths",
+        "answer": "average 3.5 out of 5",
+        "contribution": -0.0022829893637756264,
+        "direction": "down",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "er4",
+        "name": "Finding it hard to keep a study schedule",
+        "answer": "3 out of 5 (higher = harder to keep a schedule)",
+        "contribution": 0.00212262306536205,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "ol_maths",
+        "name": "O/L Mathematics grade",
+        "answer": "B",
+        "contribution": -0.0012478439385556137,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "self_efficacy_index",
+        "name": "Confidence in O/L studies",
+        "answer": "average 3.0 out of 5",
+        "contribution": -0.0008362492856471577,
+        "direction": "down",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "er3",
+        "name": "Kept up with schoolwork every week",
+        "answer": "3 out of 5",
+        "contribution": 0.0007564710492647119,
+        "direction": "up",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      },
+      {
+        "item": "ol_science",
+        "name": "O/L Science grade",
+        "answer": "B",
+        "contribution": 0.0005347231096734963,
+        "direction": "up",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "goal_clarity_index",
+        "name": "Goal clarity",
+        "answer": "clear career goal: Not Sure; chose Science for career goals: no",
+        "contribution": 0.0001261051569967708,
+        "direction": "up",
+        "changeable": true,
+        "group": "Goals and reasons for Science"
+      }
+    ],
+    "groups": {
+      "A/L subject choice": 0.39514176626306785,
+      "O/L results": 0.09259930111532683,
+      "Goals and reasons for Science": 0.028303727976904565,
+      "Attitudes and study habits": -0.00792588133685633,
+      "School background and standing": 0.003048829827428956
+    },
+    "top_up": [
+      {
+        "item": "al_subject_combination",
+        "name": "A/L subjects",
+        "answer": "Chemistry + Physics + Combined Maths",
+        "contribution": 0.39514176626306785,
+        "direction": "up",
+        "changeable": false,
+        "group": "A/L subject choice"
+      },
+      {
+        "item": "ol_n_A",
+        "name": "Number of A grades at O/L",
+        "answer": "0 A grades",
+        "contribution": 0.04412065034883953,
+        "direction": "up",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "stream_influence_teachers",
+        "name": "Chose Science because of teachers",
+        "answer": "yes",
+        "contribution": 0.03048331056864603,
+        "direction": "up",
+        "changeable": false,
+        "group": "Goals and reasons for Science"
+      }
+    ],
+    "top_down": [
+      {
+        "item": "stream_influence_personal_interest",
+        "name": "Chose Science out of personal interest",
+        "answer": "no",
+        "contribution": -0.013261163008935381,
+        "direction": "down",
+        "changeable": false,
+        "group": "Goals and reasons for Science"
+      },
+      {
+        "item": "ol_core_mean",
+        "name": "Average of the 6 core O/L grades",
+        "answer": "Religion B, First language B, English C, Maths B, History C, Science B",
+        "contribution": -0.013168732663630575,
+        "direction": "down",
+        "changeable": false,
+        "group": "O/L results"
+      },
+      {
+        "item": "motivation_index",
+        "name": "Motivation (confidence + interest)",
+        "answer": "average 3.2 out of 5",
+        "contribution": -0.013127310221080145,
+        "direction": "down",
+        "changeable": true,
+        "group": "Attitudes and study habits"
+      }
+    ],
+    "additivity_error": 0.0,
+    "stability_spearman_top5": 0.8999999999999998,
+    "stable": true,
+    "stability_note": null,
+    "sentences": [
+      "Your A/L subject choice raised the chance of Physical Science by about 40 percentage points, compared with a typical student in our survey.",
+      "Your O/L results raised the chance of Physical Science by about 9 percentage points, compared with a typical student in our survey.",
+      "Your goals and reasons for choosing Science raised the chance of Physical Science by about 3 percentage points, compared with a typical student in our survey.",
+      "Your attitudes and study habits lowered the chance of Physical Science by about 1 percentage points, compared with a typical student in our survey."
+    ],
+    "detail_sentences": [
+      "A/L subjects (Chemistry + Physics + Combined Maths) raised the chance of Physical Science by about 40 percentage points.",
+      "Number of A grades at O/L (0 A grades) raised the chance of Physical Science by about 4 percentage points.",
+      "Chose Science because of teachers (yes) raised the chance of Physical Science by about 3 percentage points.",
+      "Chose Science out of personal interest (no) lowered the chance of Physical Science by about 1 percentage points.",
+      "Average of the 6 core O/L grades (Religion B, First language B, English C, Maths B, History C, Science B) lowered the chance of Physical Science by about 1 percentage points.",
+      "Motivation (confidence + interest) (average 3.2 out of 5) lowered the chance of Physical Science by about 1 percentage points."
+    ],
+    "note": "These show how the model used your answers compared with a typical student in our survey. They are patterns in the data, not proof that one thing causes another."
+  },
+  "recommendations": {
+    "mode": "close_the_gap",
+    "mode_text": "Close the gap: your plan focuses on the steps most linked to a higher Z-score.",
+    "weekly_plan": {
+      "self_study_advice": "Similar successful students mostly studied 21 - 30 hours a week during A/L. Build up step by step and keep time for rest.",
+      "actions": [
+        "Explore your career goal",
+        "Give every study session one clear goal",
+        "Do a weekly catch-up",
+        "Practise past papers",
+        "Revise earlier lessons regularly"
+      ]
+    },
+    "recommendations": [
+      {
+        "id": "career_goal",
+        "area": "Goals",
+        "title": "Explore your career goal",
+        "text": "Learn about the degrees and careers you could aim for. Your teachers and the school career guidance unit can help you choose a goal that fits you.",
+        "reason": "You said you did not have a clear career goal yet (Not Sure).",
+        "evidence": [
+          "Model: the Phase 8 explanation found this group of answers linked to the Z-score (a pattern, not proof)",
+          "Research: Specific goals direct effort (Locke & Latham, 2002)"
+        ],
+        "evidence_types": [
+          "model",
+          "research"
+        ],
+        "linked_answers_effect": -0.019,
+        "priority": 1
+      },
+      {
+        "id": "session_goal",
+        "area": "Study habits",
+        "title": "Give every study session one clear goal",
+        "text": "Before you start, write one small goal for the session, such as \"finish 10 Chemistry MCQs\" or \"summarise one Physics lesson\". Check it at the end.",
+        "reason": "You said you did not always make good use of your study time.",
+        "evidence": [
+          "Model: the Phase 8 explanation found this group of answers linked to the Z-score (a pattern, not proof)",
+          "Research: Goal setting (Locke & Latham, 2002)"
+        ],
+        "evidence_types": [
+          "model",
+          "research"
+        ],
+        "linked_answers_effect": -0.002,
+        "priority": 2
+      },
+      {
+        "id": "weekly_review",
+        "area": "Study habits",
+        "title": "Do a weekly catch-up",
+        "text": "Keep one fixed time each weekend to go over the week's lessons and finish any homework that is left, so work does not pile up.",
+        "reason": "You said you did not always keep up with schoolwork every week.",
+        "evidence": [
+          "Model: the Phase 8 explanation found this group of answers linked to the Z-score (a pattern, not proof)",
+          "Research: Spaced practice (Dunlosky et al., 2013)"
+        ],
+        "evidence_types": [
+          "model",
+          "research"
+        ],
+        "linked_answers_effect": -0.001,
+        "priority": 3
+      },
+      {
+        "id": "past_papers",
+        "area": "Practice",
+        "title": "Practise past papers",
+        "text": "After you finish a topic, practise past paper questions on it. Most similar students who reached Engineering practised past papers \"Weekly\" during A/L.",
+        "reason": "This is what similar successful students in our survey reported doing.",
+        "evidence": [
+          "Survey: what similar students who reached this target reported",
+          "Research: Practice testing (Roediger & Karpicke, 2006; Dunlosky et al., 2013)"
+        ],
+        "evidence_types": [
+          "survey",
+          "research"
+        ],
+        "linked_answers_effect": null,
+        "priority": 4
+      },
+      {
+        "id": "revision",
+        "area": "Practice",
+        "title": "Revise earlier lessons regularly",
+        "text": "Go back to lessons from earlier weeks and months, not only the newest ones. Most similar students who reached Engineering revised earlier work \"Sometimes\".",
+        "reason": "This is what similar successful students in our survey reported doing.",
+        "evidence": [
+          "Survey: what similar students who reached this target reported",
+          "Research: Distributed practice (Dunlosky et al., 2013)"
+        ],
+        "evidence_types": [
+          "survey",
+          "research"
+        ],
+        "linked_answers_effect": null,
+        "priority": 5
+      },
+      {
+        "id": "study_time",
+        "area": "Study time",
+        "title": "Set a weekly self-study target",
+        "text": "Plan your own study time every week, on top of school and tuition. Students like you who reached Engineering mostly studied 21 - 30 hours a week during A/L. Build up your own study time step by step, and keep time for sleep, rest and family.",
+        "reason": "Your Grade 11 self-study time (5 - 10 hours a week) was lower than that of most similar students who reached Engineering.",
+        "evidence": [
+          "Survey: what similar students who reached this target reported",
+          "Model: the Phase 8 explanation found this group of answers linked to the Z-score (a pattern, not proof)"
+        ],
+        "evidence_types": [
+          "survey",
+          "model"
+        ],
+        "linked_answers_effect": 0.006,
+        "priority": 6
+      },
+      {
+        "id": "confidence",
+        "area": "Confidence",
+        "title": "Build confidence step by step",
+        "text": "Start each topic with easier questions, then move to harder ones. Keep a list of the topics you have mastered and add to it every week.",
+        "reason": "Your answers about confidence in your studies were in the middle or lower part of the scale.",
+        "evidence": [
+          "Model: the Phase 8 explanation found this group of answers linked to the Z-score (a pattern, not proof)",
+          "Research: Mastery experiences build self-efficacy (Bandura, 1997)"
+        ],
+        "evidence_types": [
+          "model",
+          "research"
+        ],
+        "linked_answers_effect": 0.021,
+        "priority": 7
+      }
+    ],
+    "similar_students": {
+      "n": 25,
+      "available": true,
+      "group": "Engineering",
+      "who": "students in our survey who entered Engineering",
+      "median_z": 1.79,
+      "g11_self_study_hours": {
+        "Less than 5": 0.12,
+        "5 - 10": 0.2,
+        "11 - 20": 0.28,
+        "21 - 30": 0.32,
+        "More than 30": 0.08
+      },
+      "al_study_hours": {
+        "Less than 10": 0.08,
+        "10 - 20": 0.2,
+        "21 - 30": 0.36,
+        "31 - 40": 0.28,
+        "More than 40": 0.08
+      },
+      "al_study_hours_mode": "21 - 30",
+      "al_past_paper_freq": {
+        "Never": 0.2,
+        "Monthly": 0.32,
+        "Weekly": 0.36,
+        "Several times per week": 0.12
+      },
+      "al_past_paper_freq_mode": "Weekly",
+      "al_revision_freq": {
+        "Never": 0.04,
+        "Rarely": 0.16,
+        "Sometimes": 0.4,
+        "Often": 0.24,
+        "Very Often": 0.16
+      },
+      "al_revision_freq_mode": "Sometimes",
+      "g11_study_level_median": 2.0
+    },
+    "what_if": {
+      "habits": 0.08,
+      "motivation": 0.01,
+      "goals": 0.06,
+      "all": 0.19,
+      "note": "This is the model's estimate for students whose answers were one step better. It shows a pattern in the survey data, not a promise of what will happen."
+    },
+    "note": "These suggestions come from patterns in our survey and from research on studying. They are not guarantees. Choose what fits you and talk to your teachers."
+  }
+}
