@@ -1,0 +1,78 @@
+# Phase 9 - settings of the five system parts (prediction, recommendation, gap, chatbot, XAI).
+# Every number shown to a student comes from the trained models, the training data, or the three
+# UGC documents supplied by the researcher. Nothing here is an official figure typed in by hand.
+
+prediction:
+  # Z-score range: empirical quantiles of the VALIDATION residuals of the chosen Z-score network
+  # (the test set is not used to set it). 0.80 -> "8 out of 10 students like you".
+  interval_level: 0.80
+  # Lowest Z-score among respondents. Every respondent entered university, so predictions near or
+  # below this are probably too optimistic (Phase 2 limitation 1).
+  lowest_z_in_data: 0.75
+  band_labels: [Band 1, Band 2, Band 3]   # student-facing names (Phase 3); never "fail"/"low"
+  university_top_k: 2
+  # Plain confidence messages, chosen automatically from the Phase 7 test calibration results of
+  # the chosen system (reports/phase07/calibration.csv, temperature-scaled rows).
+  confidence_messages:
+    reliable: These chances were fairly well matched to what really happened when we tested the model.
+    rough: Treat these chances as rough. When we tested the model, its chances were sometimes too high or too low.
+    very_rough: This is only a very rough guide. When we tested the model, it was not better than simply guessing the most common answer.
+  sure_threshold: 0.60      # top chance at or above this -> "the model is fairly sure"
+
+xai:
+  # Per-student SHAP (same algorithm and 100-student reference as Phase 8). More evaluations than
+  # Phase 8's 1000 because one student's explanation must be stable on its own: on 25 validation
+  # students, 1000 evaluations gave top-5 stability >= 0.80 for 68 % of degree explanations, 4000
+  # gave 96 % (Z-score: 96 % -> 100 %). Chosen on validation rows only; the model is unchanged.
+  max_evals: 4000
+  runs: 3                         # repeated runs with different seeds; shown values = their average
+
+gap:
+  cutoff_file: data/processed/ugc_cutoffs.csv
+  latest_year: 2023/2024
+  # For the H8 retrospective check: a respondent's A/L exam year -> the cut-off year used.
+  # Rule fixed before the check is run: the closest available year; a tie goes to the later year.
+  cutoff_exam_years: {2019: 2019/2020, 2021: 2021/2022, 2023: 2023/2024}
+  # Courses (as named in the UGC documents) counted for each target option of the questionnaire.
+  # Mapping proposed in Phase 9 and confirmed by the researcher on 2026-10-15.
+  category_courses:
+    Medicine: [MEDICINE]
+    Dental Surgery or Veterinary Science: [DENTAL SURGERY, VETERINARY SCIENCE]
+    Engineering: [ENGINEERING, ENGINEERING (EM), ENGINEERING (TM)]
+    Allied Health Sciences: [NURSING, PHARMACY, PHYSIOTHERAPY, MEDICAL LABORATORY SCIENCES, RADIOGRAPHY,
+                             OCCUPATIONAL THERAPY, OPTOMETRY, SPEECH AND HEARING SCIENCES,
+                             MEDICAL IMAGING TECHNOLOGY]
+    Agriculture or Food Science: [AGRICULTURE, AGRICULTURAL TECHNOLOGY & MANAGEMENT,
+                                  AGRICULTURAL RESOURCE MANAGEMENT AND TECHNOLOGY,
+                                  AGRICULTURAL RESOURCE MANAGEMENT & TECHNOLOGY, EXPORT AGRICULTURE,
+                                  FOOD SCIENCE & NUTRITION, FOOD SCIENCE & TECHNOLOGY,
+                                  FOOD PRODUCTION & TECHNOLOGY MANAGEMENT, ANIMAL SCIENCE & FISHERIES]
+    Biological Science: [BIOLOGICAL SCIENCE, APPLIED SCIENCES (BIO.SC)]
+    Physical Science: [PHYSICAL SCIENCE, APPLIED SCIENCES (PHY.SC)]
+    Computing, IT, AI or Data Science: [COMPUTER SCIENCE, ARTIFICIAL INTELLIGENCE, DATA SCIENCE,
+                                        PHYSICAL SCIENCE -ICT, ELECTRONICS AND COMPUTER SCIENCE]
+  min_students_for_profile: 10    # a data-derived "typical entrant" summary needs at least this many
+
+recommend:
+  k_neighbours: 25                # similar successful training profiles (only aggregates are shown)
+  min_group: 10                   # never summarise fewer students than this (privacy)
+  # Answers a student can still work on (all others are fixed: grades, school, subjects).
+  changeable: [g11_self_study_hours, er1, er2, er3, er4, se1, se2, se3, se4,
+               int1, int2, int3, int4, career_goal_clear]
+  # Descriptive A/L-period answers of similar successful respondents (not model inputs).
+  al_habits: [al_study_hours, al_past_paper_freq, al_revision_freq]
+  big_gap: 0.30                   # Z-score points; above this the plan also lists backup options
+
+chatbot:
+  provider: ollama
+  url: http://localhost:11434
+  model: qwen2.5:7b               # chosen in Phase 9 by a small comparison (docs/phase09)
+  fallback_model: llama3.2:3b
+  temperature: 0.2
+  max_tokens: 90
+  timeout_seconds: 60
+  history_turns: 4
+  notice: >-
+    This chatbot is a support tool, not a final decision maker. It only knows your results in this
+    app. Please talk to your teachers, parents or school career guidance unit before you decide.
+  unsure_phrase: "I'm not sure"
