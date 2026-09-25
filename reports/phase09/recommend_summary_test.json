@@ -1,0 +1,19 @@
+{
+  "students": 153,
+  "share_recs_with_reason_and_evidence": 1.0,
+  "share_mode_follows_status": 1.0,
+  "any_unfilled_placeholder": false,
+  "mean_distance_similar": 5.273,
+  "mean_distance_random": 6.915,
+  "mean_difference_ci": [
+    1.643,
+    1.472,
+    1.816
+  ],
+  "similar_closer_than_random": true,
+  "modes": {
+    "strengthen": 124,
+    "close_the_gap": 29
+  },
+  "mean_recommendations": 7.07
+}

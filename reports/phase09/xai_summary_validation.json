@@ -1,0 +1,18 @@
+{
+  "degree_category": {
+    "students": 40,
+    "median_stability": 1.0,
+    "share_at_least_threshold": 0.9,
+    "min_stability": 0.429,
+    "max_additivity_error": 1.1920928966180355e-07,
+    "additivity_ok": true
+  },
+  "zscore": {
+    "students": 40,
+    "median_stability": 1.0,
+    "share_at_least_threshold": 1.0,
+    "min_stability": 0.9,
+    "max_additivity_error": 1.1920928955078125e-07,
+    "additivity_ok": true
+  }
+}

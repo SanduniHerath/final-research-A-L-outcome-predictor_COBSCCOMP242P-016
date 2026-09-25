@@ -1,0 +1,21 @@
+{
+  "rows_used": 117,
+  "balanced_accuracy": 0.652,
+  "ci95": [
+    0.611,
+    0.697
+  ],
+  "supported": true,
+  "crosstab_status_by_reached": {
+    "False": {
+      "gap": 32,
+      "on_track": 73
+    },
+    "True": {
+      "gap": 0,
+      "on_track": 12
+    }
+  },
+  "share_reached": 0.103,
+  "share_on_track": 0.726
+}
