@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Alora">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#143A6B"/>
+      <stop offset="0.65" stop-color="#1F5FAD"/>
+      <stop offset="1" stop-color="#3C7BC4"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#sky)"/>
+  <!-- rays of the rising sun -->
+  <g stroke="#F4A62A" stroke-width="2.6" stroke-linecap="round">
+    <path d="M24 9v5"/><path d="M12.5 14.5l3.4 3.4"/><path d="M35.5 14.5l-3.4 3.4"/>
+    <path d="M7 25.5h4.5"/><path d="M36.5 25.5H41"/>
+  </g>
+  <!-- the sun rising over the horizon -->
+  <path d="M14 31a10 10 0 0 1 20 0z" fill="#F4A62A"/>
+  <path d="M8 31h32" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M15 36.5h18" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2.2" stroke-linecap="round"/>
+</svg>
