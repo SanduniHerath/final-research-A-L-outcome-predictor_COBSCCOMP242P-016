@@ -1,0 +1,145 @@
+/* Design tokens (Phase 10) for Alora - "Your A/L, lit up."
+   Theme: dawn (aurora). A deep night-to-morning blue sky (trust) warming to an amber sunrise (hope).
+ Every colour, size and space used by the app comes from here.
+   Colour plan: 60 % calm neutral surfaces, 30 % trust blue, 10 % warm amber highlights.
+   Green = growth / on track. Blue and orange are the colour-blind-safe pair for up / down.
+   Contrast ratios are checked in docs/phase10 (WCAG AA: 4.5:1 for text), for both themes.
+   Two themes: light (morning) below, and dark ("the night before the sunrise") further down.
+   js/theme-init.js sets <html data-theme="light|dark"> before the page is drawn: the student's
+   choice if they made one, otherwise the device setting. */
+:root {
+  color-scheme: light;
+  /* 60 % - neutral surfaces */
+  --c-bg: #F5F8FC;
+  --c-surface: #FFFFFF;
+  --c-surface-2: #EDF3FA;
+  --c-border: #D3DCE8;
+
+  /* text */
+  --c-ink: #172133;
+  --c-ink-2: #46546B;
+
+  /* 30 % - trust blue (primary) */
+  --c-primary: #1F5FAD;
+  --c-primary-700: #174C8C;
+  --c-primary-50: #E6EFFA;
+  --c-night: #143A6B;      /* top of the dawn sky (hero, logo) */
+  --c-brand: #143A6B;      /* the word "Alora" in the top bar */
+  --c-hero-mid: #1F5FAD;   /* the hero sky stays dark in both themes, so its text is always white */
+  --c-hero-end: #2B6CB8;
+  --c-on-primary: #FFFFFF; /* text and icons on a primary-blue fill */
+  --c-sunrise: #F08A4B;    /* warm glow, decoration only (never behind text) */
+
+  /* growth green (on track, done) */
+  --c-growth: #1D7A4D;
+  --c-growth-50: #E3F3EA;
+  --c-growth-ink: #155B39;
+  --c-on-growth: #FFFFFF;
+
+  /* 10 % - warm amber accent (highlights only; text on it is dark) */
+  --c-accent: #F4A62A;
+  --c-accent-50: #FFF3DD;
+  --c-accent-ink: #7A4300;
+  --c-on-accent: #172133;  /* text on amber: dark in both themes */
+
+  /* "down" / gap: orange (pairs with blue for colour-blind safety) */
+  --c-down: #C25A0C;
+  --c-down-ink: #9A4508;
+  --c-down-50: #FDEEE3;
+
+  --c-danger: #B42318;
+  --c-focus: #B45F06;      /* deep amber: 4.6:1 on white (WCAG 2.4.11 needs 3:1); white is used on the dark hero */
+
+  /* small helpers */
+  --c-inverse: #172133;    /* toast, skip link */
+  --c-on-inverse: #FFFFFF;
+  --c-shimmer: #F7FAFD;    /* loading placeholder highlight */
+  --c-muted-bar: #8A97AB;  /* "simple guess" comparison bars */
+  --c-scrim: rgba(23, 33, 51, 0.35);
+  --c-backdrop: rgba(23, 33, 51, 0.45);
+
+  /* typography: one family that also covers Sinhala and Tamil; modular scale 1.25 */
+  --font: "Segoe UI", "Nirmala UI", "Noto Sans", "Noto Sans Sinhala", "Noto Sans Tamil", Roboto,
+          system-ui, -apple-system, sans-serif;
+  --fs-xs: 0.8rem;
+  --fs-sm: 0.9rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.563rem;
+  --fs-2xl: 1.953rem;
+  --fs-3xl: 2.441rem;
+  --lh: 1.55;
+  --measure: 66ch;
+
+  /* 8-point spacing grid */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+  --shadow: 0 1px 2px rgba(23, 33, 51, 0.06), 0 4px 16px rgba(23, 33, 51, 0.06);
+  --tap: 48px;             /* minimum touch target (Fitts's law; WCAG 2.5.5) */
+  --topbar-h: 64px;
+  --sidenav-w: 264px;
+  --speed: 160ms;
+}
+
+/* Dark theme: a calm night-sky blue, not pure black (less glare, softer for long evening study).
+   Text is off-white, not pure white (less halo on dark screens). Colours keep their meaning:
+   blue = up / you, orange = down / gap, green = on track, amber = highlight. Fills that carry text
+   (primary buttons, chat bubbles) become lighter, so the text on them turns dark. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --c-bg: #0D1625;
+  --c-surface: #15213A;
+  --c-surface-2: #1E2C47;
+  --c-border: #33466A;
+
+  --c-ink: #E9EEF6;
+  --c-ink-2: #AAB8CD;
+
+  --c-primary: #6AA6F2;
+  --c-primary-700: #93C0F7;
+  --c-primary-50: #1C3557;
+  --c-night: #0A2140;
+  --c-brand: #CFE1FA;
+  --c-hero-mid: #174A88;
+  --c-hero-end: #1D5799;
+  --c-on-primary: #0D1625;
+
+  --c-growth: #55C795;
+  --c-growth-50: #12352A;
+  --c-growth-ink: #9BE3BF;
+  --c-on-growth: #0D1625;
+
+  --c-accent: #F4A62A;
+  --c-accent-50: #3A2B12;
+  --c-accent-ink: #F8CD84;
+  --c-on-accent: #172133;
+
+  --c-down: #F2894A;
+  --c-down-ink: #F6AE80;
+  --c-down-50: #3E2318;
+
+  --c-danger: #FF8B80;
+  --c-focus: #FFB547;
+
+  --c-inverse: #E9EEF6;
+  --c-on-inverse: #0D1625;
+  --c-shimmer: #2A3B5C;
+  --c-muted-bar: #7686A0;
+  --c-scrim: rgba(0, 0, 0, 0.6);
+  --c-backdrop: rgba(0, 0, 0, 0.65);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --speed: 0ms; }
+}
