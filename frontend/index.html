@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A friendly guide for students who have finished their O/L: likely A/L results, your target, and a study plan.">
+  <meta name="theme-color" content="#143A6B">
+  <title>Alora – Your A/L, lit up.</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <script src="js/theme-init.js"></script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
+
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menu-btn" aria-controls="sidenav" aria-expanded="false">
+      <span data-icon="menu"></span><span class="sr-only" data-i18n="nav.menu">Menu</span>
+    </button>
+    <a class="brand" href="#/home">
+      <img src="img/logo.svg" alt="" width="36" height="36">
+      <span class="brand-name" data-i18n="app.name">Alora</span><span class="brand-tag" data-i18n="app.tagline">Your A/L, lit up.</span>
+    </a>
+    <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="lang.label">
+      <button type="button" data-lang="en" lang="en"><span class="full">English</span><span class="short" aria-hidden="true">EN</span></button>
+      <button type="button" data-lang="si" lang="si"><span class="full">සිංහල</span><span class="short" aria-hidden="true">සිං</span></button>
+      <button type="button" data-lang="ta" lang="ta"><span class="full">தமிழ்</span><span class="short" aria-hidden="true">த</span></button>
+    </div>
+    <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-pressed="false" aria-label="Dark mode" data-i18n-aria="theme.label">
+      <span data-icon="moon"></span>
+    </button>
+  </header>
+
+  <div class="layout">
+    <nav class="sidenav" id="sidenav" aria-label="Main" data-i18n-aria="nav.label"></nav>
+    <div class="scrim" id="scrim" hidden></div>
+    <main id="main" class="main" tabindex="-1"></main>
+  </div>
+
+  <div class="sr-only" aria-live="polite" id="live"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
