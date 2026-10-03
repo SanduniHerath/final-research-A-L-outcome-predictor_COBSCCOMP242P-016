@@ -1,0 +1,14 @@
+{
+  "name": "alora-frontend",
+  "private": true,
+  "type": "module",
+  "description": "Alora web interface (plain HTML, CSS and JavaScript; no build step). Node is only needed for the checks and screenshots.",
+  "scripts": {
+    "check:i18n": "node tools/check_i18n.mjs",
+    "screenshots": "node tools/capture_screens.mjs ../docs/phase10_screenshots",
+    "e2e": "node tools/e2e_browser.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^23.11.1"
+  }
+}
