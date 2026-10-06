@@ -184,3 +184,5 @@ def test_server_keeps_no_student_data_on_disk(client: TestClient) -> None:
     changed = [str(f) for f in after if f not in before or after[f] != before[f]]
     changed = [f for f in changed if not f.endswith("project.log")]  # the log never holds answers
     assert changed == []
+#   I n t e g r a t i o n   p a t h w a y s   c a t a l o g e d  
+ 
