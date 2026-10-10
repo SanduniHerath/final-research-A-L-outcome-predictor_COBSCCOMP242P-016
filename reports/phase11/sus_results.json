@@ -1,0 +1,148 @@
+{
+  "source": "Final test responses.xlsx",
+  "testers": 12,
+  "per_tester": [
+    {
+      "tester": "T1",
+      "language": "Sinhala",
+      "sus": 72.5,
+      "grade": "C+",
+      "adjective": "Good"
+    },
+    {
+      "tester": "T2",
+      "language": "English",
+      "sus": 77.5,
+      "grade": "B+",
+      "adjective": "Good"
+    },
+    {
+      "tester": "T3",
+      "language": "English",
+      "sus": 75.0,
+      "grade": "B",
+      "adjective": "Good"
+    },
+    {
+      "tester": "T4",
+      "language": "Sinhala",
+      "sus": 65.0,
+      "grade": "C",
+      "adjective": "OK"
+    },
+    {
+      "tester": "T5",
+      "language": "English",
+      "sus": 77.5,
+      "grade": "B+",
+      "adjective": "Good"
+    },
+    {
+      "tester": "T6",
+      "language": "Sinhala",
+      "sus": 72.5,
+      "grade": "C+",
+      "adjective": "Good"
+    },
+    {
+      "tester": "T7",
+      "language": "Sinhala",
+      "sus": 52.5,
+      "grade": "D",
+      "adjective": "OK"
+    },
+    {
+      "tester": "T8",
+      "language": "English",
+      "sus": 85.0,
+      "grade": "A+",
+      "adjective": "Good"
+    },
+    {
+      "tester": "T9",
+      "language": "English",
+      "sus": 75.0,
+      "grade": "B",
+      "adjective": "Good"
+    },
+    {
+      "tester": "T10",
+      "language": "Sinhala",
+      "sus": 57.5,
+      "grade": "D",
+      "adjective": "OK"
+    },
+    {
+      "tester": "T11",
+      "language": "English",
+      "sus": 57.5,
+      "grade": "D",
+      "adjective": "OK"
+    },
+    {
+      "tester": "T12",
+      "language": "Sinhala",
+      "sus": 55.0,
+      "grade": "D",
+      "adjective": "OK"
+    }
+  ],
+  "mean": 68.5,
+  "sd": 10.6,
+  "median": 72.5,
+  "min": 52.5,
+  "max": 85.0,
+  "ci95": [
+    61.8,
+    75.3
+  ],
+  "grade_of_mean": "C",
+  "adjective_of_mean": "OK",
+  "target": 68,
+  "verdict": "met",
+  "one_sample_t_vs_68": {
+    "t": 0.18,
+    "p_two_sided": 0.863
+  },
+  "at_or_above_68": 7,
+  "item_means": {
+    "a1": 3.5,
+    "a2": 2.58,
+    "a3": 3.75,
+    "a4": 2.08,
+    "a5": 4.0,
+    "a6": 2.0,
+    "a7": 3.5,
+    "a8": 2.08,
+    "a9": 3.67,
+    "a10": 2.25
+  },
+  "item_contribution_means_0to4": {
+    "a1": 2.5,
+    "a2": 2.42,
+    "a3": 2.75,
+    "a4": 2.92,
+    "a5": 3.0,
+    "a6": 3.0,
+    "a7": 2.5,
+    "a8": 2.92,
+    "a9": 2.67,
+    "a10": 2.75
+  },
+  "subscales_lewis_sauro_2009": {
+    "usable_mean": 68.0,
+    "learnable_mean": 70.8
+  },
+  "by_language": {
+    "Sinhala": {
+      "n": 6,
+      "mean": 62.5
+    },
+    "English": {
+      "n": 6,
+      "mean": 74.6
+    }
+  },
+  "cronbach_alpha": 0.75,
+  "data_check_note": "Scored as supplied"
+}

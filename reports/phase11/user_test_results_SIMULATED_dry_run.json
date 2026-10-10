@@ -1,0 +1,146 @@
+{
+  "testers": 5,
+  "H12_usability": {
+    "sus_per_tester": {
+      "SIM_T1": 90.0,
+      "SIM_T2": 77.5,
+      "SIM_T3": 62.5,
+      "SIM_T4": 55.0,
+      "SIM_T5": 90.0
+    },
+    "sus_mean": 75.0,
+    "target": 68,
+    "verdict": "met"
+  },
+  "H10_comprehension": {
+    "share_correct": 0.85,
+    "per_question": {
+      "b1": 1.0,
+      "b2": 0.6,
+      "b4": 1.0,
+      "b5": 1.0,
+      "b6": 1.0,
+      "b7": 0.6,
+      "b8": 0.8,
+      "b3": 0.8
+    },
+    "per_tester": {
+      "SIM_T1": 1.0,
+      "SIM_T2": 0.875,
+      "SIM_T3": 0.75,
+      "SIM_T4": 0.625,
+      "SIM_T5": 1.0
+    },
+    "target": 0.7,
+    "verdict": "met"
+  },
+  "H9_recommendations_testers": {
+    "close_the_gap": {
+      "ratings": 5,
+      "median_useful": 4.0,
+      "median_clear": 4.0,
+      "median_would_try": 4.0,
+      "median_age_ok": 4.0
+    },
+    "strengthen": {
+      "ratings": 5,
+      "median_useful": 4.0,
+      "median_clear": 4.0,
+      "median_would_try": 4.0,
+      "median_age_ok": 4.0
+    },
+    "target_median_usefulness": 4,
+    "verdict": "met"
+  },
+  "H9_recommendations_expert": {
+    "medians": {
+      "relevance": 4.0,
+      "actionability": 4.0,
+      "age_appropriate": 4.0
+    },
+    "target": 4,
+    "verdict": "met",
+    "experts": 1
+  },
+  "chatbot_clarity": {
+    "median": 4.0,
+    "target": 4,
+    "verdict": "met",
+    "noticed_support_tool_notice": 4
+  },
+  "tasks": [
+    {
+      "task": 1,
+      "testers": 5,
+      "done": 5,
+      "hint": 0,
+      "not_done": 0,
+      "median_seconds": 340.0
+    },
+    {
+      "task": 2,
+      "testers": 5,
+      "done": 4,
+      "hint": 1,
+      "not_done": 0,
+      "median_seconds": 35.0
+    },
+    {
+      "task": 3,
+      "testers": 5,
+      "done": 5,
+      "hint": 0,
+      "not_done": 0,
+      "median_seconds": 40.0
+    },
+    {
+      "task": 4,
+      "testers": 5,
+      "done": 2,
+      "hint": 2,
+      "not_done": 1,
+      "median_seconds": 95.0
+    },
+    {
+      "task": 5,
+      "testers": 5,
+      "done": 3,
+      "hint": 2,
+      "not_done": 0,
+      "median_seconds": 75.0
+    },
+    {
+      "task": 6,
+      "testers": 5,
+      "done": 5,
+      "hint": 0,
+      "not_done": 0,
+      "median_seconds": 35.0
+    },
+    {
+      "task": 7,
+      "testers": 5,
+      "done": 4,
+      "hint": 1,
+      "not_done": 0,
+      "median_seconds": 170.0
+    },
+    {
+      "task": 8,
+      "testers": 5,
+      "done": 5,
+      "hint": 0,
+      "not_done": 0,
+      "median_seconds": 15.0
+    },
+    {
+      "task": 9,
+      "testers": 5,
+      "done": 4,
+      "hint": 1,
+      "not_done": 0,
+      "median_seconds": 55.0
+    }
+  ],
+  "note": "Descriptive results with few raters (Phase 2, limitation 7); not tested statistically."
+}

@@ -1,0 +1,137 @@
+{
+  "source": "Final test responses.xlsx (supplied by the researcher)",
+  "H10_comprehension": {
+    "scored_questions": "B1,B2,B4-B8 (B3 needs the researcher's check against each tester's screen; not scored)",
+    "share_correct": 0.976,
+    "per_question": {
+      "b1": 1.0,
+      "b2": 1.0,
+      "b4": 1.0,
+      "b5": 0.917,
+      "b6": 1.0,
+      "b7": 0.917,
+      "b8": 1.0
+    },
+    "per_tester": {
+      "T1": 0.86,
+      "T2": 1.0,
+      "T3": 1.0,
+      "T4": 0.86,
+      "T5": 1.0,
+      "T6": 1.0,
+      "T7": 1.0,
+      "T8": 1.0,
+      "T9": 1.0,
+      "T10": 1.0,
+      "T11": 1.0,
+      "T12": 1.0
+    },
+    "wrong_answers": {
+      "b5": [
+        [
+          "T4",
+          "a"
+        ]
+      ],
+      "b7": [
+        [
+          "T1",
+          "c"
+        ]
+      ]
+    },
+    "b3_answers": {
+      "Study habits": 4,
+      "O/L results": 3,
+      "Hours of study per week": 2,
+      "A/L subject choice": 2,
+      "My study habits": 1
+    },
+    "target": 0.7,
+    "verdict": "met"
+  },
+  "H9_plans": {
+    "close_the_gap": {
+      "ratings": 12,
+      "median_useful": 3.5,
+      "median_clear": 4.0,
+      "median_would_try": 3.0,
+      "median_age_ok": 4.0
+    },
+    "strengthen": {
+      "ratings": 12,
+      "median_useful": 3.0,
+      "median_clear": 4.0,
+      "median_would_try": 3.0,
+      "median_age_ok": 3.5
+    },
+    "own_plan_medians": {
+      "own_c1": 3.0,
+      "own_c2": 3.5,
+      "own_c3": 3.0,
+      "own_c4": 3.0
+    },
+    "example_plan_medians": {
+      "ex_c1": 3.0,
+      "ex_c2": 4.0,
+      "ex_c3": 3.5,
+      "ex_c4": 4.0
+    },
+    "all_ratings_means": {
+      "c1": 3.46,
+      "c2": 3.83,
+      "c3": 3.5,
+      "c4": 3.79
+    },
+    "target_median_usefulness": 4,
+    "verdict": "not met (close the gap 3.5, stay on track 3.0)"
+  },
+  "chatbot": {
+    "d1_clear_median": 3.5,
+    "d1_mean": 3.67,
+    "d2_own_results_median": 4.0,
+    "d2_mean": 3.92,
+    "d3_noticed_yes": 9,
+    "target_clarity_median": 4,
+    "verdict": "not met (3.5)"
+  },
+  "language": {
+    "easy_to_understand": {
+      "Yes": 10,
+      "Partly": 2
+    },
+    "would_use": {
+      "Sinhala": 5,
+      "Tamil": 4,
+      "English": 3
+    }
+  },
+  "open_text": {
+    "E1_liked": {
+      "The chatbot gave quick answers in plain language.": 6,
+      "Comparing my plan with the example student was helpful.": 2,
+      "Seeing which habits I can still change was motivating.": 1,
+      "I liked how the app explained why my result looked that way.": 1,
+      "It felt like a tool made for students like me.": 1,
+      "The app was fast and simple to open on my phone.": 1
+    },
+    "E2_confusing": {
+      "The typical student idea needed a second look.": 4,
+      "Nothing was hard.": 2,
+      "The meaning of the blue bars took a moment to understand.": 2,
+      "All fine.": 1,
+      "I was unsure how the chatbot used my results at first.": 1,
+      "A few words on the results page were unfamiliar.": 1,
+      "Nothing confusing.": 1
+    },
+    "E3_change": {
+      "Offer a lighter theme with bigger text.": 4,
+      "Show more example students from different streams.": 2,
+      "Add a progress tracker for each week.": 2,
+      "Include a section for time management tips.": 2,
+      "Send reminders for the study plan steps.": 1,
+      "Add a short guide for first-time users.": 1
+    }
+  },
+  "data_check_note": "Scored as supplied"
+}
