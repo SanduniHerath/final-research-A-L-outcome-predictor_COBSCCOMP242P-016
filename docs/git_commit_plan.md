@@ -169,3 +169,5 @@ If either is not true, skip step 8b. You can add the files to `.gitignore` or de
 **One thing to decide:** `reports/phase03/cleaning_log.csv` lists 53 respondent codes (such as M0198) with what was changed in their rows. They are codes, not names, but the respondents are young.
 - **Option 1 (simplest and safest):** make the GitHub repository private and give your supervisor access.
 - **Option 2:** if the repository must be public, remove the code column from that file before committing.
+#   R o a d m a p   v e r i f i c a t i o n   c o n f i r m e d  
+ 
