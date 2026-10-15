@@ -133,3 +133,5 @@ These are documented in the phase documents.
 - **Chatbot test.** The chatbot met 3 of its 4 automated targets (H11): it said "not sure" in 88 % of cases where 90 % was the target. The model is small and can mix up numbers, so named-university questions are answered by an exact lookup.
 - **Translations.** The Sinhala and Tamil texts are first drafts waiting for checks.
 - **User test.** Five testers and one expert give descriptive results only.
+#   P r o j e c t   d o c u m e n t a t i o n   a r c h i t e c t u r e   f i n a l i z e d  
+ 
