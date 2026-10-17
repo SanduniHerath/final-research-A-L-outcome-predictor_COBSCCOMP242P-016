@@ -174,7 +174,9 @@ def test_chat_still_answers_safely_when_the_model_is_down(system: DecisionSuppor
         assert c.post("/api/predict", json={"profile": EXAMPLES["average"]}).status_code == 200
 
 
-def test_server_keeps_no_student_data_on_disk(client: TestClient) -> None:
+def test_server_writes_student_data_only_to_the_app_database(client: TestClient) -> None:
+    # Answers go only into the app database (a temporary file in the tests, see conftest.py);
+    # nothing else under data/, reports/, models/ or logs/ changes.
     from src.utils.config import resolve_path
 
     watched = [resolve_path(p) for p in ("data", "reports", "models", "logs")]
@@ -184,5 +186,3 @@ def test_server_keeps_no_student_data_on_disk(client: TestClient) -> None:
     changed = [str(f) for f in after if f not in before or after[f] != before[f]]
     changed = [f for f in changed if not f.endswith("project.log")]  # the log never holds answers
     assert changed == []
-#   I n t e g r a t i o n   p a t h w a y s   c a t a l o g e d  
- 
