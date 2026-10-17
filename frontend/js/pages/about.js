@@ -1,5 +1,6 @@
 // About and Help: what the app is, how to use it, questions and answers, where to get help.
 import { t } from "../i18n.js";
+import { api } from "../api.js";
 import { icon } from "../icons.js";
 import { store } from "../store.js";
 import { esc, pageHead, toast } from "../ui.js";
@@ -30,11 +31,12 @@ export async function render(root) {
         <button class="btn btn-danger" id="delete">${icon("trash")} ${esc(t("profile.reset"))}</button></section>
     </div>
   </div>`;
-  root.querySelector("#delete").addEventListener("click", () => {
-    if (window.confirm(t("profile.resetConfirm"))) {
-      store.reset();
-      try { sessionStorage.clear(); } catch { /* ignore */ }
-      toast(t("profile.deleted"));
-    }
+  root.querySelector("#delete").addEventListener("click", async () => {
+    if (!window.confirm(t("profile.resetConfirm"))) return;
+    let ok = true;
+    try { await api.forget(); } catch { ok = false; }  // also delete what the server stored
+    store.reset();
+    try { sessionStorage.clear(); } catch { /* ignore */ }
+    toast(t(ok ? "profile.deleted" : "profile.deleteFailed"));
   });
 }

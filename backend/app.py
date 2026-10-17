@@ -12,9 +12,12 @@
 
 The Phase 10 web interface (``frontend/``) is served at ``/`` by the same server.
 
-Privacy: nothing about a student is written to disk and request bodies are never logged. Every
-request carries the answers it needs. For chat speed, a student's results are kept in memory for at
-most 15 minutes (``DecisionSupportSystem.cached_report``). The chat history is kept by the client.
+Storage: every answer set and every result (including chatbot questions and replies) is saved in
+the app database (``backend/storage.py``, SQLite file set in ``configs/app.yaml`` -> ``storage``),
+under the random visit code the browser sends in ``X-Alora-Session``. No name, e-mail or IP address
+is stored, and request bodies are never written to the log. ``DELETE /api/my-data`` removes
+everything stored for a visit code. For chat speed, a student's results are also kept in memory for
+at most 15 minutes (``DecisionSupportSystem.cached_report``).
 """
 
 from __future__ import annotations
@@ -25,11 +28,12 @@ from collections.abc import AsyncIterator, Callable
 from contextlib import asynccontextmanager
 from typing import Any
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from backend.schemas import ChatRequest, ExplainRequest, Profile, ProfileRequest
+from backend.storage import AppStore, clean_session
 from src.chatbot.llm import OllamaModel
 from src.evaluation.stats_api import project_statistics
 from src.models import student
@@ -55,9 +59,17 @@ def _profile(profile: Profile, gap_fields: bool = False) -> dict[str, Any]:
     return data
 
 
-def create_app(loader: Callable[[], DecisionSupportSystem] = DecisionSupportSystem.load) -> FastAPI:
-    """Build the app; tests pass a loader with a fake chatbot."""
+_UNSET: Any = object()
+
+
+def create_app(
+    loader: Callable[[], DecisionSupportSystem] = DecisionSupportSystem.load,
+    store: AppStore | None = _UNSET,
+) -> FastAPI:
+    """Build the app; tests pass a loader with a fake chatbot and their own (or no) store."""
     state: dict[str, DecisionSupportSystem] = {}
+    if store is _UNSET:
+        store = AppStore.from_config()
 
     @asynccontextmanager
     async def lifespan(_: FastAPI) -> AsyncIterator[None]:
@@ -72,12 +84,29 @@ def create_app(loader: Callable[[], DecisionSupportSystem] = DecisionSupportSyst
     app.add_middleware(
         CORSMiddleware,
         allow_origin_regex=r"http://(localhost|127\.0\.0\.1)(:\d+)?",
-        allow_methods=["GET", "POST"],
-        allow_headers=["Content-Type"],
+        allow_methods=["GET", "POST", "DELETE"],
+        allow_headers=["Content-Type", "X-Alora-Session", "X-Alora-Lang"],
     )
 
     def system() -> DecisionSupportSystem:
         return state["system"]
+
+    def saved(
+        part: str,
+        answers: dict[str, Any],
+        result: dict[str, Any],
+        session: str | None,
+        lang: str | None,
+        options: dict[str, Any] | None = None,
+        question: str | None = None,
+    ) -> dict[str, Any]:
+        """Store the result in the app database (if switched on) and return it unchanged."""
+        if store is not None:
+            store.record(
+                part, answers, result, session=clean_session(session), lang=lang,
+                options=options, question=question,
+            )
+        return result
 
     @app.get("/api/health")
     def health() -> dict[str, Any]:
@@ -106,31 +135,61 @@ def create_app(loader: Callable[[], DecisionSupportSystem] = DecisionSupportSyst
         """The three made-up example students (for 'Try an example' and for user testing)."""
         return load_config("example_profiles")
 
+    session_header = Header(default=None, alias="X-Alora-Session")
+    lang_header = Header(default=None, alias="X-Alora-Lang")
+
     @app.post("/api/predict")
-    def predict(body: ProfileRequest) -> dict[str, Any]:
+    def predict(
+        body: ProfileRequest, session: str | None = session_header, lang: str | None = lang_header
+    ) -> dict[str, Any]:
         """Part 1: Z-score range, band, degree area and university region with confidence."""
-        return system().predict(_profile(body.profile))
+        answers = _profile(body.profile)
+        return saved("predict", answers, system().predict(answers), session, lang)
 
     @app.post("/api/gap")
-    def gap(body: ProfileRequest) -> dict[str, Any]:
+    def gap(
+        body: ProfileRequest, session: str | None = session_header, lang: str | None = lang_header
+    ) -> dict[str, Any]:
         """Part 3: the student's target compared with the official cut-offs."""
-        return system().analyse_gap(_profile(body.profile, gap_fields=True))
+        answers = _profile(body.profile, gap_fields=True)
+        return saved("gap", answers, system().analyse_gap(answers), session, lang)
 
     @app.post("/api/recommend")
-    def recommend(body: ProfileRequest) -> dict[str, Any]:
+    def recommend(
+        body: ProfileRequest, session: str | None = session_header, lang: str | None = lang_header
+    ) -> dict[str, Any]:
         """Part 2: study plan in 'close the gap' or 'strengthen' mode."""
-        return system().recommend(_profile(body.profile, gap_fields=True))
+        answers = _profile(body.profile, gap_fields=True)
+        return saved("recommend", answers, system().recommend(answers), session, lang)
 
     @app.post("/api/explain")
-    def explain(body: ExplainRequest) -> dict[str, Any]:
+    def explain(
+        body: ExplainRequest, session: str | None = session_header, lang: str | None = lang_header
+    ) -> dict[str, Any]:
         """Part 5: why this result (SHAP, grouped and per answer)."""
-        return system().explain(_profile(body.profile), include_degree=body.include_degree)
+        answers = _profile(body.profile)
+        result = system().explain(answers, include_degree=body.include_degree)
+        options = {"include_degree": body.include_degree}
+        return saved("explain", answers, result, session, lang, options=options)
 
     @app.post("/api/chat")
-    def chat(body: ChatRequest) -> dict[str, Any]:
+    def chat(
+        body: ChatRequest, session: str | None = session_header, lang: str | None = lang_header
+    ) -> dict[str, Any]:
         """Part 4: grounded chatbot answer, always with the support-tool notice."""
+        answers = _profile(body.profile, gap_fields=True)
         history = [turn.model_dump() for turn in body.history]
-        return system().chat(_profile(body.profile, gap_fields=True), body.message, history)
+        result = system().chat(answers, body.message, history)
+        return saved("chat", answers, result, session, lang, question=body.message)
+
+    @app.delete("/api/my-data")
+    def delete_my_data(session: str | None = session_header) -> dict[str, Any]:
+        """Delete everything the database holds for this browser's visit code."""
+        code = clean_session(session)
+        if code is None:
+            raise HTTPException(status_code=400, detail="Missing or invalid X-Alora-Session header")
+        removed = store.delete_session(code) if store is not None else 0
+        return {"deleted_rows": removed}
 
     if (FRONTEND / "index.html").exists():  # Phase 10 interface, served from the same address
         app.mount("/", StaticFiles(directory=FRONTEND, html=True), name="frontend")

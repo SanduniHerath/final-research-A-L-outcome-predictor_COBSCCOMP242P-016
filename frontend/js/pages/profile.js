@@ -143,8 +143,11 @@ export async function render(root) {
   const wire = () => {
     root.querySelectorAll("[data-goto]").forEach((b) => b.addEventListener("click", () => { step = Number(b.dataset.goto); store.setStep(step); draw(); }));
     root.querySelector("#back")?.addEventListener("click", () => { step -= 1; store.setStep(step); draw(); });
-    root.querySelector("#reset").addEventListener("click", () => {
-      if (window.confirm(t("profile.resetConfirm"))) { store.reset(); step = 0; toast(t("profile.deleted")); draw(); }
+    root.querySelector("#reset").addEventListener("click", async () => {
+      if (!window.confirm(t("profile.resetConfirm"))) return;
+      let ok = true;
+      try { await api.forget(); } catch { ok = false; }  // also delete what the server stored
+      store.reset(); step = 0; toast(t(ok ? "profile.deleted" : "profile.deleteFailed")); draw();
     });
     root.querySelector("#finish")?.addEventListener("click", () => {
       const firstMissing = STEPS.findIndex((_, i) => !fieldsOf(i).every(answered));

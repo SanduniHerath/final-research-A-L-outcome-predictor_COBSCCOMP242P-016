@@ -150,7 +150,7 @@ git push origin --all
 
 ## Step 8b: check before committing the user evaluation results
 
-`reports/phase11/sus_results.json` and `reports/phase11/parts_bcd_results.json` contain per-tester scores (T1 to T12). Their source is given as "Final test responses.xlsx". Commit them only if:
+`reports/phase11/sus_results.json` and `reports/phase11/parts_bcd_results.json` contain per-tester scores (T01 to T12). Their source is "Alora - questionnaire for testers (Responses).xlsx". Commit them only if:
 
 - they come from the 12 real participants of the user evaluation (not simulated or edited answers); and
 - they contain no names or other details that could identify a participant (tester codes only).
@@ -169,5 +169,3 @@ If either is not true, skip step 8b. You can add the files to `.gitignore` or de
 **One thing to decide:** `reports/phase03/cleaning_log.csv` lists 53 respondent codes (such as M0198) with what was changed in their rows. They are codes, not names, but the respondents are young.
 - **Option 1 (simplest and safest):** make the GitHub repository private and give your supervisor access.
 - **Option 2:** if the repository must be public, remove the code column from that file before committing.
-#   R o a d m a p   v e r i f i c a t i o n   c o n f i r m e d  
- 

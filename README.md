@@ -59,6 +59,24 @@ npm run e2e                           # a "student" clicks through the real webs
 npm run screenshots                   # screenshots for docs\phase10_screenshots
 ```
 
+## App database
+
+Everything students do in the app is saved in `data/app/alora.db` (SQLite; set in `configs/app.yaml` under `storage`). That covers their answers, every result from the five parts, and each chatbot question and reply. Each browser gets a random visit code. No name, e-mail or IP address is stored. **Delete my answers** in the app removes that browser's rows. Example students are marked with `is_example = 1`.
+
+| Table | One row per |
+|---|---|
+| `sessions` | browser (visit code), first and last visit, language |
+| `profiles` | different set of answers |
+| `results` | result from predict, gap, recommend, explain or chat (JSON) |
+| `chat_messages` | chatbot question and reply |
+
+```powershell
+python -m backend.storage counts      # rows in each table
+python -m backend.storage export      # every table to data\app\export\*.csv (opens in Excel)
+```
+
+The file is under `data/`, so Git never commits it. The tests use a temporary database.
+
 ## Notebooks (thesis appendix)
 
 `notebooks/01`–`06` show the whole pipeline with real outputs:
@@ -118,8 +136,8 @@ tests/             pytest: unit, integration and end-to-end tests
 - **All models are reported, including worse ones.** No result is tuned on the test set.
 - **No official figure is typed in by hand.** Cut-offs are read from the UGC documents supplied by the researcher.
 - **Privacy:**
-  - student answers stay in the browser;
-  - the server stores nothing;
+  - app use is stored in the app database under a random visit code, never with a name, e-mail or IP address;
+  - a student can delete everything stored for their visit code from the app;
   - statistics show groups of 10 or more only;
   - survey data is never committed.
 
@@ -133,5 +151,3 @@ These are documented in the phase documents.
 - **Chatbot test.** The chatbot met 3 of its 4 automated targets (H11): it said "not sure" in 88 % of cases where 90 % was the target. The model is small and can mix up numbers, so named-university questions are answered by an exact lookup.
 - **Translations.** The Sinhala and Tamil texts are first drafts waiting for checks.
 - **User test.** Five testers and one expert give descriptive results only.
-#   P r o j e c t   d o c u m e n t a t i o n   a r c h i t e c t u r e   f i n a l i z e d  
- 

@@ -211,5 +211,3 @@ fs.writeFileSync(OUT, JSON.stringify({ run_at: new Date().toISOString(), base: B
 const failed = results.filter((r) => !r.ok).length;
 console.log(`${results.length - failed} of ${results.length} checks passed`);
 process.exit(failed ? 1 : 0);
-/ /   H e a d l e s s   t i m e o u t   m a r g i n s   a d j u s t e d  
- 
