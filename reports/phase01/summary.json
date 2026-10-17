@@ -1,0 +1,65 @@
+{
+  "pilot": {
+    "n": 13,
+    "reliability": [
+      {
+        "construct": "self_efficacy",
+        "items": 4,
+        "n": 13,
+        "alpha": 0.9463,
+        "ci_low": 0.875,
+        "ci_high": 0.9816,
+        "meets_0.70": true
+      },
+      {
+        "construct": "effort_regulation",
+        "items": 4,
+        "n": 13,
+        "alpha": 0.8168,
+        "ci_low": 0.5735,
+        "ci_high": 0.9374,
+        "meets_0.70": true
+      },
+      {
+        "construct": "interest",
+        "items": 4,
+        "n": 13,
+        "alpha": 0.9485,
+        "ci_low": 0.88,
+        "ci_high": 0.9824,
+        "meets_0.70": true
+      }
+    ]
+  },
+  "main": {
+    "n": 1015,
+    "kmo": 0.9034074102762258,
+    "msa_min": 0.8770437677322986,
+    "bartlett": {
+      "chi2": 9787.790602627338,
+      "df": 66,
+      "p": 0.0
+    },
+    "parallel_suggested_factors": 3,
+    "theory_factors": 3,
+    "factor_of_construct": {
+      "self_efficacy": "F3",
+      "effort_regulation": "F2",
+      "interest": "F1"
+    },
+    "variance_explained_cumulative": 0.7492664157779758,
+    "decisions": {
+      "Keep": 11,
+      "Revise": 1
+    }
+  },
+  "exports": [
+    "spss_data_dictionary.csv",
+    "spss_main.csv",
+    "spss_syntax_main.sps",
+    "smartpls_main.csv",
+    "spss_pilot.csv",
+    "spss_syntax_pilot.sps",
+    "smartpls_pilot.csv"
+  ]
+}
