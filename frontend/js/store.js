@@ -1,4 +1,5 @@
-// The student's answers live ONLY in this browser (localStorage), never on the server.
+// The student's answers are kept in this browser (localStorage) so the form can be continued.
+// The server also saves them, with the results, in the app database (see api.js).
 import { api } from "./api.js";
 
 const KEY = "alora.profile.v1";
