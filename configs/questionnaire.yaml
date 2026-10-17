@@ -1,0 +1,64 @@
+# Phase 1 - questionnaire validation settings.
+# Thresholds were fixed BEFORE running the analysis. Sources are given for each.
+
+likert:
+  scale_min: 1
+  scale_max: 5
+  anchors: {1: Strongly disagree, 5: Strongly agree}
+
+# Construct membership confirmed by the researcher on 2026-10-15.
+constructs:
+  self_efficacy:
+    label: Academic self-efficacy during O/L
+    source: MSLQ self-efficacy for learning and performance (Pintrich et al., 1991), adapted
+    items: [se1, se2, se3, se4]
+  effort_regulation:
+    label: Effort regulation and time management during O/L
+    source: MSLQ effort regulation and time/study environment (Pintrich et al., 1991), adapted
+    items: [er1, er2, er3, er4]
+  interest:
+    label: Interest and value in Science and Mathematics
+    source: Developed for this study (task-value wording follows MSLQ)
+    items: [int1, int2, int3, int4]
+
+# "I often found it hard to stick to a study schedule" is negatively worded.
+reverse_coded: [er4]
+
+# Single-item ratings. They are not scales, so no reliability is computed for them.
+single_item_ratings: [g6_11_perf_rating, extracurricular_rating]
+
+thresholds:
+  cronbach_alpha_min: 0.70        # thesis Ch. 3, reliability and validity; Taber (2018); Hair et al. (2022)
+  composite_reliability_min: 0.70 # Hair et al. (2022)
+  outer_loading_min: 0.70         # thesis Ch. 3 convergent validity; Hair et al. (2022)
+  outer_loading_remove_below: 0.40 # Hair et al. (2022): below 0.40 always remove
+  ave_min: 0.50                   # thesis Ch. 3, reliability and validity; Fornell & Larcker (1981)
+  htmt_max: 0.85                  # thesis Ch. 3, reliability and validity; Henseler, Ringle & Sarstedt (2015)
+  citc_min: 0.30                  # corrected item-total correlation; Nunnally & Bernstein (1994)
+  citc_drop_below: 0.20           # Streiner, Norman & Cairney (2015)
+  alpha_if_deleted_tolerance: 0.01 # deleting the item raises alpha by more than this -> flag
+  kmo_min: 0.60                   # Kaiser (1974): 0.60 "mediocre" is the usual minimum
+  bartlett_p_max: 0.05
+  efa_loading_min: 0.40           # Hair et al. (2019)
+  efa_cross_loading_max: 0.30     # second loading at or above this is a cross-loading
+  efa_cross_loading_gap_min: 0.20 # primary minus secondary loading must be at least this
+  single_category_share_max: 0.50 # more than half of answers in one option -> little information
+
+efa:
+  rotation: oblimin               # constructs are expected to correlate
+  method: principal               # principal axis factoring (SPSS "Principal axis factoring")
+  correlation: spearman           # project rule: Spearman for Likert items
+  parallel_analysis_iterations: 1000
+  parallel_analysis_percentile: 95
+
+feldt_ci_level: 0.95              # confidence interval for Cronbach's alpha (Feldt, 1965)
+
+# Minimum sample for factor analysis, used to decide whether the pilot can be factor-analysed.
+efa_min_cases: 100                # Hair et al. (2019); also at least 5 cases per item
+
+content_validity:
+  relevant_ratings: [3, 4]        # on a 1-4 scale, 3 and 4 count as "relevant/clear/simple"
+  i_cvi_min_up_to_5_experts: 1.00 # Lynn (1986): with 5 or fewer experts all must agree
+  i_cvi_min_6_plus_experts: 0.78  # Lynn (1986); Polit & Beck (2006)
+  s_cvi_ave_min: 0.90             # Polit & Beck (2006)
+  min_recommended_experts: 3      # Lynn (1986)
