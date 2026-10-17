@@ -76,3 +76,10 @@ chatbot:
     This chatbot is a support tool, not a final decision maker. It only knows your results in this
     app. Please talk to your teachers, parents or school career guidance unit before you decide.
   unsure_phrase: "I'm not sure"
+
+storage:
+  # App database: every answer set, result and chatbot message, under a random per-browser visit
+  # code (no names, e-mails or IP addresses). data/** is gitignored, so it is never committed.
+  # Export to CSV: python -m backend.storage export
+  enabled: true
+  path: data/app/alora.db
