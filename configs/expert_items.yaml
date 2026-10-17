@@ -1,0 +1,255 @@
+# Questions shown to the content-validity expert (Phase 1).
+# Generated from the live Google Form, retrieved 2026-10-15. One entry per form question;
+# grid questions (O/L and A/L grades) are one entry each.
+items:
+- 'no': 1
+  section: Screening and consent
+  question_en: Consent Statement
+  question_si: එකඟතා ප්‍රකාශය
+  options: I confirm that I have read and understood the above information.; I voluntarily agree to participate in this study.
+  answer_type: Tick all that apply
+- 'no': 2
+  section: Screening and consent
+  question_en: Are you currently an undergraduate at a Sri Lankan state university, and did you complete your G.C.E. A/L in the Science stream (Biological Science or Physical Science)?
+  question_si: ඔබ දැනට ශ්‍රී ලංකාවේ රාජ්‍ය විශ්වවිද්‍යාලයක උපාධි අපේක්ෂකයෙක්ද, සහ ඔබ විද්‍යා ධාරාවෙන් අ.පො.ස. උසස් පෙළ සම්පූර්ණ කළාද?
+  options: Yes, both are true; No
+  answer_type: Single choice
+- 'no': 3
+  section: Section A - Background
+  question_en: Gender
+  question_si: ස්ත්‍රී පුරුෂ භාවය
+  options: Male; Female; Prefer not to say
+  answer_type: Single choice
+- 'no': 4
+  section: Section A - Background
+  question_en: In which year did you sit the A/L examination that gained you university admission?
+  question_si: ඔබට විශ්වවිද්‍යාල ප්‍රවේශය ලබා දුන් උසස් පෙළ විභාගයේ වර්ෂය කුමක්ද?
+  options: 2018 or earlier; 2019; 2020; 2021; 2022; 2023; 2024; 2025
+  answer_type: Single choice
+- 'no': 5
+  section: Section A - Background
+  question_en: Which attempt was that examination for you?
+  question_si: එය ඔබගේ කීවෙනි උත්සාහයද?
+  options: First attempt; Second attempt; Third attempt
+  answer_type: Single choice
+- 'no': 6
+  section: Section A - Background
+  question_en: What type of school did you attend for O/L?
+  question_si: සාමාන්‍ය පෙළ සඳහා ඔබ ඉගෙනුම ලැබූ පාසලේ වර්ගය කුමක්ද?
+  options: National school; Provincial school; Private or semi-government school; International school; Pirivena; Other
+  answer_type: Single choice
+- 'no': 7
+  section: Section B - School Performance and O/L Results
+  question_en: What was your Grade 5 Scholarship Examination result?
+  question_si: ඔබගේ 5 ශ්‍රේණියේ ශිෂ්‍යත්ව විභාග ප්‍රතිඵලය කුමක්ද?
+  options: Qualified; Did not qualify; Did not sit the examination; Cannot remember
+  answer_type: Single choice
+- 'no': 8
+  section: Section B - School Performance and O/L Results
+  question_en: How would you rate your academic performance during Grades 6 - 11?
+  question_si: 6 - 11 ශ්‍රේණිවලදී ඔබගේ අධ්‍යාපන කාර්ය සාධනය ඔබ තක්සේරු කරන්නේ කෙසේද?
+  options: Scale 1 to 5 (1 = Very Low, 5 = Very High)
+  answer_type: Rating scale
+- 'no': 9
+  section: Section B - School Performance and O/L Results
+  question_en: How often did you receive positions/ranks among the top students in your class?
+  question_si: පන්තියේ ඉහළම සිසුන් අතර ස්ථාන ඔබට කොපමණ වාරයක් ලැබුණාද?
+  options: Never; Rarely; Sometimes; Often; Always
+  answer_type: Single choice
+- 'no': 10
+  section: Section B - School Performance and O/L Results
+  question_en: What grade did you get in each compulsory O/L subject?
+  question_si: එක් එක් අනිවාර්ය සාමාන්‍ය පෙළ විෂයය සඳහා ඔබ ලබාගත් සාමාර්ථය කුමක්ද?
+  options: 'Rows: Religion (Buddhism/Saivanery/Catholicism/Christianity/Islam); Language (Sinhala/Tamil); English Language; Mathematics; History; Science | Grades: A, B, C, S, W'
+  answer_type: Grid
+- 'no': 11
+  section: Section B - School Performance and O/L Results
+  question_en: What grade did you get in each of your three O/L basket (optional) subjects?
+  question_si: ඔබගේ සාමාන්‍ය පෙළ කාණ්ඩ විෂයයන් තුන සඳහා ලබාගත් සාමාර්ථ මොනවාද?
+  options: 'Rows: Category 1 subject (e.g. Commerce, Geography, Civics, a second language); Category 2 subject (e.g. Music, Art, Dancing, Literature, Drama); Category 3 subject (e.g. ICT, Agriculture, Health,
+    Home Economics) | Grades: A, B, C, S, W'
+  answer_type: Grid
+- 'no': 12
+  section: Section B - School Performance and O/L Results
+  question_en: In Grade 11, about how many hours per week did you study on your own, outside school and tuition classes?
+  question_si: 11 ශ්‍රේණියේදී පාසලෙන් සහ අමතර පන්තිවලින් පිටත සතියකට පැය කීයක් පමණ ඔබ තනිවම පාඩම් කළාද?
+  options: Less than 5; 5 - 10; 11 - 20; 21 - 30; More than 30
+  answer_type: Single choice
+- 'no': 13
+  section: Section B - School Performance and O/L Results
+  question_en: For how many O/L subjects did you attend private tuition?
+  question_si: සාමාන්‍ය පෙළ විෂයයන් කීයක් සඳහා ඔබ අමතර පන්තිවලට සහභාගී වූවාද?
+  options: None; 1 - 2; 3 - 4; 5 or more
+  answer_type: Single choice
+- 'no': 14
+  section: Section C - Attitudes and Study Habits During O/L - Confidence in your studies
+  question_en: I was confident I could understand the most difficult material taught in my O/L subjects.
+  question_si: සාමාන්‍ය පෙළ විෂයයන්හි ඉගැන්වූ අපහසුම කොටස් පවා මට තේරුම් ගත හැකි බවට විශ්වාසයක් තිබුණි.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 15
+  section: Section C - Attitudes and Study Habits During O/L - Confidence in your studies
+  question_en: I expected to do well in the O/L examination.
+  question_si: සාමාන්‍ය පෙළ විභාගයෙන් හොඳ ප්‍රතිඵල ලබා ගැනීමට මම බලාපොරොත්තු වුණෙමි.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 16
+  section: Section C - Attitudes and Study Habits During O/L - Confidence in your studies
+  question_en: I was confident I could do an excellent job on school tests and assignments.
+  question_si: පාසල් පරීක්ෂණ සහ පැවරුම් ඉතා හොඳින් කළ හැකි බවට මට විශ්වාසයක් තිබුණි.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 17
+  section: Section C - Attitudes and Study Habits During O/L - Confidence in your studies
+  question_en: I was certain I could master the skills taught in my O/L subjects.
+  question_si: සාමාන්‍ය පෙළ විෂයයන්හි ඉගැන්වූ කුසලතා ප්‍රගුණ කළ හැකි බව මට ස්ථිරව විශ්වාස විය.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 18
+  section: Section C - Attitudes and Study Habits During O/L - Study habits during O/L
+  question_en: I made good use of my study time.
+  question_si: මම මගේ අධ්‍යයන කාලය හොඳින් ප්‍රයෝජනයට ගත්තෙමි.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 19
+  section: Section C - Attitudes and Study Habits During O/L - Study habits during O/L
+  question_en: I kept working on my studies even when the material was dull or uninteresting.
+  question_si: පාඩම් නීරස හෝ උනන්දුවක් නැති වූ විටත් මම දිගටම පාඩම් කළෙමි.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 20
+  section: Section C - Attitudes and Study Habits During O/L - Study habits during O/L
+  question_en: I kept up with my schoolwork and homework every week.
+  question_si: සෑම සතියකම පාසල් වැඩ සහ ගෙදර වැඩ මම නොපිරිහෙලා සම්පූර්ණ කළෙමි.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 21
+  section: Section C - Attitudes and Study Habits During O/L - Study habits during O/L
+  question_en: I often found it hard to stick to a study schedule.
+  question_si: අධ්‍යයන කාලසටහනකට අනුව වැඩ කිරීම මට බොහෝ විට අපහසු විය.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 22
+  section: Section C - Attitudes and Study Habits During O/L - Interest in Science and Mathematics
+  question_en: I was very interested in the content of Science and Mathematics.
+  question_si: විද්‍යාව සහ ගණිතය විෂය කරුණු කෙරෙහි මට විශාල උනන්දුවක් තිබුණි.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 23
+  section: Section C - Attitudes and Study Habits During O/L - Interest in Science and Mathematics
+  question_en: I enjoyed learning Science more than most other subjects.
+  question_si: අනෙක් බොහෝ විෂයයන්ට වඩා විද්‍යාව ඉගෙනීමට මම කැමති වීමි.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 24
+  section: Section C - Attitudes and Study Habits During O/L - Interest in Science and Mathematics
+  question_en: I thought what I learned in Science and Mathematics would be useful for my future.
+  question_si: විද්‍යාව සහ ගණිතයෙන් ඉගෙන ගත් දේ මගේ අනාගතයට ප්‍රයෝජනවත් වනු ඇතැයි මම සිතුවෙමි.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 25
+  section: Section C - Attitudes and Study Habits During O/L - Interest in Science and Mathematics
+  question_en: I explored Science topics beyond what was required at school.
+  question_si: පාසලෙන් අවශ්‍ය වූ ප්‍රමාණයට වඩා විද්‍යා මාතෘකා පිළිබඳව මම සොයා බැලුවෙමි.
+  options: Scale 1 to 5 (1 = Strongly disagree, 5 = Strongly agree)
+  answer_type: Rating scale
+- 'no': 26
+  section: Section D - Goals and Activities
+  question_en: Before starting A/L studies, did you have a clear career goal?
+  question_si: උසස් පෙළ ආරම්භ කිරීමට පෙර ඔබට පැහැදිලි වෘත්තීය ඉලක්කයක් තිබුණාද?
+  options: Yes; No; Not Sure
+  answer_type: Single choice
+- 'no': 27
+  section: Section D - Goals and Activities
+  question_en: What influenced your decision to choose the Science stream?
+  question_si: විද්‍යා ධාරාව තෝරා ගැනීමට ඔබට බලපෑවේ කුමක්ද?
+  options: Personal Interest; Parents; Teachers; Friends; Career Goals; Other (write in)
+  answer_type: Tick all that apply
+- 'no': 28
+  section: Section D - Goals and Activities
+  question_en: When you started A/L, which degree were you aiming for?
+  question_si: උසස් පෙළ ආරම්භ කරන විට ඔබ ඉලක්ක කළ උපාධිය කුමක්ද?
+  options: Medicine; Dental Surgery or Veterinary Science; Engineering; Allied Health Sciences (Nursing, Pharmacy, Physiotherapy, MLS, etc.); Agriculture or Food Science; Biological Science; Physical Science;
+    Computing, IT, AI or Data Science; Other; I had not decided
+  answer_type: Drop-down
+- 'no': 29
+  section: Section D - Goals and Activities
+  question_en: Which of these did you take part in at school? (Check all that apply)
+  question_si: පාසලේදී ඔබ සහභාගී වූයේ මේවායින් මොනවාටද? (අදාළ සියල්ල තෝරන්න)
+  options: Sports; Clubs or societies; Academic competitions (Science, Mathematics, ICT, Olympiads); Other competitions (debating, arts, etc.); None
+  answer_type: Tick all that apply
+- 'no': 30
+  section: Section D - Goals and Activities
+  question_en: Did you hold any leadership positions? (Check all that apply)
+  question_si: ඔබ නායකත්ව තනතුරු දැරුවාද? (අදාළ සියල්ල තෝරන්න)
+  options: Prefect; Head Prefect; Club Leader; Society Leader; Sport Leader; Team Captain; None
+  answer_type: Tick all that apply
+- 'no': 31
+  section: Section D - Goals and Activities
+  question_en: How would you rate your involvement in extracurricular activities?
+  question_si: විෂය බාහිර ක්‍රියාකාරකම්වලට ඔබගේ සහභාගීත්වය ඔබ තක්සේරු කරන්නේ කෙසේද?
+  options: Scale 1 to 5 (1 = Very Low, 5 = Very High)
+  answer_type: Rating scale
+- 'no': 32
+  section: Section E - A/L Exam Preparation
+  question_en: How many hours per week did you study during A/L preparation?
+  question_si: උසස් පෙළ සූදානමේදී සතියකට පැය කීයක් ඔබ පාඩම් කළාද?
+  options: Less than 10; 10 - 20; 21 - 30; 31 - 40; More than 40
+  answer_type: Single choice
+- 'no': 33
+  section: Section E - A/L Exam Preparation
+  question_en: How frequently did you practice past papers?
+  question_si: ඔබ පසුගිය විභාග ප්‍රශ්න පත්‍ර කොපමණ වාරයක් පුහුණු වූවාද?
+  options: Never; Monthly; Weekly; Several times per week
+  answer_type: Single choice
+- 'no': 34
+  section: Section E - A/L Exam Preparation
+  question_en: How frequently did you revise previously learned content?
+  question_si: කලින් ඉගෙන ගත් කරුණු ඔබ කොපමණ වාරයක් නැවත අධ්‍යයනය කළාද?
+  options: Never; Rarely; Sometimes; Often; Very Often
+  answer_type: Single choice
+- 'no': 35
+  section: Section F - A/L Outcomes and University Admission
+  question_en: What were your final A/L grades?
+  question_si: ඔබගේ අවසන් උසස් පෙළ සාමාර්ථ මොනවාද?
+  options: 'Rows: Biology; Chemistry; Physics; Combined Mathematics; ICT; Agricultural Science | Grades: A, B, C, S, F, Not Taken'
+  answer_type: Grid
+- 'no': 36
+  section: Section F - A/L Outcomes and University Admission
+  question_en: District in which you sat for your A/L Examination?
+  question_si: ඔබ උසස් පෙළ විභාගයට පෙනී සිටි දිස්ත්‍රික්කය කුමක්ද?
+  options: Ampara; Anuradhapura; Badulla; Batticaloa; Colombo; Galle; Gampaha; Hambantota; Jaffna; Kalutara; Kandy; Kegalle; Kilinochchi; Kurunegala; Mannar; Matale; Matara; Monaragala; Mullaitivu; Nuwara
+    Eliya; Polonnaruwa; Puttalam; Ratnapura; Trincomalee; Vavuniya
+  answer_type: Drop-down
+- 'no': 37
+  section: Section F - A/L Outcomes and University Admission
+  question_en: What was your final Z-score?
+  question_si: ඔබගේ අවසන් Z-අගය කුමක්ද?
+  options: Short text answer
+  answer_type: Short text
+- 'no': 38
+  section: Section F - A/L Outcomes and University Admission
+  question_en: What is your university?
+  question_si: ඔබගේ විශ්වවිද්‍යාලය කුමක්ද?
+  options: University of Colombo; University of Peradeniya; University of Sri Jayewardenepura; University of Kelaniya; University of Moratuwa; University of Jaffna; University of Ruhuna; Eastern University;
+    Trincomalee Campus, Eastern University; South Eastern University; Rajarata University; Sabaragamuwa University; Wayamba University; Uva Wellassa University; University of Vavuniya; Gampaha Wickramarachchi
+    University of Indigenous Medicine; Other
+  answer_type: Drop-down
+- 'no': 39
+  section: Section F - A/L Outcomes and University Admission
+  question_en: What is your current degree program?
+  question_si: ඔබගේ වර්තමාන උපාධි පාඨමාලාව කුමක්ද?
+  options: Medicine; Dental Surgery; Veterinary Science; Agricultural Technology & Management; Agriculture; Agricultural Resource Management & Technology; Agribusiness Management; Green Technology; Food
+    Science & Nutrition; Food Science & Technology; Ayurveda Medicine & Surgery; Unani Medicine & Surgery; Siddha Medicine & Surgery; Biological Science; Applied Sciences (Biological Science); Health Promotion;
+    Nursing; Pharmacy; Medical Laboratory Sciences; Radiography; Physiotherapy; Biochemistry & Molecular Biology; Fisheries & Marine Sciences; Environmental Conservation & Management; Animal Science & Fisheries;
+    Food Production & Technology Management; Animal Production & Food Technology; Export Agriculture; Aquatic Resources Technology; Occupational Therapy; Optometry; Applied Chemistry; Aquatic Bioresources;
+    Medical Imaging Technology; Speech & Hearing Sciences; Engineering; Engineering (EM) - Earth Resources Engineering; Engineering (TM) - Textile & Apparel Engineering; Transport Management & Logistics
+    Engineering; Physical Science; Computer Science; Applied Sciences (Physical Science); Industrial Statistics & Mathematical Finance; Statistics & Operations Research; Physical Science - ICT; Artificial
+    Intelligence; Electronics & Computer Science; Data Science; Electronic & Intelligent Systems Engineering; Other
+  answer_type: Drop-down
+- 'no': 40
+  section: Section F - A/L Outcomes and University Admission
+  question_en: Was your current degree program your first preference?
+  question_si: ඔබගේ වර්තමාන උපාධි පාඨමාලාව ඔබගේ පළමු මනාපයද?
+  options: Yes; No
+  answer_type: Single choice
