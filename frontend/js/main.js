@@ -12,17 +12,16 @@ import * as home from "./pages/home.js";
 import * as prediction from "./pages/prediction.js";
 import * as profile from "./pages/profile.js";
 import * as plan from "./pages/plan.js";
-import * as stats from "./pages/stats.js";
 import * as target from "./pages/target.js";
 import * as why from "./pages/why.js";
 
-const PAGES = { home, profile, prediction, target, why, plan, chat, stats, about };
+const PAGES = { home, profile, prediction, target, why, plan, chat, about };
 // Navigation grouped into four short groups (Hick's law, Miller's law, Gestalt proximity).
 const NAV = [
   ["start", [["home", "home"], ["profile", "user"]]],
   ["results", [["prediction", "chart"], ["target", "target"], ["why", "bulb"]]],
   ["plan", [["plan", "list"], ["chat", "chat"]]],
-  ["more", [["stats", "stats"], ["about", "info"]]],
+  ["more", [["about", "info"]]],
 ];
 const NEEDS_PROFILE = new Set(["prediction", "target", "why", "plan", "chat"]);
 

@@ -58,7 +58,6 @@ function cached(key, make) {
 export const api = {
   questions: () => cached("questions", () => request("/api/questions")),
   examples: () => cached("examples", () => request("/api/examples")),
-  stats: () => cached("stats", () => request("/api/stats")),
   predict: (profile) => cached("predict" + JSON.stringify(profile), () => request("/api/predict", { profile })),
   gap: (profile) => cached("gap" + JSON.stringify(profile), () => request("/api/gap", { profile })),
   recommend: (profile) => cached("rec" + JSON.stringify(profile), () => request("/api/recommend", { profile })),
@@ -73,5 +72,5 @@ export const api = {
       memorySession = null;
     }
   },
-  clear: () => { for (const key of [...cache.keys()]) if (!["questions", "examples", "stats"].includes(key)) cache.delete(key); },
+  clear: () => { for (const key of [...cache.keys()]) if (!["questions", "examples"].includes(key)) cache.delete(key); },
 };

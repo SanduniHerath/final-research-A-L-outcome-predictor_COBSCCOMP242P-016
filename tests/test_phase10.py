@@ -48,11 +48,13 @@ def test_interface_is_served(client: TestClient) -> None:
         assert client.get(path).status_code == 200, path
 
 
-def test_examples_and_stats_endpoints(client: TestClient) -> None:
+def test_examples_endpoint(client: TestClient) -> None:
     assert set(client.get("/api/examples").json()) == {"strong", "average", "weak"}
-    stats = client.get("/api/stats").json()
-    assert {"dataset", "questionnaire", "model", "hypotheses", "parts"} <= set(stats)
-    assert [h["id"] for h in stats["hypotheses"]] == [f"H{i}" for i in range(1, 13)]
+
+
+def test_statistics_page_is_removed(client: TestClient) -> None:
+    assert client.get("/api/stats").status_code == 404
+    assert client.get("/js/pages/stats.js").status_code == 404
 
 
 def test_chatbot_answers_before_a_profile_exists(client: TestClient) -> None:

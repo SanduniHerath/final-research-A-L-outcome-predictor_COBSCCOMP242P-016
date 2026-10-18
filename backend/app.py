@@ -35,7 +35,6 @@ from fastapi.staticfiles import StaticFiles
 from backend.schemas import ChatRequest, ExplainRequest, GeneralChatRequest, Profile, ProfileRequest
 from backend.storage import AppStore, clean_session
 from src.chatbot.llm import OllamaModel
-from src.evaluation.stats_api import project_statistics
 from src.models import student
 from src.system import DecisionSupportSystem
 from src.utils.config import load_config, resolve_path
@@ -124,11 +123,6 @@ def create_app(
     def notice() -> dict[str, str]:
         """The support-tool notice the interface must always show next to the chatbot."""
         return {"notice": " ".join(load_config("app")["chatbot"]["notice"].split())}
-
-    @app.get("/api/stats")
-    def stats() -> dict[str, Any]:
-        """Project, dataset and evaluation statistics (aggregates only) for the Statistics page."""
-        return project_statistics()
 
     @app.get("/api/examples")
     def examples() -> dict[str, Any]:
