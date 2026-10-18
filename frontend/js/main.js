@@ -1,5 +1,6 @@
 // App start-up: navigation, language, routing. One page per function (Phase 10 brief).
 import { api } from "./api.js";
+import { setupChatbot, updateChatbot } from "./chatbot.js";
 import { applyStatic, getLang, setLang, t } from "./i18n.js";
 import { fillIcons, icon } from "./icons.js";
 import { store } from "./store.js";
@@ -11,17 +12,16 @@ import * as home from "./pages/home.js";
 import * as prediction from "./pages/prediction.js";
 import * as profile from "./pages/profile.js";
 import * as plan from "./pages/plan.js";
-import * as stats from "./pages/stats.js";
 import * as target from "./pages/target.js";
 import * as why from "./pages/why.js";
 
-const PAGES = { home, profile, prediction, target, why, plan, chat, stats, about };
+const PAGES = { home, profile, prediction, target, why, plan, chat, about };
 // Navigation grouped into four short groups (Hick's law, Miller's law, Gestalt proximity).
 const NAV = [
   ["start", [["home", "home"], ["profile", "user"]]],
   ["results", [["prediction", "chart"], ["target", "target"], ["why", "bulb"]]],
   ["plan", [["plan", "list"], ["chat", "chat"]]],
-  ["more", [["stats", "stats"], ["about", "info"]]],
+  ["more", [["about", "info"]]],
 ];
 const NEEDS_PROFILE = new Set(["prediction", "target", "why", "plan", "chat"]);
 
@@ -54,6 +54,7 @@ async function route() {
   const main = document.getElementById("main");
   renderNav(name);
   closeMenu();
+  updateChatbot(name);
   document.title = `${t(`nav.${name}`)} – ${t("app.name")}`;
   main.innerHTML = "";
   try {
@@ -135,6 +136,7 @@ async function start() {
     if (e.target.closest("[data-use-mine]")) { store.reset(); }
   });
   await loadDemoFromUrl().catch(() => {});
+  setupChatbot();
   window.addEventListener("hashchange", route);
   route();
 }

@@ -20,7 +20,7 @@ import time
 from dataclasses import dataclass
 from typing import Any
 
-from src.chatbot.facts import build_fact_sheet
+from src.chatbot.facts import build_fact_sheet, general_fact_sheet
 from src.chatbot.guard import (
     OUT_OF_SCOPE_PATTERN,
     OUT_OF_SCOPE_TOKEN,
@@ -32,7 +32,7 @@ from src.chatbot.guard import (
     unsupported_numbers,
 )
 from src.chatbot.llm import ChatModel, LLMUnavailableError, OllamaModel
-from src.chatbot.lookup import university_answer
+from src.chatbot.lookup import cutoff_answer, district_in, university_answer
 from src.utils.config import load_config
 
 SYSTEM_PROMPT = """You are a friendly study-support assistant in an app for Sri Lankan students who \
@@ -88,6 +88,7 @@ class Chatbot:
             model = OllamaModel(self.cfg["model"], **common)
             fallback = OllamaModel(self.cfg["fallback_model"], **common)
         self.model, self.fallback = model, fallback
+        self.cutoffs = None  # the official UGC table, set by the system for exact cut-off answers
 
     def _system(self, facts: str) -> str:
         return SYSTEM_PROMPT.format(
@@ -107,9 +108,16 @@ class Chatbot:
             return self.fallback.chat(messages), self.fallback.name
 
     def reply(
-        self, message: str, results: dict[str, Any], history: list[dict[str, str]] | None = None
+        self,
+        message: str,
+        results: dict[str, Any] | None,
+        history: list[dict[str, str]] | None = None,
     ) -> ChatReply:
-        """Answer one message about the student's results."""
+        """Answer one message about the student's results.
+
+        ``results`` is None when the student has not filled in their profile yet: the chatbot then
+        answers general questions about the app from ``general_fact_sheet`` (same guard and checks).
+        """
         start = time.perf_counter()
         notice = " ".join(self.cfg["notice"].split())
 
@@ -121,11 +129,18 @@ class Chatbot:
         topic = topic_of(message)
         if topic != "in_scope":
             return done(REPLIES[topic], "guard", topic)
-        exact = university_answer(message, results)
+        exact = university_answer(message, results) if results else None
+        if not exact and self.cutoffs is not None:  # a named course and university, any district
+            home = ((results or {}).get("gap") or {}).get("district")
+            exact = cutoff_answer(message, self.cutoffs, home)
+            asked = [t["content"] for t in (history or []) if t.get("role") == "user"]
+            if not exact and asked and district_in(message, self.cutoffs):
+                # "I am from Kandy district" after a cut-off question: answer that question for the district
+                exact = cutoff_answer(f"{asked[-1]} {message}", self.cutoffs, home)
         if exact:  # questions about a named university are answered from the cut-off table
             return done(exact, "university_lookup", topic)
 
-        facts = build_fact_sheet(results)
+        facts = build_fact_sheet(results) if results else general_fact_sheet()
         turns = (history or [])[-2 * self.cfg["history_turns"] :]
         messages = [{"role": "system", "content": self._system(facts)}, *turns,
                     {"role": "user", "content": message}]  # fmt: skip

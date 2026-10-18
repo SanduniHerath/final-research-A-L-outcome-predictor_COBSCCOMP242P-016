@@ -38,6 +38,12 @@ const browser = await puppeteer.launch({ executablePath: CHROME, headless: true 
 const page = await browser.newPage();
 page.on("pageerror", (e) => errors.push(e.message));
 page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
+// Like a student, scroll a control to the middle of the screen before clicking it, so the
+// floating chatbot button in the bottom-right corner never sits on top of it.
+const click = async (selector) => {
+  await page.$eval(selector, (e) => e.scrollIntoView({ block: "center", inline: "center" }));
+  await page.click(selector);
+};
 await page.setViewport({ width: 1280, height: 860 });
 await page.goto(BASE, { waitUntil: "networkidle0" });
 await page.evaluate(() => { localStorage.clear(); sessionStorage.clear(); });
@@ -58,7 +64,7 @@ await check("Results pages are locked before answering", async () => {
 await check("Next without answers shows friendly errors", async () => {
   await page.goto(`${BASE}#/profile`, { waitUntil: "networkidle0" });
   await page.waitForSelector(".question");
-  await page.click('button[type="submit"]');
+  await click('button[type="submit"]');
   await wait(200);
   const shown = await page.$$eval(".q-error", (els) => els.filter((e) => !e.hidden).length);
   if (shown < 3) throw new Error(`only ${shown} error messages`);
@@ -72,9 +78,9 @@ await check("A student can answer all 30 questions step by step", async () => {
     for (const name of names) {
       const value = ANSWERS[name];
       if (name === "al_district") { await page.select("#al_district", value); continue; }
-      for (const v of Array.isArray(value) ? value : [value]) await page.click(`label[for="${idFor(name, v)}"]`);
+      for (const v of Array.isArray(value) ? value : [value]) await click(`label[for="${idFor(name, v)}"]`);
     }
-    await page.click('button[type="submit"]');
+    await click('button[type="submit"]');
     await wait(150);
   }
   await page.waitForSelector(".review-list");
@@ -85,7 +91,7 @@ await check("A student can answer all 30 questions step by step", async () => {
 
 await check("See my results opens the prediction (answers match the example student)", async () => {
   const t0 = Date.now();
-  await page.click("#finish");
+  await click("#finish");
   await page.waitForSelector(".big-number", { timeout: 30000 });
   const z = await page.$eval(".big-number", (e) => e.textContent.trim());
   const api = await page.evaluate(async () => (await (await fetch("/api/examples")).json()).average);
@@ -113,7 +119,7 @@ await check("Why page shows the question groups", async () => {
 await check("Plan ticks are remembered after reloading", async () => {
   await page.goto(`${BASE}#/plan`, { waitUntil: "networkidle0" });
   await page.waitForSelector("[data-done]", { timeout: 30000 });
-  await page.click("[data-done]");
+  await click("[data-done]");
   await page.reload({ waitUntil: "networkidle0" });
   await page.waitForSelector("[data-done]", { timeout: 30000 });
   const ticked = await page.$eval("[data-done]", (e) => e.checked);
@@ -136,10 +142,10 @@ await check("Chatbot notice is visible and a university question gets an exact a
 await check("Language switch changes every label (Sinhala, Tamil, back to English)", async () => {
   await page.goto(`${BASE}#/prediction`, { waitUntil: "networkidle0" });
   const read = async () => page.$eval("h1", (e) => e.textContent);
-  await page.click('[data-lang="si"]'); await page.waitForSelector(".big-number"); const si = await read();
+  await click('[data-lang="si"]'); await page.waitForSelector(".big-number"); const si = await read();
   const lang = await page.evaluate(() => document.documentElement.lang);
-  await page.click('[data-lang="ta"]'); await page.waitForSelector(".big-number"); const ta = await read();
-  await page.click('[data-lang="en"]'); await page.waitForSelector(".big-number"); const en = await read();
+  await click('[data-lang="ta"]'); await page.waitForSelector(".big-number"); const ta = await read();
+  await click('[data-lang="en"]'); await page.waitForSelector(".big-number"); const en = await read();
   if (lang !== "si" || si === en || ta === en) throw new Error(`${si} / ${ta} / ${en}`);
   return `${si} / ${ta} / ${en}`;
 });
@@ -156,13 +162,13 @@ await check("Dark mode: follows the device, the switch changes the colours and i
   await wait(200);
   const followed = await theme();
   const lightBg = await bg();
-  await page.click("#theme-btn"); await wait(400);
+  await click("#theme-btn"); await wait(400);
   const darkBg = await bg();
   const pressed = await page.$eval("#theme-btn", (e) => e.getAttribute("aria-pressed"));
   await page.goto(`${BASE}?r=${Date.now()}#/target`, { waitUntil: "networkidle0" });
   await page.waitForSelector(".page h1");
   const kept = await theme();
-  await page.click("#theme-btn"); await wait(200);
+  await click("#theme-btn"); await wait(200);
   const back = await theme();
   if (device !== "dark" || followed !== "light" || lightBg === darkBg || pressed !== "true" || kept !== "dark" || back !== "light") {
     throw new Error(`device ${device}, followed ${followed}, ${lightBg} -> ${darkBg}, pressed ${pressed}, kept ${kept}, back ${back}`);
@@ -179,7 +185,7 @@ await check("Keyboard: the first Tab reaches 'Skip to main content'", async () =
 await check("Phone: the menu opens and closes", async () => {
   await page.setViewport({ width: 390, height: 844, isMobile: true, hasTouch: true });
   await page.goto(`${BASE}#/plan`, { waitUntil: "networkidle0" });
-  await page.click("#menu-btn");
+  await click("#menu-btn");
   await wait(300);
   const open = await page.$eval("#sidenav", (e) => e.classList.contains("open"));
   await page.keyboard.press("Escape");
@@ -195,7 +201,7 @@ await check("Delete my answers removes everything and locks the results again", 
   try { await page.waitForSelector("#delete", { timeout: 5000 }); }
   catch { throw new Error("About page shows: " + (await page.evaluate(() => location.href + " | " + document.querySelector("main").textContent.slice(0, 120)))); }
   page.once("dialog", (d) => d.accept());
-  await page.click("#delete");
+  await click("#delete");
   await wait(300);
   const stored = await page.evaluate(() => JSON.parse(localStorage.getItem("alora.profile.v1")).answers);
   await page.goto(`${BASE}#/target`, { waitUntil: "networkidle0" });

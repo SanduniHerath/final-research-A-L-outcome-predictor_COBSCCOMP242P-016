@@ -68,3 +68,10 @@ class ChatRequest(ProfileRequest):
 
     message: str = Field(min_length=1, max_length=500)
     history: list[ChatTurn] = Field(default_factory=list, max_length=20)
+
+
+class GeneralChatRequest(BaseModel):
+    """A chatbot question before the student has filled in a profile (questions about the app)."""
+
+    message: str = Field(min_length=1, max_length=500)
+    history: list[ChatTurn] = Field(default_factory=list, max_length=20)

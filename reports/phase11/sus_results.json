@@ -1,148 +1,148 @@
 {
-  "source": "Final test responses.xlsx",
+  "source": "Alora - questionnaire for testers (Responses).xlsx",
   "testers": 12,
+  "collected": "2026-10-15 to 2026-10-17",
   "per_tester": [
     {
-      "tester": "T1",
-      "language": "Sinhala",
-      "sus": 72.5,
-      "grade": "C+",
-      "adjective": "Good"
+      "tester": "T01",
+      "language": "English",
+      "sus": 92.5,
+      "grade": "A+",
+      "adjective": "Excellent"
     },
     {
-      "tester": "T2",
+      "tester": "T02",
       "language": "English",
       "sus": 77.5,
       "grade": "B+",
       "adjective": "Good"
     },
     {
-      "tester": "T3",
-      "language": "English",
-      "sus": 75.0,
-      "grade": "B",
-      "adjective": "Good"
-    },
-    {
-      "tester": "T4",
-      "language": "Sinhala",
-      "sus": 65.0,
-      "grade": "C",
-      "adjective": "OK"
-    },
-    {
-      "tester": "T5",
+      "tester": "T03",
       "language": "English",
       "sus": 77.5,
       "grade": "B+",
       "adjective": "Good"
     },
     {
-      "tester": "T6",
+      "tester": "T04",
       "language": "Sinhala",
-      "sus": 72.5,
-      "grade": "C+",
+      "sus": 80.0,
+      "grade": "A-",
       "adjective": "Good"
     },
     {
-      "tester": "T7",
+      "tester": "T05",
       "language": "Sinhala",
-      "sus": 52.5,
-      "grade": "D",
-      "adjective": "OK"
+      "sus": 80.0,
+      "grade": "A-",
+      "adjective": "Good"
     },
     {
-      "tester": "T8",
+      "tester": "T06",
+      "language": "Sinhala",
+      "sus": 82.5,
+      "grade": "A",
+      "adjective": "Good"
+    },
+    {
+      "tester": "T07",
       "language": "English",
       "sus": 85.0,
       "grade": "A+",
       "adjective": "Good"
     },
     {
-      "tester": "T9",
+      "tester": "T08",
+      "language": "Sinhala",
+      "sus": 77.5,
+      "grade": "B+",
+      "adjective": "Good"
+    },
+    {
+      "tester": "T09",
       "language": "English",
-      "sus": 75.0,
-      "grade": "B",
+      "sus": 77.5,
+      "grade": "B+",
       "adjective": "Good"
     },
     {
       "tester": "T10",
       "language": "Sinhala",
-      "sus": 57.5,
-      "grade": "D",
+      "sus": 65.0,
+      "grade": "C",
       "adjective": "OK"
     },
     {
       "tester": "T11",
       "language": "English",
-      "sus": 57.5,
-      "grade": "D",
-      "adjective": "OK"
+      "sus": 80.0,
+      "grade": "A-",
+      "adjective": "Good"
     },
     {
       "tester": "T12",
       "language": "Sinhala",
-      "sus": 55.0,
-      "grade": "D",
-      "adjective": "OK"
+      "sus": 80.0,
+      "grade": "A-",
+      "adjective": "Good"
     }
   ],
-  "mean": 68.5,
-  "sd": 10.6,
-  "median": 72.5,
-  "min": 52.5,
-  "max": 85.0,
+  "mean": 79.6,
+  "sd": 6.3,
+  "median": 80.0,
+  "min": 65.0,
+  "max": 92.5,
   "ci95": [
-    61.8,
-    75.3
+    75.6,
+    83.6
   ],
-  "grade_of_mean": "C",
-  "adjective_of_mean": "OK",
+  "grade_of_mean": "A-",
+  "adjective_of_mean": "Good",
   "target": 68,
   "verdict": "met",
   "one_sample_t_vs_68": {
-    "t": 0.18,
-    "p_two_sided": 0.863
+    "t": 6.38,
+    "p_two_sided": 0.0001
   },
-  "at_or_above_68": 7,
+  "at_or_above_68": 11,
   "item_means": {
-    "a1": 3.5,
-    "a2": 2.58,
-    "a3": 3.75,
-    "a4": 2.08,
-    "a5": 4.0,
-    "a6": 2.0,
-    "a7": 3.5,
-    "a8": 2.08,
-    "a9": 3.67,
-    "a10": 2.25
+    "a1": 4.17,
+    "a2": 1.42,
+    "a3": 4.33,
+    "a4": 2.0,
+    "a5": 4.08,
+    "a6": 2.17,
+    "a7": 4.33,
+    "a8": 1.75,
+    "a9": 4.0,
+    "a10": 1.75
   },
   "item_contribution_means_0to4": {
-    "a1": 2.5,
-    "a2": 2.42,
-    "a3": 2.75,
-    "a4": 2.92,
-    "a5": 3.0,
-    "a6": 3.0,
-    "a7": 2.5,
-    "a8": 2.92,
-    "a9": 2.67,
-    "a10": 2.75
+    "a1": 3.17,
+    "a2": 3.58,
+    "a3": 3.33,
+    "a4": 3.0,
+    "a5": 3.08,
+    "a6": 2.83,
+    "a7": 3.33,
+    "a8": 3.25,
+    "a9": 3.0,
+    "a10": 3.25
   },
   "subscales_lewis_sauro_2009": {
-    "usable_mean": 68.0,
-    "learnable_mean": 70.8
+    "usable_mean": 79.9,
+    "learnable_mean": 78.1
   },
   "by_language": {
-    "Sinhala": {
-      "n": 6,
-      "mean": 62.5
-    },
     "English": {
       "n": 6,
-      "mean": 74.6
+      "mean": 81.7
+    },
+    "Sinhala": {
+      "n": 6,
+      "mean": 77.5
     }
   },
-  "cronbach_alpha": 0.75,
-  "data_check_note": "Scored as supplied"
+  "cronbach_alpha": 0.11
 }
