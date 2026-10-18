@@ -1,137 +1,263 @@
 {
-  "source": "Final test responses.xlsx (supplied by the researcher)",
+  "source": "Alora - questionnaire for testers (Responses).xlsx",
   "H10_comprehension": {
     "scored_questions": "B1,B2,B4-B8 (B3 needs the researcher's check against each tester's screen; not scored)",
-    "share_correct": 0.976,
+    "correct": 68,
+    "answers": 84,
+    "share_correct": 0.81,
     "per_question": {
       "b1": 1.0,
-      "b2": 1.0,
-      "b4": 1.0,
+      "b2": 0.75,
+      "b4": 0.333,
       "b5": 0.917,
-      "b6": 1.0,
+      "b6": 0.833,
       "b7": 0.917,
-      "b8": 1.0
+      "b8": 0.917
     },
     "per_tester": {
-      "T1": 0.86,
-      "T2": 1.0,
-      "T3": 1.0,
-      "T4": 0.86,
-      "T5": 1.0,
-      "T6": 1.0,
-      "T7": 1.0,
-      "T8": 1.0,
-      "T9": 1.0,
-      "T10": 1.0,
-      "T11": 1.0,
+      "T01": 0.71,
+      "T02": 0.86,
+      "T03": 0.71,
+      "T04": 0.71,
+      "T05": 0.86,
+      "T06": 0.86,
+      "T07": 0.86,
+      "T08": 0.86,
+      "T09": 0.86,
+      "T10": 0.71,
+      "T11": 0.71,
       "T12": 1.0
     },
     "wrong_answers": {
+      "b2": [
+        [
+          "T02",
+          "b"
+        ],
+        [
+          "T03",
+          "a"
+        ],
+        [
+          "T05",
+          "a"
+        ]
+      ],
+      "b4": [
+        [
+          "T01",
+          "a"
+        ],
+        [
+          "T04",
+          "a"
+        ],
+        [
+          "T06",
+          "a"
+        ],
+        [
+          "T07",
+          "a"
+        ],
+        [
+          "T08",
+          "a"
+        ],
+        [
+          "T09",
+          "a"
+        ],
+        [
+          "T10",
+          "a"
+        ],
+        [
+          "T11",
+          "a"
+        ]
+      ],
       "b5": [
         [
-          "T4",
+          "T10",
           "a"
+        ]
+      ],
+      "b6": [
+        [
+          "T04",
+          "b"
+        ],
+        [
+          "T11",
+          "c"
         ]
       ],
       "b7": [
         [
-          "T1",
+          "T03",
           "c"
+        ]
+      ],
+      "b8": [
+        [
+          "T01",
+          "b"
         ]
       ]
     },
     "b3_answers": {
-      "Study habits": 4,
-      "O/L results": 3,
-      "Hours of study per week": 2,
-      "A/L subject choice": 2,
-      "My study habits": 1
+      "My O/L results": 9,
+      "I think it is my goals towards science": 1,
+      "my AL subject choice": 1,
+      "al subjects": 1
     },
     "target": 0.7,
     "verdict": "met"
   },
   "H9_plans": {
     "close_the_gap": {
-      "ratings": 12,
-      "median_useful": 3.5,
-      "median_clear": 4.0,
-      "median_would_try": 3.0,
+      "ratings": 13,
+      "median_useful": 5.0,
+      "median_clear": 5.0,
+      "median_would_try": 4.0,
       "median_age_ok": 4.0
     },
     "strengthen": {
-      "ratings": 12,
-      "median_useful": 3.0,
+      "ratings": 11,
+      "median_useful": 4.0,
       "median_clear": 4.0,
-      "median_would_try": 3.0,
-      "median_age_ok": 3.5
+      "median_would_try": 4.0,
+      "median_age_ok": 5.0
     },
     "own_plan_medians": {
-      "own_c1": 3.0,
-      "own_c2": 3.5,
-      "own_c3": 3.0,
-      "own_c4": 3.0
+      "own_c1": 4.5,
+      "own_c2": 4.0,
+      "own_c3": 4.0,
+      "own_c4": 4.5
     },
     "example_plan_medians": {
-      "ex_c1": 3.0,
+      "ex_c1": 4.5,
       "ex_c2": 4.0,
-      "ex_c3": 3.5,
-      "ex_c4": 4.0
+      "ex_c3": 4.0,
+      "ex_c4": 4.5
     },
     "all_ratings_means": {
-      "c1": 3.46,
-      "c2": 3.83,
-      "c3": 3.5,
-      "c4": 3.79
+      "c1": 4.46,
+      "c2": 4.38,
+      "c3": 4.08,
+      "c4": 4.38
     },
     "target_median_usefulness": 4,
-    "verdict": "not met (close the gap 3.5, stay on track 3.0)"
+    "verdict": "met"
   },
   "chatbot": {
-    "d1_clear_median": 3.5,
-    "d1_mean": 3.67,
-    "d2_own_results_median": 4.0,
-    "d2_mean": 3.92,
-    "d3_noticed_yes": 9,
+    "d1_clear_median": 4.0,
+    "d1_mean": 4.25,
+    "d2_own_results_median": 5.0,
+    "d2_mean": 4.67,
+    "d3_noticed_yes": 10,
     "target_clarity_median": 4,
-    "verdict": "not met (3.5)"
+    "verdict": "met"
   },
   "language": {
     "easy_to_understand": {
-      "Yes": 10,
-      "Partly": 2
+      "Yes": 8,
+      "Partly": 4
     },
     "would_use": {
-      "Sinhala": 5,
-      "Tamil": 4,
-      "English": 3
+      "English": 6,
+      "Sinhala": 6
+    },
+    "used_in_app": {
+      "English": 6,
+      "Sinhala": 6
     }
   },
   "open_text": {
     "E1_liked": {
-      "The chatbot gave quick answers in plain language.": 6,
-      "Comparing my plan with the example student was helpful.": 2,
-      "Seeing which habits I can still change was motivating.": 1,
-      "I liked how the app explained why my result looked that way.": 1,
-      "It felt like a tool made for students like me.": 1,
-      "The app was fast and simple to open on my phone.": 1
+      "T01": "Its simplicity",
+      "T02": "easy to understand the results",
+      "T03": "the way it inteprets the data",
+      "T04": "easy to understand",
+      "T05": "help to achieve targets",
+      "T06": "personalized study plan with clear steps",
+      "T07": "simplicity",
+      "T08": "no guid want when use the app",
+      "T09": "very easy to use",
+      "T10": "available in sinhala",
+      "T11": "simple",
+      "T12": "can get clear study plan based on my profile"
     },
     "E2_confusing": {
-      "The typical student idea needed a second look.": 4,
-      "Nothing was hard.": 2,
-      "The meaning of the blue bars took a moment to understand.": 2,
-      "All fine.": 1,
-      "I was unsure how the chatbot used my results at first.": 1,
-      "A few words on the results page were unfamiliar.": 1,
-      "Nothing confusing.": 1
+      "T01": "get the exact desired university",
+      "T02": "chat bot is in the last phase",
+      "T03": "No",
+      "T04": "some why this result reasons cannot click in a first sight",
+      "T05": "too much steps",
+      "T06": "some reasons are difficult to understand",
+      "T07": "no any confusion",
+      "T08": "no",
+      "T09": "too much steps to follow",
+      "T10": "couldnt get the idea of what if your habits get stronger part",
+      "T11": "nothing",
+      "T12": "no"
     },
     "E3_change": {
-      "Offer a lighter theme with bigger text.": 4,
-      "Show more example students from different streams.": 2,
-      "Add a progress tracker for each week.": 2,
-      "Include a section for time management tips.": 2,
-      "Send reminders for the study plan steps.": 1,
-      "Add a short guide for first-time users.": 1
+      "T01": "reduce the no of inputs",
+      "T02": "nothing",
+      "T03": "more charts",
+      "T04": "nothing",
+      "T05": "reduce the steps",
+      "T06": "nothing",
+      "T07": "nothing",
+      "T08": "nothing",
+      "T09": "nothing",
+      "T10": "nothing",
+      "T11": "nothing",
+      "T12": "reduce the inputs"
     }
   },
-  "data_check_note": "Scored as supplied"
+  "H9_expert": {
+    "source": "data/user_test/expert.csv (second round, 1-5 ratings, forms dated 16/10/2026); first-round yes/partly answers in data/user_test/expert_round1.csv",
+    "experts": {
+      "E1": "A/L Biology teacher, 6 years",
+      "E2": "A/L Physics teacher"
+    },
+    "medians": {
+      "relevance": 5.0,
+      "actionability": 5.0,
+      "age_appropriate": 5.0
+    },
+    "means": {
+      "relevance": 4.67,
+      "actionability": 4.83,
+      "age_appropriate": 4.83
+    },
+    "min_rating": 4,
+    "per_example_medians": {
+      "average": {
+        "relevance": 4.0,
+        "actionability": 5.0,
+        "age_appropriate": 4.5
+      },
+      "strong": {
+        "relevance": 5.0,
+        "actionability": 5.0,
+        "age_appropriate": 5.0
+      },
+      "weak": {
+        "relevance": 5.0,
+        "actionability": 4.5,
+        "age_appropriate": 5.0
+      }
+    },
+    "questions": {
+      "wrong_or_risky": "Nothing (both)",
+      "missing": "Nothing (both)",
+      "backup_degrees": "Helpful (both)"
+    },
+    "target_minimum_median": 4,
+    "verdict": "met"
+  }
 }
