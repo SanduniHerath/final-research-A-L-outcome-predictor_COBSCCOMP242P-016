@@ -24,9 +24,6 @@ const SHOTS = [
   { name: "10_why", url: "#/why", demo: "average", action: "openDetails" },
   { name: "11_plan", url: "#/plan", demo: "weak" },
   { name: "12_chat", url: "#/chat", demo: "average", action: "chat" },
-  { name: "13_stats_data", url: "#/stats" },
-  { name: "14_stats_model", url: "#/stats", action: "tab-model" },
-  { name: "15_stats_checks", url: "#/stats", action: "tab-checks" },
   { name: "16_about", url: "#/about" },
   { name: "17_home_example_dialog", url: "#/home", fresh: true, action: "dialog" },
   { name: "20_mobile_home", url: "#/home", fresh: true, mobile: true },
@@ -43,7 +40,6 @@ const SHOTS = [
   { name: "44_dark_plan", url: "#/plan", demo: "weak", theme: "dark" },
   { name: "45_dark_chat", url: "#/chat", demo: "average", theme: "dark", action: "chat" },
   { name: "46_dark_profile", url: "#/profile", fresh: true, theme: "dark", action: "grades" },
-  { name: "47_dark_stats", url: "#/stats", theme: "dark" },
   { name: "48_dark_mobile_target", url: "#/target", demo: "average", mobile: true, theme: "dark" },
 ];
 
