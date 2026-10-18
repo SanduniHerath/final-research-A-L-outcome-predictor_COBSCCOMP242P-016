@@ -64,6 +64,8 @@ export const api = {
   recommend: (profile) => cached("rec" + JSON.stringify(profile), () => request("/api/recommend", { profile })),
   explain: (profile) => cached("why" + JSON.stringify(profile), () => request("/api/explain", { profile, include_degree: true })),
   chat: (profile, message, history) => request("/api/chat", { profile, message, history }),
+  // Before the profile is filled in: general questions about the app (same safety checks).
+  chatGeneral: (message, history) => request("/api/chat/general", { message, history }),
   // Delete everything the server stored for this browser, then start a new visit code.
   forget: async () => {
     try { await request("/api/my-data", null, "DELETE"); } finally {

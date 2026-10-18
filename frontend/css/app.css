@@ -112,7 +112,7 @@ small, .small { font-size: var(--fs-sm); }
 .nav-link[aria-current="page"] .icon { color: var(--c-primary); }
 .nav-link .lock { margin-left: auto; color: var(--c-ink-2); }
 
-.main { flex: 1; min-width: 0; padding: var(--s-6) var(--s-6) var(--s-8); }
+.main { flex: 1; min-width: 0; padding: var(--s-6) var(--s-6) 120px; } /* bottom room for the Lumi button */
 .page { max-width: 920px; margin: 0 auto; }
 .menu-btn { display: none; }
 .scrim { display: none; }
@@ -127,7 +127,7 @@ small, .small { font-size: var(--fs-sm); }
   .sidenav.open { transform: none; }
   .scrim { display: block; position: fixed; inset: var(--topbar-h) 0 0 0; z-index: 25; background: var(--c-scrim); }
   .scrim[hidden] { display: none; }
-  .main { padding: var(--s-5) var(--s-4) var(--s-8); }
+  .main { padding: var(--s-5) var(--s-4) 104px; }
   .layout { background: none; }
   h1 { font-size: var(--fs-xl); }
 }
@@ -417,6 +417,89 @@ details.more[open] > summary .chev { transform: rotate(90deg); }
 .chat-form input { flex: 1; min-height: var(--tap); border: 2px solid var(--c-border); border-radius: var(--radius-pill); padding: 0 var(--s-4); font: inherit; background: var(--c-surface); color: var(--c-ink); }
 .chat-form input:focus { border-color: var(--c-primary); outline: none; }
 
+/* Lumi, the chatbot (lumi.js, chatbot.js). The face is a small sunrise; its eyes blink. */
+.chat-head { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-3) var(--s-4); border-bottom: 1px solid var(--c-border); }
+.chat-body { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.chat-name { font-weight: 800; font-size: var(--fs-lg); line-height: 1.2; }
+.chat-role { display: flex; align-items: center; gap: 6px; font-size: var(--fs-sm); color: var(--c-ink-2); }
+.chat-role .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-growth); box-shadow: 0 0 0 3px var(--c-growth-50); }
+.chat-tip { padding: 0 var(--s-4) var(--s-2); font-size: var(--fs-sm); }
+.chat-tip a { display: inline-flex; align-items: center; gap: 6px; font-weight: 650; color: var(--c-primary-700); }
+.lumi-body .chat-tip { padding: 0 var(--s-3) var(--s-2); }
+.msg-row { display: flex; align-items: flex-end; gap: var(--s-2); }
+.msg-row.user { justify-content: flex-end; }
+.msg-row .msg { max-width: 82%; }
+
+.lumi { display: block; flex: none; overflow: visible; }
+.lumi-xs { width: 28px; height: 28px; }
+.lumi-md { width: 44px; height: 44px; }
+.lumi-lg { width: 54px; height: 54px; }
+.lumi-eyes { transform-box: fill-box; transform-origin: center; animation: lumi-blink 4.6s infinite; }
+.lumi-rays { transform-box: view-box; transform-origin: 32px 34px; animation: lumi-spin 24s linear infinite; }
+.msg-row .lumi-eyes { animation-delay: 1.3s; }
+.is-thinking .chat-head .lumi-eyes, .is-thinking .lumi-head .lumi-eyes { animation: lumi-blink 1.2s infinite; }
+@keyframes lumi-blink { 0%, 90%, 100% { transform: scaleY(1); } 93% { transform: scaleY(0.12); } 96% { transform: scaleY(1); } }
+@keyframes lumi-spin { to { transform: rotate(360deg); } }
+@keyframes lumi-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes lumi-glow { 0% { transform: scale(1); opacity: 0.55; } 100% { transform: scale(1.45); opacity: 0; } }
+@keyframes lumi-pop { from { opacity: 0; transform: translateY(12px) scale(0.96); } to { opacity: 1; transform: none; } }
+
+.lumi-root { position: fixed; right: var(--s-5); bottom: var(--s-5); z-index: 40; display: flex; flex-direction: column; align-items: flex-end; gap: var(--s-3); }
+.lumi-root[hidden] { display: none; }
+.lumi-root { pointer-events: none; }   /* only the visible button, bubble and window take clicks */
+.lumi-root > * { pointer-events: auto; }
+.lumi-launcher {
+  position: relative; width: 68px; height: 68px; border-radius: 50%; border: 3px solid var(--c-surface);
+  background: radial-gradient(circle at 50% 30%, var(--c-hero-end), var(--c-night) 72%);
+  box-shadow: 0 6px 20px rgba(20, 58, 107, 0.35); cursor: pointer; display: grid; place-items: center;
+  animation: lumi-float 3.4s ease-in-out infinite;
+}
+.lumi-launcher::after { content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 3px solid var(--c-accent); animation: lumi-glow 2.8s ease-out infinite; pointer-events: none; }
+.lumi-launcher:hover { box-shadow: 0 8px 26px rgba(20, 58, 107, 0.45); }
+.lumi-root.is-open .lumi-launcher { animation: none; }
+.lumi-root.is-open .lumi-launcher::after { display: none; }
+.lumi-badge { display: none; position: absolute; top: -2px; right: -2px; min-width: 22px; height: 22px; border-radius: 11px; padding: 0 6px;
+  background: var(--c-down); color: #fff; font-size: var(--fs-xs); font-weight: 800; line-height: 22px; border: 2px solid var(--c-surface); }
+.lumi-root.has-news .lumi-badge { display: block; }
+
+.lumi-teaser { position: relative; max-width: 260px; animation: lumi-pop 260ms ease-out; }
+.lumi-teaser[hidden] { display: none; }
+.lumi-teaser-text { display: block; text-align: left; font: inherit; font-weight: 600; color: var(--c-ink); cursor: pointer;
+  background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 18px 18px 6px 18px; padding: var(--s-3) var(--s-6) var(--s-3) var(--s-4); box-shadow: var(--shadow); }
+.lumi-teaser-close { position: absolute; top: 4px; right: 4px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; color: var(--c-ink-2); cursor: pointer; display: grid; place-items: center; }
+
+.lumi-panel {
+  width: 380px; height: min(620px, calc(100vh - var(--topbar-h) - 120px)); display: flex; flex-direction: column; overflow: hidden;
+  background: var(--c-surface); color: var(--c-ink); border: 1px solid var(--c-border); border-radius: 22px;
+  box-shadow: 0 18px 50px rgba(13, 22, 37, 0.28); transform-origin: bottom right; animation: lumi-pop 220ms ease-out;
+}
+.lumi-panel[hidden] { display: none; }
+.lumi-head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-2); padding: var(--s-3) var(--s-3) var(--s-3) var(--s-4);
+  background: linear-gradient(120deg, var(--c-night), var(--c-hero-mid)); color: #fff; }
+.lumi-title { display: flex; align-items: center; gap: var(--s-3); min-width: 0; }
+.lumi-head .chat-name { color: #fff; }
+.lumi-head .chat-role { color: #EAF2FD; }
+.lumi-head .chat-role .dot { background: #6EE7A8; box-shadow: 0 0 0 3px rgba(110, 231, 168, 0.25); }
+.lumi-tools { display: flex; gap: 2px; }
+.lumi-tool { width: 40px; height: 40px; border: 0; border-radius: 50%; background: transparent; color: #fff; display: grid; place-items: center; cursor: pointer; }
+.lumi-tool:hover { background: rgba(255, 255, 255, 0.16); }
+.lumi-tool[hidden] { display: none; }
+.lumi-head :focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.lumi-body .chat-notice { font-size: var(--fs-xs); padding: var(--s-2) var(--s-3); }
+.lumi-body .chat-log { padding: var(--s-3); }
+.lumi-body .chat-suggest { padding: 0 var(--s-3) var(--s-2); flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; }
+.lumi-body .chat-suggest button { min-height: 36px; font-size: var(--fs-xs); white-space: nowrap; flex: none; }
+.lumi-body .msg { padding: var(--s-2) var(--s-3); }
+
+@media (max-width: 560px) {
+  .lumi-root { right: var(--s-3); bottom: var(--s-3); }
+  .lumi-root.is-open { left: var(--s-2); right: var(--s-2); bottom: var(--s-2); }
+  .lumi-root.is-open .lumi-launcher { display: none; }
+  .lumi-panel { width: 100%; height: calc(100vh - var(--topbar-h) - 16px); }
+  .lumi-launcher { width: 60px; height: 60px; }
+  .lumi-lg { width: 48px; height: 48px; }
+}
+
 /* stats */
 .tabs { display: flex; gap: var(--s-2); border-bottom: 2px solid var(--c-border); margin-bottom: var(--s-5); flex-wrap: wrap; }
 .tabs button { min-height: var(--tap); padding: 0 var(--s-4); border: 0; background: none; font: inherit; font-weight: 600; color: var(--c-ink-2); cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; }
@@ -469,6 +552,6 @@ dialog.modal::backdrop { background: var(--c-backdrop); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 @media print {
-  .topbar, .sidenav, .next-step, .actions, .chat-form { display: none !important; }
+  .topbar, .sidenav, .next-step, .actions, .chat-form, .lumi-root { display: none !important; }
   .main { padding: 0; }
 }

@@ -7,6 +7,7 @@ import ta from "../i18n/ta.js";
 // Keys deliberately left to the English fallback.
 const ALLOWED_MISSING = new Set([
   "chat.suggestions",      // the chatbot answers in English, so its suggested questions stay English
+  "chat.generalSuggestions",
   "opt.al_district",       // empty in every language (districts are under "district")
   "stats.trustTitle",      // not shown
   "district",              // English shows the district names as they are

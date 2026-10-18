@@ -35,12 +35,15 @@ class DecisionSupportSystem:
     def load(cls, chatbot: Chatbot | None = None) -> DecisionSupportSystem:
         """Load models and data once."""
         predictor = Predictor.load()
+        gap = GapAnalyzer.load()
+        chatbot = chatbot or Chatbot()
+        chatbot.cutoffs = gap.cutoffs  # exact cut-off answers from the official UGC table
         return cls(
             predictor=predictor,
-            gap=GapAnalyzer.load(),
+            gap=gap,
             explainer=StudentExplainer.load(predictor),
             recommender=Recommender.load(predictor),
-            chatbot=chatbot or Chatbot(),
+            chatbot=chatbot,
         )
 
     def predict(self, profile: dict[str, Any]) -> dict[str, Any]:
@@ -85,15 +88,15 @@ class DecisionSupportSystem:
 
     def chat(
         self,
-        profile: dict[str, Any],
+        profile: dict[str, Any] | None,
         message: str,
         history: list[dict[str, str]] | None = None,
         results: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
-        """Part 4."""
-        return self.chatbot.reply(
-            message, results or self.cached_report(profile), history
-        ).as_dict()
+        """Part 4. Without a profile, the chatbot answers general questions about the app."""
+        if results is None and profile:
+            results = self.cached_report(profile)
+        return self.chatbot.reply(message, results, history).as_dict()
 
     def cached_report(self, profile: dict[str, Any]) -> dict[str, Any]:
         """``report`` with a short in-memory cache (see ``cache_seconds``)."""
