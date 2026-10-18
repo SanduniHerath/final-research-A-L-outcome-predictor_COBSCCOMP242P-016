@@ -1,89 +1,89 @@
 {
-  "run_at": "2026-10-17T15:18:15.811Z",
+  "run_at": "2026-10-18T13:24:02.664Z",
   "base": "http://localhost:8000/",
   "results": [
     {
       "check": "Home shows the name and one main action",
       "ok": true,
-      "ms": 32,
+      "ms": 43,
       "detail": "Your A/L journey begins at sunrise"
     },
     {
       "check": "Results pages are locked before answering",
       "ok": true,
-      "ms": 1034,
+      "ms": 596,
       "detail": ""
     },
     {
       "check": "Next without answers shows friendly errors",
       "ok": true,
-      "ms": 520,
+      "ms": 561,
       "detail": "3 questions flagged"
     },
     {
       "check": "A student can answer all 30 questions step by step",
       "ok": true,
-      "ms": 2430,
+      "ms": 2781,
       "detail": "100% done"
     },
     {
       "check": "See my results opens the prediction (answers match the example student)",
       "ok": true,
-      "ms": 445,
-      "detail": "Z 1.42, shown after 445 ms"
+      "ms": 527,
+      "detail": "Z 1.42, shown after 526 ms"
     },
     {
       "check": "Target page shows the status and the universities card",
       "ok": true,
-      "ms": 625,
+      "ms": 653,
       "detail": "0.11 to go for Engineering; 8 university rows"
     },
     {
       "check": "Why page shows the question groups",
       "ok": true,
-      "ms": 3317,
+      "ms": 4238,
       "detail": "18 rows"
     },
     {
       "check": "Plan ticks are remembered after reloading",
       "ok": true,
-      "ms": 7145,
+      "ms": 8238,
       "detail": "1 of 5 done"
     },
     {
       "check": "Chatbot notice is visible and a university question gets an exact answer",
       "ok": true,
-      "ms": 5124,
+      "ms": 5736,
       "detail": "Engineering at University of Peradeniya: the 2023/2024 cut-off for Gampaha district was 1.…"
     },
     {
       "check": "Language switch changes every label (Sinhala, Tamil, back to English)",
       "ok": true,
-      "ms": 488,
+      "ms": 631,
       "detail": "මගේ අනාවැකිය / என் கணிப்பு / My Prediction"
     },
     {
       "check": "Dark mode: follows the device, the switch changes the colours and is remembered",
       "ok": true,
-      "ms": 4028,
+      "ms": 3568,
       "detail": "rgb(245, 248, 252) -> rgb(13, 22, 37)"
     },
     {
       "check": "Keyboard: the first Tab reaches 'Skip to main content'",
       "ok": true,
-      "ms": 1532,
+      "ms": 644,
       "detail": "Skip to main content"
     },
     {
       "check": "Phone: the menu opens and closes",
       "ok": true,
-      "ms": 4711,
+      "ms": 4632,
       "detail": ""
     },
     {
       "check": "Delete my answers removes everything and locks the results again",
       "ok": true,
-      "ms": 2336,
+      "ms": 1928,
       "detail": ""
     },
     {
