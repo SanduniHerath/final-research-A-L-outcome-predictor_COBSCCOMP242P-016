@@ -55,6 +55,40 @@ def test_examples_and_stats_endpoints(client: TestClient) -> None:
     assert [h["id"] for h in stats["hypotheses"]] == [f"H{i}" for i in range(1, 13)]
 
 
+def test_chatbot_answers_before_a_profile_exists(client: TestClient) -> None:
+    """The floating chatbot (Lumi) works without a profile: general questions, same checks."""
+    ask = lambda m: client.post("/api/chat/general", json={"message": m}).json()  # noqa: E731
+    reply = ask("What is a cut-off?")
+    assert reply["reply"] == "ok" and reply["source"] == "model"
+    assert "support tool" in reply["notice"]
+    crisis = ask("I want to end my life")
+    assert crisis["source"] == "guard" and "1926" in crisis["reply"]
+    assert client.post("/api/chat/general", json={"message": ""}).status_code == 422
+
+
+def test_cutoff_questions_get_exact_answers_from_the_ugc_table(client: TestClient) -> None:
+    """A named course and university is answered from the official table, never by the model."""
+    ask = lambda m: client.post("/api/chat/general", json={"message": m}).json()  # noqa: E731
+    one = ask("Medicine at Peradeniya from Kandy district?")
+    assert one["source"] == "university_lookup" and "2.1565" in one["reply"]
+    spread = ask("How much Z-score do I need for medicine in Peradeniya university?")
+    assert spread["source"] == "university_lookup" and "depended on the district" in spread["reply"]
+    assert ask("What is a cut-off?")["source"] == "model"
+    follow = client.post("/api/chat/general", json={
+        "message": "I am from Kandy district",
+        "history": [{"role": "user", "content": "Z-score for medicine in Peradeniya?"}],
+    }).json()  # fmt: skip
+    assert follow["source"] == "university_lookup" and "2.1565" in follow["reply"]
+
+
+def test_general_fact_sheet_has_no_student_results() -> None:
+    from src.chatbot.facts import general_fact_sheet
+
+    sheet = general_fact_sheet()
+    assert "NO STUDENT RESULTS YET" in sheet and "Cut-off:" in sheet
+    assert "Predicted A/L Z-score" not in sheet and "STUDY PLAN" not in sheet
+
+
 def test_statistics_never_show_small_groups() -> None:
     data = project_statistics()["dataset"]
     for key in ("degree_category", "university_group", "subject_combination", "exam_year"):

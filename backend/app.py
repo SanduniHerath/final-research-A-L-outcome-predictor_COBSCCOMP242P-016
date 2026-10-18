@@ -7,7 +7,7 @@
 | 1 Prediction | POST /api/predict |
 | 2 Recommendation | POST /api/recommend |
 | 3 Target gap | POST /api/gap |
-| 4 Chatbot | POST /api/chat |
+| 4 Chatbot | POST /api/chat (and POST /api/chat/general before a profile exists) |
 | 5 XAI | POST /api/explain |
 
 The Phase 10 web interface (``frontend/``) is served at ``/`` by the same server.
@@ -32,7 +32,7 @@ from fastapi import FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from backend.schemas import ChatRequest, ExplainRequest, Profile, ProfileRequest
+from backend.schemas import ChatRequest, ExplainRequest, GeneralChatRequest, Profile, ProfileRequest
 from backend.storage import AppStore, clean_session
 from src.chatbot.llm import OllamaModel
 from src.evaluation.stats_api import project_statistics
@@ -181,6 +181,15 @@ def create_app(
         history = [turn.model_dump() for turn in body.history]
         result = system().chat(answers, body.message, history)
         return saved("chat", answers, result, session, lang, question=body.message)
+
+    @app.post("/api/chat/general")
+    def chat_general(
+        body: GeneralChatRequest, session: str | None = session_header, lang: str | None = lang_header
+    ) -> dict[str, Any]:
+        """Part 4 before a profile exists: questions about the app and its words, same safety checks."""
+        history = [turn.model_dump() for turn in body.history]
+        result = system().chat(None, body.message, history)
+        return saved("chat", {}, result, session, lang, question=body.message)
 
     @app.delete("/api/my-data")
     def delete_my_data(session: str | None = session_header) -> dict[str, Any]:

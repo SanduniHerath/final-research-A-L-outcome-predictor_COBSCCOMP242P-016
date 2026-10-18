@@ -1,5 +1,6 @@
 // App start-up: navigation, language, routing. One page per function (Phase 10 brief).
 import { api } from "./api.js";
+import { setupChatbot, updateChatbot } from "./chatbot.js";
 import { applyStatic, getLang, setLang, t } from "./i18n.js";
 import { fillIcons, icon } from "./icons.js";
 import { store } from "./store.js";
@@ -54,6 +55,7 @@ async function route() {
   const main = document.getElementById("main");
   renderNav(name);
   closeMenu();
+  updateChatbot(name);
   document.title = `${t(`nav.${name}`)} – ${t("app.name")}`;
   main.innerHTML = "";
   try {
@@ -135,6 +137,7 @@ async function start() {
     if (e.target.closest("[data-use-mine]")) { store.reset(); }
   });
   await loadDemoFromUrl().catch(() => {});
+  setupChatbot();
   window.addEventListener("hashchange", route);
   route();
 }

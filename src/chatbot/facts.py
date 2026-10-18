@@ -162,4 +162,33 @@ def build_fact_sheet(results: dict[str, Any], max_courses: int = 6) -> str:
     return "\n".join(lines)
 
 
-__all__ = ["GLOSSARY", "build_fact_sheet", "pct", "project_facts"]
+APP_PAGES = [
+    "My Profile: about 30 short questions on school, O/L results, study habits, confidence, interests, "
+    "career goal, A/L subjects, district and target degree. After the last step, the student presses See my results.",
+    "My Prediction: the likely A/L Z-score shown as a range, the Z-score band, likely degree areas and a very "
+    "rough university region.",
+    "My Target and Gap: compares the prediction with the UGC cut-offs for the target degree in the student's district.",
+    "Why This Result: which groups of answers raised or lowered the prediction compared with a typical student.",
+    "My Recommendations: a study plan with a reason for every step, and a weekly checklist.",
+    "Statistics: about the survey behind the app and how well the model works. About and Help: privacy and help.",
+]
+
+
+def general_fact_sheet() -> str:
+    """Facts for a student who has not filled in My Profile yet: the app and its words, no results."""
+    lines = ["NO STUDENT RESULTS YET"]
+    lines.append(
+        "- This student has not filled in My Profile yet, so there is no prediction, target gap, explanation or "
+        "study plan for them. If they ask about their own Z-score, chances, target, universities or study plan, "
+        "say kindly that you can answer once they fill in My Profile and press See my results."
+    )
+    lines.append("HOW THE APP WORKS")
+    lines.extend(f"- {p}" for p in APP_PAGES)
+    lines.append("ABOUT THE APP")
+    lines.extend(f"- {f}" for f in project_facts())
+    lines.append("WORDS")
+    lines.extend(f"- {g}" for g in GLOSSARY)
+    return "\n".join(lines)
+
+
+__all__ = ["APP_PAGES", "GLOSSARY", "build_fact_sheet", "general_fact_sheet", "pct", "project_facts"]
