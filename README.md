@@ -138,7 +138,6 @@ tests/             pytest: unit, integration and end-to-end tests
 - **Privacy:**
   - app use is stored in the app database under a random visit code, never with a name, e-mail or IP address;
   - a student can delete everything stored for their visit code from the app;
-  - statistics show groups of 10 or more only;
   - survey data is never committed.
 
 ## Limitations
