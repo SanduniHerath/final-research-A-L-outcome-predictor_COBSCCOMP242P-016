@@ -19,7 +19,7 @@ It works offline on one laptop, in **English, Sinhala and Tamil**. It is a final
 | 1. Prediction | `src/models` | Neural networks only, no ensembles. The Z-score is shown as a range (8 in 10 inside). Band, degree area and university region come with a trust message from the test calibration. | `POST /api/predict` |
 | 2. Recommendations | `src/recommend`, `configs/recommend.yaml` | 14 transparent rules, each with a reason and evidence, plus what similar students who reached the target reported doing. Two modes: *close the gap* / *stay on track*. | `POST /api/recommend` |
 | 3. Target gap | `src/gap` | Predicted range against the official UGC cut-offs (2019/20, 2021/22, 2023/24) for the student's district. Universities are grouped *within reach / close / further away*. | `POST /api/gap` |
-| 4. Chatbot | `src/chatbot` | Local model (Qwen 2.5 7B through Ollama), grounded only in the student's results. A safety guard, a number check and exact university lookups. Always shows the support-tool notice. | `POST /api/chat` |
+| 4. Chatbot (Lumi) | `src/chatbot` | Local model (Qwen 2.5 7B through Ollama), grounded only in the student's results. Lumi floats on every page and also answers general questions about the app before any answers are given. A safety guard, a number check and exact university lookups. Always shows the support-tool notice. | `POST /api/chat`, `POST /api/chat/general` |
 | 5. Explainable AI | `src/explain` | SHAP explanations, grouped into 5 question groups, checked for additivity and stability. | `POST /api/explain` |
 
 The web interface is in `frontend/`: plain HTML, CSS and JavaScript, served by the same backend at `/`.
@@ -101,7 +101,7 @@ Each phase has its own document in [docs/](docs/):
 | Phase | Document | Main commands |
 |---|---|---|
 | 0 Setup, data registration | `phase00_project_setup.md` | `python -m src.data.register_raw --verify` |
-| 1 Questionnaire validation | `phase01_questionnaire_validation.md` | `python -m src.data.run_phase01` |
+| 1 Questionnaire validation | `phase01_questionnaire_validation.md` | `python -m src.data.run_phase01`, `python -m src.data.cvi` (content validity) |
 | 2 Hypotheses and success criteria (locked) | `phase02_hypotheses_and_success_criteria.md` | `configs/success_criteria.lock.json` |
 | 3 Cleaning and labels | `phase03_data_labeling_and_documentation.md` | `python -m src.data.run_phase03` |
 | 4 Features (fitted on training data only) | `phase04_feature_engineering.md` | `python -m src.data.split`, `python -m src.features.run_phase04` |
@@ -113,6 +113,18 @@ Each phase has its own document in [docs/](docs/):
 | 10 Interface | `phase10_user_interface.md` | `uvicorn backend.app:app --port 8000` |
 | 11 Integration and user test | `user_testing/` (session plan, consent, tasks, questionnaire, expert review) | `python -m src.evaluation.user_test` |
 
+## User test results
+
+From 12 testers (6 in English, 6 in Sinhala) and two A/L teachers. The scores are in `reports/phase11/`.
+
+- **Usability (SUS):** mean 79.6 (95 % CI 75.6–83.6); 11 of 12 testers at or above the target of 68.
+- **Understanding the results:** 81 % of comprehension answers correct. 8 of 12 testers still thought the explanation page proves cause, so this is reported as a weakness.
+- **Study plans:** median rating 5 (*close the gap*) and 4 (*stay on track*). Both teachers gave the example plans a median of 5 (H9).
+- **Chatbot clarity:** median 4.
+- **Questionnaire content validity:** one lecturer rated every item; S-CVI/Ave 1.00 for relevance and clarity, 0.975 for simplicity (`reports/phase01/cvi_*.csv`).
+
+In total, 7 of the 12 locked hypotheses are supported.
+
 ## Folder structure
 
 ```
@@ -123,6 +135,7 @@ configs/           every setting, threshold and rule (YAML); success criteria ar
 data/raw/          original files, read-only, checksummed (never committed to Git)
 data/interim/, data/processed/   outputs of the scripts (never committed)
 models/            trained networks and the feature pipeline
+notebooks/         thesis appendix notebooks 01–06 and their HTML/PDF exports
 reports/           results per phase (tables, JSON, figures)
 docs/              phase documents, screenshots, user-test materials
 tests/             pytest: unit, integration and end-to-end tests
@@ -149,4 +162,4 @@ These are documented in the phase documents.
 - **Degree-area chances** are only roughly calibrated.
 - **Chatbot test.** The chatbot met 3 of its 4 automated targets (H11): it said "not sure" in 88 % of cases where 90 % was the target. The model is small and can mix up numbers, so named-university questions are answered by an exact lookup.
 - **Translations.** The Sinhala and Tamil texts are first drafts waiting for checks.
-- **User test.** Five testers and one expert give descriptive results only.
+- **User test.** Twelve testers and two teachers give descriptive results only, not a general proof. The SUS items agreed poorly with each other (Cronbach's α 0.11), so the SUS mean should be read with care.
